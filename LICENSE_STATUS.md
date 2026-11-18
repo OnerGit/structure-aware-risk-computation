@@ -1,15 +1,9 @@
 # Licence Status
 
-**Owner confirmation pending.** No open-source licence has yet been selected
-for the original software and documentation in this candidate package, and no
-`LICENSE` file is included. Public visibility of a repository does not by
-itself grant third parties general permission to reuse or redistribute its
-contents. The owner must decide whether to keep the default proprietary
-copyright position or adopt an appropriate licence before release.
+**Owner decision confirmed (18 November 2026).** No open-source licence has been granted for the original software and documentation in this public repository, and no root `LICENSE` file is included.
 
-Upstream sources and datasets are **not** vendored. Their own licences and
-attribution obligations are independent of any subsequent owner decision:
-see `THIRD_PARTY_NOTICES.md`.
+The original materials remain subject to applicable copyright law. Public visibility allows viewing and forking under GitHub's Terms of Service but does not independently grant general permission to reuse, modify, or redistribute the materials.
 
-This file is a disclosure of status, not a licence grant, and is not legal
-advice.
+Third-party materials remain subject to their respective licences and attribution requirements. See `THIRD_PARTY_NOTICES.md` and `THIRD_PARTY_LICENSES/` for details.
+
+This document describes the current licensing status; it is not itself a licence grant or legal advice.
