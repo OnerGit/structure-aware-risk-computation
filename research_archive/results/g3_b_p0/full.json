@@ -1,0 +1,1197 @@
+{
+  "gate": "G3_B_P0_DIRECT_ANNUAL_LAW_TN_MPS_CONSTRUCTION_AND_VALIDATION",
+  "method": {
+    "production_input": "annual-law factors only",
+    "posthoc_TT_on_terminal_table": "NO",
+    "production_functions": "annual_n2/annual_n3 + merge_map + contraction (network.py)",
+    "terminal_distribution_functions_used": "diagnostics only"
+  },
+  "n2": {
+    "n2_25_cells": {
+      "cells": [
+        {
+          "scenario": "adb-base",
+          "metric": "EL",
+          "cover": [
+            35,
+            20
+          ],
+          "tn_value": 0.06289695843096318,
+          "frozen_target": 0.06289695843096318,
+          "gt_scaled": 0.06289695843096317,
+          "normalized_abs_error_vs_target": 0.0,
+          "pass_1e12": true
+        },
+        {
+          "scenario": "adb-base",
+          "metric": "attach",
+          "cover": [
+            35,
+            20
+          ],
+          "tn_value": 0.04413776873084346,
+          "frozen_target": 0.04413776873084346,
+          "gt_scaled": 0.04413776873084346,
+          "normalized_abs_error_vs_target": 0.0,
+          "pass_1e12": true
+        },
+        {
+          "scenario": "adb-base",
+          "metric": "exceed",
+          "cover": [
+            35,
+            20
+          ],
+          "tn_value": 0.012046720907534033,
+          "frozen_target": 0.012046720907534031,
+          "gt_scaled": 0.012046720907534031,
+          "normalized_abs_error_vs_target": 1.734723475976807e-18,
+          "pass_1e12": true
+        },
+        {
+          "scenario": "adb-base",
+          "metric": "stoploss",
+          "cover": [
+            35,
+            20
+          ],
+          "tn_value": 0.0035294337320767623,
+          "frozen_target": 0.003529433732076762,
+          "gt_scaled": 0.0035294337320767627,
+          "normalized_abs_error_vs_target": 4.336808689942018e-19,
+          "pass_1e12": true
+        },
+        {
+          "scenario": "adb-base",
+          "metric": "both",
+          "cover": [
+            35,
+            20
+          ],
+          "tn_value": 3.163304630917887e-05,
+          "frozen_target": 3.163304630917883e-05,
+          "gt_scaled": 3.1633046309178836e-05,
+          "normalized_abs_error_vs_target": 4.0657581468206416e-20,
+          "pass_1e12": true
+        },
+        {
+          "scenario": "adb-independent",
+          "metric": "EL",
+          "cover": [
+            35,
+            20
+          ],
+          "tn_value": 0.06289695843096316,
+          "frozen_target": 0.06289695843096316,
+          "gt_scaled": 0.06289695843096317,
+          "normalized_abs_error_vs_target": 0.0,
+          "pass_1e12": true
+        },
+        {
+          "scenario": "adb-independent",
+          "metric": "attach",
+          "cover": [
+            35,
+            20
+          ],
+          "tn_value": 0.027156372630856667,
+          "frozen_target": 0.027156372630856667,
+          "gt_scaled": 0.02715637263085667,
+          "normalized_abs_error_vs_target": 0.0,
+          "pass_1e12": true
+        },
+        {
+          "scenario": "adb-independent",
+          "metric": "exceed",
+          "cover": [
+            35,
+            20
+          ],
+          "tn_value": 0.007185934925690383,
+          "frozen_target": 0.007185934925690383,
+          "gt_scaled": 0.007185934925690383,
+          "normalized_abs_error_vs_target": 0.0,
+          "pass_1e12": true
+        },
+        {
+          "scenario": "adb-independent",
+          "metric": "stoploss",
+          "cover": [
+            35,
+            20
+          ],
+          "tn_value": 0.0021408305679225816,
+          "frozen_target": 0.0021408305679225816,
+          "gt_scaled": 0.0021408305679225816,
+          "normalized_abs_error_vs_target": 0.0,
+          "pass_1e12": true
+        },
+        {
+          "scenario": "adb-independent",
+          "metric": "both",
+          "cover": [
+            35,
+            20
+          ],
+          "tn_value": 3.923917930752888e-06,
+          "frozen_target": 3.923917930752892e-06,
+          "gt_scaled": 3.923917930752892e-06,
+          "normalized_abs_error_vs_target": 4.235164736271502e-21,
+          "pass_1e12": true
+        },
+        {
+          "scenario": "adb-common-shock",
+          "metric": "EL",
+          "cover": [
+            35,
+            20
+          ],
+          "tn_value": 0.06289695843096318,
+          "frozen_target": 0.06289695843096317,
+          "gt_scaled": 0.06289695843096317,
+          "normalized_abs_error_vs_target": 1.3877787807814457e-17,
+          "pass_1e12": true
+        },
+        {
+          "scenario": "adb-common-shock",
+          "metric": "attach",
+          "cover": [
+            35,
+            20
+          ],
+          "tn_value": 0.050525670312933146,
+          "frozen_target": 0.050525670312933146,
+          "gt_scaled": 0.050525670312933146,
+          "normalized_abs_error_vs_target": 0.0,
+          "pass_1e12": true
+        },
+        {
+          "scenario": "adb-common-shock",
+          "metric": "exceed",
+          "cover": [
+            35,
+            20
+          ],
+          "tn_value": 0.016066409986690615,
+          "frozen_target": 0.016066409986690615,
+          "gt_scaled": 0.01606640998669062,
+          "normalized_abs_error_vs_target": 0.0,
+          "pass_1e12": true
+        },
+        {
+          "scenario": "adb-common-shock",
+          "metric": "stoploss",
+          "cover": [
+            35,
+            20
+          ],
+          "tn_value": 0.00481304212779335,
+          "frozen_target": 0.0048130421277933514,
+          "gt_scaled": 0.004813042127793351,
+          "normalized_abs_error_vs_target": 1.734723475976807e-18,
+          "pass_1e12": true
+        },
+        {
+          "scenario": "adb-common-shock",
+          "metric": "both",
+          "cover": [
+            35,
+            20
+          ],
+          "tn_value": 4.400154217606905e-05,
+          "frozen_target": 4.400154217606905e-05,
+          "gt_scaled": 4.4001542176069056e-05,
+          "normalized_abs_error_vs_target": 0.0,
+          "pass_1e12": true
+        },
+        {
+          "scenario": "adb-rain-stress",
+          "metric": "EL",
+          "cover": [
+            35,
+            20
+          ],
+          "tn_value": 0.0698156608229632,
+          "frozen_target": 0.0698156608229632,
+          "gt_scaled": 0.06981566082296319,
+          "normalized_abs_error_vs_target": 0.0,
+          "pass_1e12": true
+        },
+        {
+          "scenario": "adb-rain-stress",
+          "metric": "attach",
+          "cover": [
+            35,
+            20
+          ],
+          "tn_value": 0.07046389659987555,
+          "frozen_target": 0.07046389659987555,
+          "gt_scaled": 0.07046389659987555,
+          "normalized_abs_error_vs_target": 0.0,
+          "pass_1e12": true
+        },
+        {
+          "scenario": "adb-rain-stress",
+          "metric": "exceed",
+          "cover": [
+            35,
+            20
+          ],
+          "tn_value": 0.013215038883593162,
+          "frozen_target": 0.013215038883593162,
+          "gt_scaled": 0.013215038883593162,
+          "normalized_abs_error_vs_target": 0.0,
+          "pass_1e12": true
+        },
+        {
+          "scenario": "adb-rain-stress",
+          "metric": "stoploss",
+          "cover": [
+            35,
+            20
+          ],
+          "tn_value": 0.003828572454093997,
+          "frozen_target": 0.0038285724540939965,
+          "gt_scaled": 0.003828572454093997,
+          "normalized_abs_error_vs_target": 4.336808689942018e-19,
+          "pass_1e12": true
+        },
+        {
+          "scenario": "adb-rain-stress",
+          "metric": "both",
+          "cover": [
+            35,
+            20
+          ],
+          "tn_value": 6.924565668457718e-05,
+          "frozen_target": 6.924565668457714e-05,
+          "gt_scaled": 6.924565668457714e-05,
+          "normalized_abs_error_vs_target": 4.0657581468206416e-20,
+          "pass_1e12": true
+        },
+        {
+          "scenario": "adb-rain-cover",
+          "metric": "EL",
+          "cover": [
+            30,
+            40
+          ],
+          "tn_value": 0.062312821512254146,
+          "frozen_target": 0.062312821512254146,
+          "gt_scaled": 0.06231282151225415,
+          "normalized_abs_error_vs_target": 0.0,
+          "pass_1e12": true
+        },
+        {
+          "scenario": "adb-rain-cover",
+          "metric": "attach",
+          "cover": [
+            30,
+            40
+          ],
+          "tn_value": 0.04413776873084346,
+          "frozen_target": 0.04413776873084346,
+          "gt_scaled": 0.04413776873084346,
+          "normalized_abs_error_vs_target": 0.0,
+          "pass_1e12": true
+        },
+        {
+          "scenario": "adb-rain-cover",
+          "metric": "exceed",
+          "cover": [
+            30,
+            40
+          ],
+          "tn_value": 0.006997089316821914,
+          "frozen_target": 0.006997089316821914,
+          "gt_scaled": 0.006997089316821913,
+          "normalized_abs_error_vs_target": 0.0,
+          "pass_1e12": true
+        },
+        {
+          "scenario": "adb-rain-cover",
+          "metric": "stoploss",
+          "cover": [
+            30,
+            40
+          ],
+          "tn_value": 0.0021365932640908633,
+          "frozen_target": 0.0021365932640908633,
+          "gt_scaled": 0.0021365932640908633,
+          "normalized_abs_error_vs_target": 0.0,
+          "pass_1e12": true
+        },
+        {
+          "scenario": "adb-rain-cover",
+          "metric": "both",
+          "cover": [
+            30,
+            40
+          ],
+          "tn_value": 3.163304630917887e-05,
+          "frozen_target": 3.163304630917883e-05,
+          "gt_scaled": 3.1633046309178836e-05,
+          "normalized_abs_error_vs_target": 4.0657581468206416e-20,
+          "pass_1e12": true
+        }
+      ],
+      "all_pass_1e12": true,
+      "count": 25,
+      "reference_source": "results/g2_s2_s1a/results.json n2.*.targets + results/g1b_full/exact_ground_truth.json"
+    },
+    "cover_mapping_checks_not_in_official_25": {
+      "adb-base/base": {
+        "EL": 0.06289695843096318,
+        "attach": 0.04413776873084346,
+        "exceed": 0.012046720907534033,
+        "stoploss": 0.0035294337320767623,
+        "both": 3.163304630917887e-05
+      },
+      "adb-base/sublimit": {
+        "EL": 0.062312821512254146,
+        "attach": 0.04413776873084346,
+        "exceed": 0.006997089316821914,
+        "stoploss": 0.0021365932640908633,
+        "both": 3.163304630917887e-05
+      },
+      "adb-rain-cover/base": {
+        "EL": 0.06289695843096318,
+        "attach": 0.04413776873084346,
+        "exceed": 0.012046720907534033,
+        "stoploss": 0.0035294337320767623,
+        "both": 3.163304630917887e-05
+      },
+      "adb-rain-cover/sublimit": {
+        "EL": 0.062312821512254146,
+        "attach": 0.04413776873084346,
+        "exceed": 0.006997089316821914,
+        "stoploss": 0.0021365932640908633,
+        "both": 3.163304630917887e-05
+      }
+    }
+  },
+  "n3": {
+    "law": "S1A F1/F2/F3 synthetic third country",
+    "tag": "SYNTHETIC_N3_NOT_OFFICIAL",
+    "terminal_marginal_to_n2_max_abs_err": 5.551115123125783e-16,
+    "annual_marginal_to_n2_max_abs_err": 2.220446049250313e-16,
+    "marginals_pass_1e12": true,
+    "metrics_vs_exact_n3_dp": {
+      "EL": {
+        "tn": 0.0640981008933936,
+        "dp_reference": 0.0640981008933936,
+        "abs_err": 0.0
+      },
+      "attach": {
+        "tn": 0.026696718109426237,
+        "dp_reference": 0.026696718109426233,
+        "abs_err": 3.469446951953614e-18
+      },
+      "exceed": {
+        "tn": 0.010657058513242773,
+        "dp_reference": 0.010657058513242772,
+        "abs_err": 1.734723475976807e-18
+      },
+      "stoploss": {
+        "tn": 0.0021829104599944164,
+        "dp_reference": 0.002182910459994415,
+        "abs_err": 1.3010426069826053e-18
+      },
+      "both": {
+        "tn": 5.250499180815835e-06,
+        "dp_reference": 5.250499180815876e-06,
+        "abs_err": 4.0657581468206416e-20
+      }
+    },
+    "metrics_pass_1e12": true,
+    "annual_factor_norm": 1.0,
+    "terminal_norm": 1.0000000000000004
+  },
+  "chi_experiments": {
+    "rows": [
+      {
+        "scenario": "adb-base",
+        "chi": 1,
+        "metric": "EL",
+        "approx": 0.026129531376046164,
+        "exact": 0.06289695843096318,
+        "abs_err": 0.03676742705491702,
+        "rel_err_nonzero": 0.5845660580753456,
+        "kept_L2_fraction": 0.9995817157743496,
+        "final_norm_L1": 0.8763398705343463,
+        "mass_removed_padding": 0.0,
+        "feasible": true
+      },
+      {
+        "scenario": "adb-base",
+        "chi": 1,
+        "metric": "attach",
+        "approx": 0.008570886753433923,
+        "exact": 0.04413776873084346,
+        "abs_err": 0.03556688197740954,
+        "rel_err_nonzero": 0.8058151329375064,
+        "kept_L2_fraction": 0.9995817157743496,
+        "final_norm_L1": 0.8763398705343463,
+        "mass_removed_padding": 0.0,
+        "feasible": true
+      },
+      {
+        "scenario": "adb-base",
+        "chi": 1,
+        "metric": "exceed",
+        "approx": 0.00024364729034520924,
+        "exact": 0.012046720907534033,
+        "abs_err": 0.011803073617188823,
+        "rel_err_nonzero": 0.9797748040968699,
+        "kept_L2_fraction": 0.9995817157743496,
+        "final_norm_L1": 0.8763398705343463,
+        "mass_removed_padding": 0.0,
+        "feasible": true
+      },
+      {
+        "scenario": "adb-base",
+        "chi": 1,
+        "metric": "stoploss",
+        "approx": 3.3939153662666014e-05,
+        "exact": 0.0035294337320767623,
+        "abs_err": 0.003495494578414096,
+        "rel_err_nonzero": 0.9903839663132885,
+        "kept_L2_fraction": 0.9995817157743496,
+        "final_norm_L1": 0.8763398705343463,
+        "mass_removed_padding": 0.0,
+        "feasible": true
+      },
+      {
+        "scenario": "adb-base",
+        "chi": 1,
+        "metric": "both",
+        "approx": 2.503605720967493e-09,
+        "exact": 3.163304630917887e-05,
+        "abs_err": 3.1630542703457905e-05,
+        "rel_err_nonzero": 0.9999208547385384,
+        "kept_L2_fraction": 0.9995817157743496,
+        "final_norm_L1": 0.8763398705343463,
+        "mass_removed_padding": 0.0,
+        "feasible": true
+      },
+      {
+        "scenario": "adb-base",
+        "chi": 2,
+        "metric": "EL",
+        "approx": 0.04232009845314282,
+        "exact": 0.06289695843096318,
+        "abs_err": 0.020576859977820362,
+        "rel_err_nonzero": 0.32715190831375235,
+        "kept_L2_fraction": 0.9767164989937469,
+        "final_norm_L1": 0.9189291964745112,
+        "mass_removed_padding": 0.0,
+        "feasible": true
+      },
+      {
+        "scenario": "adb-base",
+        "chi": 2,
+        "metric": "attach",
+        "approx": 0.02317520749671366,
+        "exact": 0.04413776873084346,
+        "abs_err": 0.020962561234129803,
+        "rel_err_nonzero": 0.47493477438702447,
+        "kept_L2_fraction": 0.9767164989937469,
+        "final_norm_L1": 0.9189291964745112,
+        "mass_removed_padding": 0.0,
+        "feasible": true
+      },
+      {
+        "scenario": "adb-base",
+        "chi": 2,
+        "metric": "exceed",
+        "approx": 0.0024581045304770473,
+        "exact": 0.012046720907534033,
+        "abs_err": 0.009588616377056986,
+        "rel_err_nonzero": 0.7959523965613128,
+        "kept_L2_fraction": 0.9767164989937469,
+        "final_norm_L1": 0.9189291964745112,
+        "mass_removed_padding": 0.0,
+        "feasible": true
+      },
+      {
+        "scenario": "adb-base",
+        "chi": 2,
+        "metric": "stoploss",
+        "approx": 0.0012517428002257337,
+        "exact": 0.0035294337320767623,
+        "abs_err": 0.0022776909318510284,
+        "rel_err_nonzero": 0.645341747360364,
+        "kept_L2_fraction": 0.9767164989937469,
+        "final_norm_L1": 0.9189291964745112,
+        "mass_removed_padding": 0.0,
+        "feasible": true
+      },
+      {
+        "scenario": "adb-base",
+        "chi": 2,
+        "metric": "both",
+        "approx": 2.4973235795513997e-05,
+        "exact": 3.163304630917887e-05,
+        "abs_err": 6.659810513664873e-06,
+        "rel_err_nonzero": 0.21053332798151708,
+        "kept_L2_fraction": 0.9767164989937469,
+        "final_norm_L1": 0.9189291964745112,
+        "mass_removed_padding": 0.0,
+        "feasible": true
+      },
+      {
+        "scenario": "adb-base",
+        "chi": 4,
+        "metric": "EL",
+        "approx": 0.11162402714462658,
+        "exact": 0.06289695843096318,
+        "abs_err": 0.04872706871366339,
+        "rel_err_nonzero": 0.7747126399943025,
+        "kept_L2_fraction": 0.9940209261927083,
+        "final_norm_L1": 1.067164030205379,
+        "mass_removed_padding": 0.0,
+        "feasible": true
+      },
+      {
+        "scenario": "adb-base",
+        "chi": 4,
+        "metric": "attach",
+        "approx": 0.10937362946190572,
+        "exact": 0.04413776873084346,
+        "abs_err": 0.06523586073106226,
+        "rel_err_nonzero": 1.4780054045975246,
+        "kept_L2_fraction": 0.9940209261927083,
+        "final_norm_L1": 1.067164030205379,
+        "mass_removed_padding": 0.0,
+        "feasible": true
+      },
+      {
+        "scenario": "adb-base",
+        "chi": 4,
+        "metric": "exceed",
+        "approx": 0.0345026909061142,
+        "exact": 0.012046720907534033,
+        "abs_err": 0.02245596999858017,
+        "rel_err_nonzero": 1.86407323378233,
+        "kept_L2_fraction": 0.9940209261927083,
+        "final_norm_L1": 1.067164030205379,
+        "mass_removed_padding": 0.0,
+        "feasible": true
+      },
+      {
+        "scenario": "adb-base",
+        "chi": 4,
+        "metric": "stoploss",
+        "approx": 0.012044917832936881,
+        "exact": 0.0035294337320767623,
+        "abs_err": 0.008515484100860119,
+        "rel_err_nonzero": 2.4127054783514814,
+        "kept_L2_fraction": 0.9940209261927083,
+        "final_norm_L1": 1.067164030205379,
+        "mass_removed_padding": 0.0,
+        "feasible": true
+      },
+      {
+        "scenario": "adb-base",
+        "chi": 4,
+        "metric": "both",
+        "approx": 0.0001507725023446665,
+        "exact": 3.163304630917887e-05,
+        "abs_err": 0.00011913945603548762,
+        "rel_err_nonzero": 3.7662972725114137,
+        "kept_L2_fraction": 0.9940209261927083,
+        "final_norm_L1": 1.067164030205379,
+        "mass_removed_padding": 0.0,
+        "feasible": true
+      },
+      {
+        "scenario": "adb-base",
+        "chi": 6,
+        "metric": "EL",
+        "approx": 0.06382829867659934,
+        "exact": 0.06289695843096318,
+        "abs_err": 0.000931340245636153,
+        "rel_err_nonzero": 0.01480739719168469,
+        "kept_L2_fraction": 0.999775503485182,
+        "final_norm_L1": 0.9899899613229055,
+        "mass_removed_padding": 0.0,
+        "feasible": true
+      },
+      {
+        "scenario": "adb-base",
+        "chi": 6,
+        "metric": "attach",
+        "approx": 0.0604722181704902,
+        "exact": 0.04413776873084346,
+        "abs_err": 0.016334449439646737,
+        "rel_err_nonzero": 0.3700787309674815,
+        "kept_L2_fraction": 0.999775503485182,
+        "final_norm_L1": 0.9899899613229055,
+        "mass_removed_padding": 0.0,
+        "feasible": true
+      },
+      {
+        "scenario": "adb-base",
+        "chi": 6,
+        "metric": "exceed",
+        "approx": 0.017887163034956827,
+        "exact": 0.012046720907534033,
+        "abs_err": 0.005840442127422794,
+        "rel_err_nonzero": 0.4848159239557194,
+        "kept_L2_fraction": 0.999775503485182,
+        "final_norm_L1": 0.9899899613229055,
+        "mass_removed_padding": 0.0,
+        "feasible": true
+      },
+      {
+        "scenario": "adb-base",
+        "chi": 6,
+        "metric": "stoploss",
+        "approx": 0.00273348546776606,
+        "exact": 0.0035294337320767623,
+        "abs_err": 0.0007959482643107021,
+        "rel_err_nonzero": 0.2255172712485967,
+        "kept_L2_fraction": 0.999775503485182,
+        "final_norm_L1": 0.9899899613229055,
+        "mass_removed_padding": 0.0,
+        "feasible": true
+      },
+      {
+        "scenario": "adb-base",
+        "chi": 6,
+        "metric": "both",
+        "approx": 0.0,
+        "exact": 3.163304630917887e-05,
+        "abs_err": 3.163304630917887e-05,
+        "rel_err_nonzero": 1.0,
+        "kept_L2_fraction": 0.999775503485182,
+        "final_norm_L1": 0.9899899613229055,
+        "mass_removed_padding": 0.0,
+        "feasible": true
+      },
+      {
+        "scenario": "adb-base",
+        "chi": 8,
+        "metric": "EL",
+        "approx": 0.062896958430964,
+        "exact": 0.06289695843096318,
+        "abs_err": 8.187894806610529e-16,
+        "rel_err_nonzero": 1.3017950328389421e-14,
+        "kept_L2_fraction": 1.0,
+        "final_norm_L1": 0.9999999999999997,
+        "mass_removed_padding": 0.0,
+        "feasible": true
+      },
+      {
+        "scenario": "adb-base",
+        "chi": 8,
+        "metric": "attach",
+        "approx": 0.044137768730844455,
+        "exact": 0.04413776873084346,
+        "abs_err": 9.922618282587337e-16,
+        "rel_err_nonzero": 2.2481014713490518e-14,
+        "kept_L2_fraction": 1.0,
+        "final_norm_L1": 0.9999999999999997,
+        "mass_removed_padding": 0.0,
+        "feasible": true
+      },
+      {
+        "scenario": "adb-base",
+        "chi": 8,
+        "metric": "exceed",
+        "approx": 0.012046720907535476,
+        "exact": 0.012046720907534033,
+        "abs_err": 1.4432899320127035e-15,
+        "rel_err_nonzero": 1.1980770062582495e-13,
+        "kept_L2_fraction": 1.0,
+        "final_norm_L1": 0.9999999999999997,
+        "mass_removed_padding": 0.0,
+        "feasible": true
+      },
+      {
+        "scenario": "adb-base",
+        "chi": 8,
+        "metric": "stoploss",
+        "approx": 0.0035294337320772523,
+        "exact": 0.0035294337320767623,
+        "abs_err": 4.90059381963448e-16,
+        "rel_err_nonzero": 1.388492940126945e-13,
+        "kept_L2_fraction": 1.0,
+        "final_norm_L1": 0.9999999999999997,
+        "mass_removed_padding": 0.0,
+        "feasible": true
+      },
+      {
+        "scenario": "adb-base",
+        "chi": 8,
+        "metric": "both",
+        "approx": 3.163304630917946e-05,
+        "exact": 3.163304630917887e-05,
+        "abs_err": 5.89534931288993e-19,
+        "rel_err_nonzero": 1.863667904529098e-14,
+        "kept_L2_fraction": 1.0,
+        "final_norm_L1": 0.9999999999999997,
+        "mass_removed_padding": 0.0,
+        "feasible": true
+      },
+      {
+        "scenario": "adb-base",
+        "chi": 10,
+        "metric": "EL",
+        "approx": 0.062896958430964,
+        "exact": 0.06289695843096318,
+        "abs_err": 8.187894806610529e-16,
+        "rel_err_nonzero": 1.3017950328389421e-14,
+        "kept_L2_fraction": 1.0,
+        "final_norm_L1": 0.9999999999999997,
+        "mass_removed_padding": 0.0,
+        "feasible": true
+      },
+      {
+        "scenario": "adb-base",
+        "chi": 10,
+        "metric": "attach",
+        "approx": 0.044137768730844455,
+        "exact": 0.04413776873084346,
+        "abs_err": 9.922618282587337e-16,
+        "rel_err_nonzero": 2.2481014713490518e-14,
+        "kept_L2_fraction": 1.0,
+        "final_norm_L1": 0.9999999999999997,
+        "mass_removed_padding": 0.0,
+        "feasible": true
+      },
+      {
+        "scenario": "adb-base",
+        "chi": 10,
+        "metric": "exceed",
+        "approx": 0.012046720907535476,
+        "exact": 0.012046720907534033,
+        "abs_err": 1.4432899320127035e-15,
+        "rel_err_nonzero": 1.1980770062582495e-13,
+        "kept_L2_fraction": 1.0,
+        "final_norm_L1": 0.9999999999999997,
+        "mass_removed_padding": 0.0,
+        "feasible": true
+      },
+      {
+        "scenario": "adb-base",
+        "chi": 10,
+        "metric": "stoploss",
+        "approx": 0.0035294337320772523,
+        "exact": 0.0035294337320767623,
+        "abs_err": 4.90059381963448e-16,
+        "rel_err_nonzero": 1.388492940126945e-13,
+        "kept_L2_fraction": 1.0,
+        "final_norm_L1": 0.9999999999999997,
+        "mass_removed_padding": 0.0,
+        "feasible": true
+      },
+      {
+        "scenario": "adb-base",
+        "chi": 10,
+        "metric": "both",
+        "approx": 3.163304630917946e-05,
+        "exact": 3.163304630917887e-05,
+        "abs_err": 5.89534931288993e-19,
+        "rel_err_nonzero": 1.863667904529098e-14,
+        "kept_L2_fraction": 1.0,
+        "final_norm_L1": 0.9999999999999997,
+        "mass_removed_padding": 0.0,
+        "feasible": true
+      },
+      {
+        "scenario": "adb-independent",
+        "chi": 1,
+        "metric": "exceed",
+        "approx": 0.00025376172225914753,
+        "exact": 0.007185934925690383,
+        "abs_err": 0.006932173203431235,
+        "rel_err_nonzero": 0.9646863317183787,
+        "kept_L2_fraction": 0.9995537443942951,
+        "final_norm_L1": 0.8883329110903934,
+        "mass_removed_padding": 0.0,
+        "feasible": true
+      },
+      {
+        "scenario": "adb-independent",
+        "chi": 2,
+        "metric": "exceed",
+        "approx": 0.0036292061939013132,
+        "exact": 0.007185934925690383,
+        "abs_err": 0.0035567287317890693,
+        "rel_err_nonzero": 0.49495699147976346,
+        "kept_L2_fraction": 0.9968377699507809,
+        "final_norm_L1": 0.9146324692798276,
+        "mass_removed_padding": 0.0,
+        "feasible": true
+      },
+      {
+        "scenario": "adb-independent",
+        "chi": 4,
+        "metric": "exceed",
+        "approx": 0.004178757273244115,
+        "exact": 0.007185934925690383,
+        "abs_err": 0.003007177652446268,
+        "rel_err_nonzero": 0.41848105828168985,
+        "kept_L2_fraction": 0.9764918640230074,
+        "final_norm_L1": 0.943858200031038,
+        "mass_removed_padding": 0.0,
+        "feasible": true
+      },
+      {
+        "scenario": "adb-independent",
+        "chi": 6,
+        "metric": "exceed",
+        "approx": 0.013347979310496787,
+        "exact": 0.007185934925690383,
+        "abs_err": 0.006162044384806405,
+        "rel_err_nonzero": 0.8575146377650215,
+        "kept_L2_fraction": 0.9994297886224187,
+        "final_norm_L1": 1.0138941388281617,
+        "mass_removed_padding": 0.0,
+        "feasible": true
+      },
+      {
+        "scenario": "adb-independent",
+        "chi": 8,
+        "metric": "exceed",
+        "approx": 0.007185934925689746,
+        "exact": 0.007185934925690383,
+        "abs_err": 6.366435156834882e-16,
+        "rel_err_nonzero": 8.859578082281662e-14,
+        "kept_L2_fraction": 1.0,
+        "final_norm_L1": 0.9999999999999987,
+        "mass_removed_padding": 0.0,
+        "feasible": true
+      },
+      {
+        "scenario": "adb-independent",
+        "chi": 10,
+        "metric": "exceed",
+        "approx": 0.007185934925689746,
+        "exact": 0.007185934925690383,
+        "abs_err": 6.366435156834882e-16,
+        "rel_err_nonzero": 8.859578082281662e-14,
+        "kept_L2_fraction": 1.0,
+        "final_norm_L1": 0.9999999999999987,
+        "mass_removed_padding": 0.0,
+        "feasible": true
+      },
+      {
+        "scenario": "adb-common-shock",
+        "chi": 1,
+        "metric": "exceed",
+        "approx": 0.00027460819868865605,
+        "exact": 0.016066409986690615,
+        "abs_err": 0.01579180178800196,
+        "rel_err_nonzero": 0.9829079303393764,
+        "kept_L2_fraction": 0.9996343822720068,
+        "final_norm_L1": 0.8769266970509211,
+        "mass_removed_padding": 0.0,
+        "feasible": true
+      },
+      {
+        "scenario": "adb-common-shock",
+        "chi": 2,
+        "metric": "exceed",
+        "approx": 0.007130895100331005,
+        "exact": 0.016066409986690615,
+        "abs_err": 0.00893551488635961,
+        "rel_err_nonzero": 0.5561612640136642,
+        "kept_L2_fraction": 0.9989050388090042,
+        "final_norm_L1": 0.924204041427128,
+        "mass_removed_padding": 0.0,
+        "feasible": true
+      },
+      {
+        "scenario": "adb-common-shock",
+        "chi": 4,
+        "metric": "exceed",
+        "approx": 0.016225102121323637,
+        "exact": 0.016066409986690615,
+        "abs_err": 0.00015869213463302195,
+        "rel_err_nonzero": 0.009877261613794383,
+        "kept_L2_fraction": 0.9815937002149747,
+        "final_norm_L1": 1.0365375240329069,
+        "mass_removed_padding": 0.0,
+        "feasible": true
+      },
+      {
+        "scenario": "adb-common-shock",
+        "chi": 6,
+        "metric": "exceed",
+        "approx": 0.012691105582478443,
+        "exact": 0.016066409986690615,
+        "abs_err": 0.0033753044042121715,
+        "rel_err_nonzero": 0.21008454328056284,
+        "kept_L2_fraction": 0.9941679681717187,
+        "final_norm_L1": 1.0014120818688979,
+        "mass_removed_padding": 0.0,
+        "feasible": true
+      },
+      {
+        "scenario": "adb-common-shock",
+        "chi": 8,
+        "metric": "exceed",
+        "approx": 0.016066409986689654,
+        "exact": 0.016066409986690615,
+        "abs_err": 9.610368056911511e-16,
+        "rel_err_nonzero": 5.981652444368545e-14,
+        "kept_L2_fraction": 1.0,
+        "final_norm_L1": 0.9999999999999968,
+        "mass_removed_padding": 0.0,
+        "feasible": true
+      },
+      {
+        "scenario": "adb-common-shock",
+        "chi": 10,
+        "metric": "exceed",
+        "approx": 0.016066409986689654,
+        "exact": 0.016066409986690615,
+        "abs_err": 9.610368056911511e-16,
+        "rel_err_nonzero": 5.981652444368545e-14,
+        "kept_L2_fraction": 1.0,
+        "final_norm_L1": 0.9999999999999968,
+        "mass_removed_padding": 0.0,
+        "feasible": true
+      },
+      {
+        "scenario": "adb-rain-stress",
+        "chi": 1,
+        "metric": "exceed",
+        "approx": 0.00041010016664771006,
+        "exact": 0.013215038883593162,
+        "abs_err": 0.012804938716945453,
+        "rel_err_nonzero": 0.9689671615603901,
+        "kept_L2_fraction": 0.9994688711696431,
+        "final_norm_L1": 0.8657844171200804,
+        "mass_removed_padding": 0.0,
+        "feasible": true
+      },
+      {
+        "scenario": "adb-rain-stress",
+        "chi": 2,
+        "metric": "exceed",
+        "approx": 0.014879478000256501,
+        "exact": 0.013215038883593162,
+        "abs_err": 0.001664439116663339,
+        "rel_err_nonzero": 0.12595037603179407,
+        "kept_L2_fraction": 0.9993687510028946,
+        "final_norm_L1": 0.9437494780550479,
+        "mass_removed_padding": 0.0,
+        "feasible": true
+      },
+      {
+        "scenario": "adb-rain-stress",
+        "chi": 4,
+        "metric": "exceed",
+        "approx": 0.051324601160328186,
+        "exact": 0.013215038883593162,
+        "abs_err": 0.03810956227673502,
+        "rel_err_nonzero": 2.8838025080689778,
+        "kept_L2_fraction": 0.9243184653411944,
+        "final_norm_L1": 1.2324862902535976,
+        "mass_removed_padding": 0.0,
+        "feasible": true
+      },
+      {
+        "scenario": "adb-rain-stress",
+        "chi": 6,
+        "metric": "exceed",
+        "approx": 0.023643857899378864,
+        "exact": 0.013215038883593162,
+        "abs_err": 0.010428819015785702,
+        "rel_err_nonzero": 0.7891629459171224,
+        "kept_L2_fraction": 0.9993388447610864,
+        "final_norm_L1": 1.0033133722022518,
+        "mass_removed_padding": 0.0,
+        "feasible": true
+      },
+      {
+        "scenario": "adb-rain-stress",
+        "chi": 8,
+        "metric": "exceed",
+        "approx": 0.013215038883593228,
+        "exact": 0.013215038883593162,
+        "abs_err": 6.591949208711867e-17,
+        "rel_err_nonzero": 4.988217792454591e-15,
+        "kept_L2_fraction": 1.0,
+        "final_norm_L1": 0.9999999999999997,
+        "mass_removed_padding": 0.0,
+        "feasible": true
+      },
+      {
+        "scenario": "adb-rain-stress",
+        "chi": 10,
+        "metric": "exceed",
+        "approx": 0.013215038883593228,
+        "exact": 0.013215038883593162,
+        "abs_err": 6.591949208711867e-17,
+        "rel_err_nonzero": 4.988217792454591e-15,
+        "kept_L2_fraction": 1.0,
+        "final_norm_L1": 0.9999999999999997,
+        "mass_removed_padding": 0.0,
+        "feasible": true
+      },
+      {
+        "scenario": "adb-rain-cover",
+        "chi": 1,
+        "metric": "exceed",
+        "approx": 0.00010274324099693477,
+        "exact": 0.006997089316821914,
+        "abs_err": 0.006894346075824979,
+        "rel_err_nonzero": 0.9853162884815653,
+        "kept_L2_fraction": 0.9995817157743496,
+        "final_norm_L1": 0.8763398705343463,
+        "mass_removed_padding": 0.0,
+        "feasible": true
+      },
+      {
+        "scenario": "adb-rain-cover",
+        "chi": 2,
+        "metric": "exceed",
+        "approx": 0.0024716184674479073,
+        "exact": 0.006997089316821914,
+        "abs_err": 0.004525470849374007,
+        "rel_err_nonzero": 0.646764768100671,
+        "kept_L2_fraction": 0.9767164989937469,
+        "final_norm_L1": 0.9189291964745112,
+        "mass_removed_padding": 0.0,
+        "feasible": true
+      },
+      {
+        "scenario": "adb-rain-cover",
+        "chi": 4,
+        "metric": "exceed",
+        "approx": 0.02347701392086155,
+        "exact": 0.006997089316821914,
+        "abs_err": 0.016479924604039638,
+        "rel_err_nonzero": 2.3552542861529226,
+        "kept_L2_fraction": 0.9940209261927083,
+        "final_norm_L1": 1.067164030205379,
+        "mass_removed_padding": 0.0,
+        "feasible": true
+      },
+      {
+        "scenario": "adb-rain-cover",
+        "chi": 6,
+        "metric": "exceed",
+        "approx": 0.005485309657845088,
+        "exact": 0.006997089316821914,
+        "abs_err": 0.0015117796589768258,
+        "rel_err_nonzero": 0.2160583623453699,
+        "kept_L2_fraction": 0.999775503485182,
+        "final_norm_L1": 0.9899899613229055,
+        "mass_removed_padding": 0.0,
+        "feasible": true
+      },
+      {
+        "scenario": "adb-rain-cover",
+        "chi": 8,
+        "metric": "exceed",
+        "approx": 0.006997089316823214,
+        "exact": 0.006997089316821914,
+        "abs_err": 1.300175245244617e-15,
+        "rel_err_nonzero": 1.858165854934603e-13,
+        "kept_L2_fraction": 1.0,
+        "final_norm_L1": 0.9999999999999997,
+        "mass_removed_padding": 0.0,
+        "feasible": true
+      },
+      {
+        "scenario": "adb-rain-cover",
+        "chi": 10,
+        "metric": "exceed",
+        "approx": 0.006997089316823214,
+        "exact": 0.006997089316821914,
+        "abs_err": 1.300175245244617e-15,
+        "rel_err_nonzero": 1.858165854934603e-13,
+        "kept_L2_fraction": 1.0,
+        "final_norm_L1": 0.9999999999999997,
+        "mass_removed_padding": 0.0,
+        "feasible": true
+      }
+    ],
+    "positions": "mid-contraction TT bond truncation after each annual merge",
+    "note": "<=1e-12 exact tier A; 10% relative exploratory tier B on nonzero targets reported separately"
+  },
+  "negative_controls": {
+    "reference_exceed": 0.012046720907534033,
+    "controls": {
+      "wrong_cap_at_5": {
+        "deviation": 0.0011626948815807534,
+        "detected": true
+      },
+      "wrong_threshold_ge_160": {
+        "deviation": 0.004839761039243775,
+        "detected": true
+      },
+      "wrong_shared_shock_cr0": {
+        "deviation": 0.0007824895515592435,
+        "detected": true
+      }
+    },
+    "all_detected": true
+  },
+  "cost_ledger": {
+    "phases": {
+      "phases": {
+        "annual_factor_build_n2": 0.0004099649959243834,
+        "merge_table_build_n2": 0.004379209014587104,
+        "exact_contraction_n2_1scenario": 0.007099296955857426,
+        "annual_factor_build_n3": 0.008605836017522961,
+        "merge_table_build_n3": 0.4051986740087159,
+        "exact_contraction_n3_1scenario": 0.41567384800873697,
+        "matched_n3_exact_dp": 0.3711249619955197,
+        "truncated_contract_chi4": 0.00942615099484101,
+        "all_25_cells": 0.03383681701961905
+      }
+    },
+    "peak_rss_kb": 65208,
+    "peak_intermediate_entries_n2": 1000000,
+    "intermediate_size_trace_exact_n2": [
+      {
+        "after_year": 1,
+        "states": 100
+      },
+      {
+        "after_year": 2,
+        "states": 100
+      },
+      {
+        "after_year": 3,
+        "states": 100
+      }
+    ],
+    "intermediate_size_trace_exact_n3": [
+      {
+        "after_year": 1,
+        "states": 1000
+      },
+      {
+        "after_year": 2,
+        "states": 1000
+      },
+      {
+        "after_year": 3,
+        "states": 1000
+      }
+    ],
+    "matched": "same machine, single thread, float64",
+    "dp_equivalence_note": "exact contraction (typhoon) = capped-state transfer DP on the same state space;"
+  },
+  "measured_wall_s": 2.5760360920103267,
+  "peak_rss_kb": 65208,
+  "budget": {
+    "wall_s": 1800,
+    "rss_kb": 2097152
+  },
+  "wall_within_budget": true,
+  "rss_within_budget": true,
+  "classification": {
+    "DP_EQUIVALENT_TN": "YES",
+    "CLASSICAL_COMPETITIVENESS": "NO_MEASURED_BENEFIT",
+    "FULLY_FACTOR_LEVEL_SCALING": "NO (annual tensor fully materialized)",
+    "FULL_G1": "NOT_RERUN"
+  }
+}

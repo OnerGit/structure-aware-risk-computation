@@ -1,0 +1,168 @@
+{
+  "execution": "classical_cpu",
+  "five_metric_correctness": "PASS",
+  "method": "official_exact_classical_dp",
+  "official_path_contract": "PASS",
+  "official_protocol": "PASS",
+  "problem_ids": "7/7",
+  "public_seven_case_solver": "PASS",
+  "resource": {
+    "peak_case_rss_kib": 190796,
+    "rss_status": "RSS_MONITOR_ONLY",
+    "target_peak_rss_kib": 1572864,
+    "total_budget_seconds": 900.0,
+    "total_wall_seconds": 4.339693362009712
+  },
+  "solver_execution": "5/5_DRB + 2/2_ELT",
+  "source_admission": "PASS",
+  "stages": [
+    {
+      "case": "adb-base",
+      "execution": "classical_cpu",
+      "five_metric_pass": true,
+      "max_rss_kib": 98840,
+      "measured_wall_seconds": 0.48315372900106013,
+      "method": "official_exact_classical_dp",
+      "problem_id": "1e05d3e5593e9f38955e8ff4271a15d65e538ed6555955aff2f84e2d3f8e5fda",
+      "problem_id_expected": "1e05d3e5593e9f38955e8ff4271a15d65e538ed6555955aff2f84e2d3f8e5fda",
+      "problem_id_pass": true,
+      "resources": {
+        "elapsed_seconds": 0.3853687340160832,
+        "model_evaluations": 100,
+        "preparation_seconds": 0.001383693073876202,
+        "qubits": 0,
+        "shots": 0
+      },
+      "status": "PASS",
+      "strict_protocol_pass": true,
+      "track": "adb_drb"
+    },
+    {
+      "case": "adb-common-shock",
+      "execution": "classical_cpu",
+      "five_metric_pass": true,
+      "max_rss_kib": 98892,
+      "measured_wall_seconds": 0.42582448199391365,
+      "method": "official_exact_classical_dp",
+      "problem_id": "17c6ca392bb7c5e8f47af39f8c6a0e41e95a99c121a7ccd3934f30bd87acf328",
+      "problem_id_expected": "17c6ca392bb7c5e8f47af39f8c6a0e41e95a99c121a7ccd3934f30bd87acf328",
+      "problem_id_pass": true,
+      "resources": {
+        "elapsed_seconds": 0.3648472549393773,
+        "model_evaluations": 100,
+        "preparation_seconds": 0.0011005960404872894,
+        "qubits": 0,
+        "shots": 0
+      },
+      "status": "PASS",
+      "strict_protocol_pass": true,
+      "track": "adb_drb"
+    },
+    {
+      "case": "adb-independent",
+      "execution": "classical_cpu",
+      "five_metric_pass": true,
+      "max_rss_kib": 98648,
+      "measured_wall_seconds": 0.4105795309878886,
+      "method": "official_exact_classical_dp",
+      "problem_id": "9784fa48c48a05089fd11b71f861ac44b928f1d94b203e1d32efefd0afb413ca",
+      "problem_id_expected": "9784fa48c48a05089fd11b71f861ac44b928f1d94b203e1d32efefd0afb413ca",
+      "problem_id_pass": true,
+      "resources": {
+        "elapsed_seconds": 0.35123055800795555,
+        "model_evaluations": 100,
+        "preparation_seconds": 0.0009053670801222324,
+        "qubits": 0,
+        "shots": 0
+      },
+      "status": "PASS",
+      "strict_protocol_pass": true,
+      "track": "adb_drb"
+    },
+    {
+      "case": "adb-rain-cover",
+      "execution": "classical_cpu",
+      "five_metric_pass": true,
+      "max_rss_kib": 98680,
+      "measured_wall_seconds": 0.4072635220363736,
+      "method": "official_exact_classical_dp",
+      "problem_id": "e9aeda787e64b3cd0f8654fd323c81f13eeffa3a73a1377cf92c70483f524351",
+      "problem_id_expected": "e9aeda787e64b3cd0f8654fd323c81f13eeffa3a73a1377cf92c70483f524351",
+      "problem_id_pass": true,
+      "resources": {
+        "elapsed_seconds": 0.35067497298587114,
+        "model_evaluations": 100,
+        "preparation_seconds": 0.0009865510510280728,
+        "qubits": 0,
+        "shots": 0
+      },
+      "status": "PASS",
+      "strict_protocol_pass": true,
+      "track": "adb_drb"
+    },
+    {
+      "case": "adb-rain-stress",
+      "execution": "classical_cpu",
+      "five_metric_pass": true,
+      "max_rss_kib": 98880,
+      "measured_wall_seconds": 0.4182207980193198,
+      "method": "official_exact_classical_dp",
+      "problem_id": "1e0742ee4814e3c47d3ce0ed4c697bcb791ec06468a6a04603a6e4262b0770f3",
+      "problem_id_expected": "1e0742ee4814e3c47d3ce0ed4c697bcb791ec06468a6a04603a6e4262b0770f3",
+      "problem_id_pass": true,
+      "resources": {
+        "elapsed_seconds": 0.358064949978143,
+        "model_evaluations": 100,
+        "preparation_seconds": 0.0011950359912589192,
+        "qubits": 0,
+        "shots": 0
+      },
+      "status": "PASS",
+      "strict_protocol_pass": true,
+      "track": "adb_drb"
+    },
+    {
+      "case": "kaz-kgz-base",
+      "execution": "classical_cpu",
+      "five_metric_pass": true,
+      "max_rss_kib": 190796,
+      "measured_wall_seconds": 0.6568696879548952,
+      "method": "official_exact_classical_dp",
+      "problem_id": "1972f9a4f55d44e7556583147182d04268d77e96f73696724719b237bbcca21e",
+      "problem_id_expected": "1972f9a4f55d44e7556583147182d04268d77e96f73696724719b237bbcca21e",
+      "problem_id_pass": true,
+      "resources": {
+        "elapsed_seconds": 0.6003742050379515,
+        "model_evaluations": 421968,
+        "preparation_seconds": 0.19439137901645154,
+        "qubits": 0,
+        "shots": 0
+      },
+      "status": "PASS",
+      "strict_protocol_pass": true,
+      "track": "worldbank_elt"
+    },
+    {
+      "case": "tjk-uzb-base",
+      "execution": "classical_cpu",
+      "five_metric_pass": true,
+      "max_rss_kib": 190784,
+      "measured_wall_seconds": 0.6727871000766754,
+      "method": "official_exact_classical_dp",
+      "problem_id": "ca8cb198d4fdb69fe2a886f521740a8f608587ac5599ebc288dee3ff5270807d",
+      "problem_id_expected": "ca8cb198d4fdb69fe2a886f521740a8f608587ac5599ebc288dee3ff5270807d",
+      "problem_id_pass": true,
+      "resources": {
+        "elapsed_seconds": 0.6036417050054297,
+        "model_evaluations": 421968,
+        "preparation_seconds": 0.19797422701958567,
+        "qubits": 0,
+        "shots": 0
+      },
+      "status": "PASS",
+      "strict_protocol_pass": true,
+      "track": "worldbank_elt"
+    }
+  ],
+  "status": "PASS_CANDIDATE"
+}

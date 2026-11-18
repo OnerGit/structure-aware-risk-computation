@@ -1,0 +1,31 @@
+{
+  "claims": {
+    "formal_benchmark": "NOT_RUN",
+    "full_three_year_quantum_poc": "NOT_RUN",
+    "git_write_operations": "NO",
+    "new_quantum_algorithm": "NO",
+    "official_source_interface_executed": "YES",
+    "publication": "NO",
+    "quantum_advantage": "NOT_CLAIMED",
+    "submission": "NO"
+  },
+  "executed_checks": "PASS",
+  "official_interface_validation": "PASS",
+  "official_path_contract": "PASS",
+  "official_problem_ids": "7/7",
+  "official_reference_ledger": "PASS",
+  "official_seven_case_interface": "PASS",
+  "official_source_audit": "PASS",
+  "p1b_gatekeeper": "PASS_WITH_SCOPE_LIMITS",
+  "p1b_integration": "PASS",
+  "p1b_scientific_semantics": "UNCHANGED",
+  "resource": {
+    "budget_s": 900,
+    "peak_rss_kib": 218376,
+    "recommended_rss_limit_kib": 1572864,
+    "rss_status": "RSS_MONITOR_ONLY",
+    "wall_s": 1.1310968270990998
+  },
+  "status": "PASS_CANDIDATE",
+  "v1_exact_reference": "PASS"
+}

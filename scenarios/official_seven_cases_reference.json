@@ -1,0 +1,425 @@
+{
+  "gate": "ADB_V2_S0_EVIDENCE_AND_NARRATIVE",
+  "source": "user_uploaded_public_repo_2026-11-13",
+  "repo_root_sha256_not_applicable": "zip archive separate; see SOURCE_IDENTITY.md",
+  "dataset": {
+    "seismic": {
+      "sha256_expected": "ec8a93254dc4d9471792941022941d6ed5d76ab80e8950c21624393743a4bd25",
+      "sha256_actual": "ec8a93254dc4d9471792941022941d6ed5d76ab80e8950c21624393743a4bd25",
+      "bytes": 19658439,
+      "rows_expected": 419968
+    },
+    "flood": {
+      "sha256_expected": "a843078285068838db0a7b83ba96aaecebceb4e69ba9774b99395a6e216bbaa1",
+      "sha256_actual": "a843078285068838db0a7b83ba96aaecebceb4e69ba9774b99395a6e216bbaa1",
+      "bytes": 135135,
+      "rows_expected": 2000
+    }
+  },
+  "sha256sums_check": {
+    "listed": 37,
+    "matched": 36,
+    "missing": [
+      ".gitignore"
+    ],
+    "mismatched": []
+  },
+  "public_scenario_count": 7,
+  "public_scenarios": [
+    {
+      "scenario": "adb-base",
+      "track": "adb_drb",
+      "schema_version": 1,
+      "definition_version": "adb-quarter-step-principal-v1",
+      "config_sha256": "91e4ca8e0ac73beb504b8a13bc80d5668c1f3005637d6e867bdc7bc31bfd1eb8",
+      "problem_id": "1e05d3e5593e9f38955e8ff4271a15d65e538ed6555955aff2f84e2d3f8e5fda",
+      "data_hashes": {
+        "adb_terms": "50bdb628d0a67d14966d16bda35b4ab9d6b2fc473bdec42c9a664db10cc2b69b"
+      },
+      "dimensions": {
+        "years": 3,
+        "countries": [
+          "KGZ",
+          "TJK"
+        ]
+      },
+      "metric_count": 5,
+      "metrics": [
+        {
+          "name": "term_expected_principal_loss_usd",
+          "unit": "USD_over_term",
+          "exact_reference": 10063513.348954104
+        },
+        {
+          "name": "term_joint_attachment_probability",
+          "unit": "probability_over_term",
+          "exact_reference": 0.04413776873084369
+        },
+        {
+          "name": "term_portfolio_loss_exceedance_probability",
+          "unit": "probability_over_term",
+          "exact_reference": 0.01204672090753405
+        },
+        {
+          "name": "term_portfolio_stop_loss_usd",
+          "unit": "USD_over_term",
+          "exact_reference": 282354.69856614113
+        },
+        {
+          "name": "term_both_bonds_exhausted_probability",
+          "unit": "probability_over_term",
+          "exact_reference": 3.163304630917947e-05
+        }
+      ],
+      "reference_status": "exact_for_discrete_principal_loss_model",
+      "independent_check": {
+        "method": "none_in_this_gate; historical G1 source required",
+        "max_absolute_diff": null
+      }
+    },
+    {
+      "scenario": "adb-common-shock",
+      "track": "adb_drb",
+      "schema_version": 1,
+      "definition_version": "adb-quarter-step-principal-v1",
+      "config_sha256": "02eef9574f7193d66623dd8187d2c3224752dba0be8f12c83ef5c68eb704039a",
+      "problem_id": "17c6ca392bb7c5e8f47af39f8c6a0e41e95a99c121a7ccd3934f30bd87acf328",
+      "data_hashes": {
+        "adb_terms": "50bdb628d0a67d14966d16bda35b4ab9d6b2fc473bdec42c9a664db10cc2b69b"
+      },
+      "dimensions": {
+        "years": 3,
+        "countries": [
+          "KGZ",
+          "TJK"
+        ]
+      },
+      "metric_count": 5,
+      "metrics": [
+        {
+          "name": "term_expected_principal_loss_usd",
+          "unit": "USD_over_term",
+          "exact_reference": 10063513.348954104
+        },
+        {
+          "name": "term_joint_attachment_probability",
+          "unit": "probability_over_term",
+          "exact_reference": 0.05052567031293338
+        },
+        {
+          "name": "term_portfolio_loss_exceedance_probability",
+          "unit": "probability_over_term",
+          "exact_reference": 0.01606640998669063
+        },
+        {
+          "name": "term_portfolio_stop_loss_usd",
+          "unit": "USD_over_term",
+          "exact_reference": 385043.37022346817
+        },
+        {
+          "name": "term_both_bonds_exhausted_probability",
+          "unit": "probability_over_term",
+          "exact_reference": 4.4001542176069876e-05
+        }
+      ],
+      "reference_status": "exact_for_discrete_principal_loss_model",
+      "independent_check": {
+        "method": "none_in_this_gate; historical G1 source required",
+        "max_absolute_diff": null
+      }
+    },
+    {
+      "scenario": "adb-independent",
+      "track": "adb_drb",
+      "schema_version": 1,
+      "definition_version": "adb-quarter-step-principal-v1",
+      "config_sha256": "7c00787e47e69a7dd62a175b08cf7005b8d8d7bd7460068ceeab366d0113dd50",
+      "problem_id": "9784fa48c48a05089fd11b71f861ac44b928f1d94b203e1d32efefd0afb413ca",
+      "data_hashes": {
+        "adb_terms": "50bdb628d0a67d14966d16bda35b4ab9d6b2fc473bdec42c9a664db10cc2b69b"
+      },
+      "dimensions": {
+        "years": 3,
+        "countries": [
+          "KGZ",
+          "TJK"
+        ]
+      },
+      "metric_count": 5,
+      "metrics": [
+        {
+          "name": "term_expected_principal_loss_usd",
+          "unit": "USD_over_term",
+          "exact_reference": 10063513.34895411
+        },
+        {
+          "name": "term_joint_attachment_probability",
+          "unit": "probability_over_term",
+          "exact_reference": 0.027156372630856927
+        },
+        {
+          "name": "term_portfolio_loss_exceedance_probability",
+          "unit": "probability_over_term",
+          "exact_reference": 0.007185934925690404
+        },
+        {
+          "name": "term_portfolio_stop_loss_usd",
+          "unit": "USD_over_term",
+          "exact_reference": 171266.44543380672
+        },
+        {
+          "name": "term_both_bonds_exhausted_probability",
+          "unit": "probability_over_term",
+          "exact_reference": 3.923917930753234e-06
+        }
+      ],
+      "reference_status": "exact_for_discrete_principal_loss_model",
+      "independent_check": {
+        "method": "none_in_this_gate; historical G1 source required",
+        "max_absolute_diff": null
+      }
+    },
+    {
+      "scenario": "adb-rain-cover",
+      "track": "adb_drb",
+      "schema_version": 1,
+      "definition_version": "adb-quarter-step-principal-v1",
+      "config_sha256": "4e90443ebebb8aa7ee321f29ff7ab741fef810a3ddc69597769488387bcddaf1",
+      "problem_id": "e9aeda787e64b3cd0f8654fd323c81f13eeffa3a73a1377cf92c70483f524351",
+      "data_hashes": {
+        "adb_terms": "50bdb628d0a67d14966d16bda35b4ab9d6b2fc473bdec42c9a664db10cc2b69b"
+      },
+      "dimensions": {
+        "years": 3,
+        "countries": [
+          "KGZ",
+          "TJK"
+        ]
+      },
+      "metric_count": 5,
+      "metrics": [
+        {
+          "name": "term_expected_principal_loss_usd",
+          "unit": "USD_over_term",
+          "exact_reference": 9970051.441960664
+        },
+        {
+          "name": "term_joint_attachment_probability",
+          "unit": "probability_over_term",
+          "exact_reference": 0.04413776873084369
+        },
+        {
+          "name": "term_portfolio_loss_exceedance_probability",
+          "unit": "probability_over_term",
+          "exact_reference": 0.006997089316821936
+        },
+        {
+          "name": "term_portfolio_stop_loss_usd",
+          "unit": "USD_over_term",
+          "exact_reference": 170927.4611272695
+        },
+        {
+          "name": "term_both_bonds_exhausted_probability",
+          "unit": "probability_over_term",
+          "exact_reference": 3.163304630917947e-05
+        }
+      ],
+      "reference_status": "exact_for_discrete_principal_loss_model",
+      "independent_check": {
+        "method": "none_in_this_gate; historical G1 source required",
+        "max_absolute_diff": null
+      }
+    },
+    {
+      "scenario": "adb-rain-stress",
+      "track": "adb_drb",
+      "schema_version": 1,
+      "definition_version": "adb-quarter-step-principal-v1",
+      "config_sha256": "63126a131cbb9e250f3ade8fca9dd41af8930c4c64c82d9291d4f1fde608c735",
+      "problem_id": "1e0742ee4814e3c47d3ce0ed4c697bcb791ec06468a6a04603a6e4262b0770f3",
+      "data_hashes": {
+        "adb_terms": "50bdb628d0a67d14966d16bda35b4ab9d6b2fc473bdec42c9a664db10cc2b69b"
+      },
+      "dimensions": {
+        "years": 3,
+        "countries": [
+          "KGZ",
+          "TJK"
+        ]
+      },
+      "metric_count": 5,
+      "metrics": [
+        {
+          "name": "term_expected_principal_loss_usd",
+          "unit": "USD_over_term",
+          "exact_reference": 11170505.73167411
+        },
+        {
+          "name": "term_joint_attachment_probability",
+          "unit": "probability_over_term",
+          "exact_reference": 0.07046389659987526
+        },
+        {
+          "name": "term_portfolio_loss_exceedance_probability",
+          "unit": "probability_over_term",
+          "exact_reference": 0.013215038883593148
+        },
+        {
+          "name": "term_portfolio_stop_loss_usd",
+          "unit": "USD_over_term",
+          "exact_reference": 306285.7963275197
+        },
+        {
+          "name": "term_both_bonds_exhausted_probability",
+          "unit": "probability_over_term",
+          "exact_reference": 6.924565668457661e-05
+        }
+      ],
+      "reference_status": "exact_for_discrete_principal_loss_model",
+      "independent_check": {
+        "method": "none_in_this_gate; historical G1 source required",
+        "max_absolute_diff": null
+      }
+    },
+    {
+      "scenario": "kaz-kgz-base",
+      "track": "worldbank_elt",
+      "schema_version": 2,
+      "definition_version": "elt-mean-loss-v1",
+      "config_sha256": "2440dc1aed8757ad9168b690d24cb75c7a7be2d0230ba6fc7f132ef50944018b",
+      "problem_id": "1972f9a4f55d44e7556583147182d04268d77e96f73696724719b237bbcca21e",
+      "data_hashes": {
+        "seismic": "ec8a93254dc4d9471792941022941d6ed5d76ab80e8950c21624393743a4bd25",
+        "flood": "a843078285068838db0a7b83ba96aaecebceb4e69ba9774b99395a6e216bbaa1"
+      },
+      "dimensions": {
+        "years": null,
+        "countries": [
+          "KAZ",
+          "KGZ"
+        ],
+        "event_records": 421968
+      },
+      "metric_count": 5,
+      "metrics": [
+        {
+          "name": "annual_economic_loss_usd",
+          "unit": "USD_per_year",
+          "exact_reference": 1802984588.9189234
+        },
+        {
+          "name": "annual_layer_payment_usd",
+          "unit": "USD_per_year",
+          "exact_reference": 94261849.48202565
+        },
+        {
+          "name": "joint_layer_exceedance_rate_per_year",
+          "unit": "event_rate_per_year",
+          "exact_reference": 0.12500027500000008
+        },
+        {
+          "name": "portfolio_layer_exceedance_rate_per_year",
+          "unit": "event_rate_per_year",
+          "exact_reference": 0.1216001300000001
+        },
+        {
+          "name": "annual_layer_stop_loss_usd",
+          "unit": "USD_per_year",
+          "exact_reference": 1236767.1065727999
+        }
+      ],
+      "reference_status": "exact_conditional_mean_catalogue",
+      "independent_check": {
+        "method": "separate_peril_npz_sum_no_qjlb_evaluate",
+        "values": {
+          "annual_economic_loss_usd": 1802984588.9189386,
+          "annual_layer_payment_usd": 94261849.48202585,
+          "joint_layer_exceedance_rate_per_year": 0.1250002750000001,
+          "portfolio_layer_exceedance_rate_per_year": 0.12160013000000008,
+          "annual_layer_stop_loss_usd": 1236767.1065727999
+        },
+        "absolute_diffs": {
+          "annual_economic_loss_usd": 1.52587890625e-05,
+          "annual_layer_payment_usd": 1.9371509552001953e-07,
+          "joint_layer_exceedance_rate_per_year": 2.7755575615628914e-17,
+          "portfolio_layer_exceedance_rate_per_year": 1.3877787807814457e-17,
+          "annual_layer_stop_loss_usd": 0.0
+        },
+        "max_absolute_diff": 1.52587890625e-05
+      }
+    },
+    {
+      "scenario": "tjk-uzb-base",
+      "track": "worldbank_elt",
+      "schema_version": 2,
+      "definition_version": "elt-mean-loss-v1",
+      "config_sha256": "27535b76fa74e0dbd80b45a64ce1cd8f376b12a4f6787ec2f0107dfe36b4cf31",
+      "problem_id": "ca8cb198d4fdb69fe2a886f521740a8f608587ac5599ebc288dee3ff5270807d",
+      "data_hashes": {
+        "seismic": "ec8a93254dc4d9471792941022941d6ed5d76ab80e8950c21624393743a4bd25",
+        "flood": "a843078285068838db0a7b83ba96aaecebceb4e69ba9774b99395a6e216bbaa1"
+      },
+      "dimensions": {
+        "years": null,
+        "countries": [
+          "TJK",
+          "UZB"
+        ],
+        "event_records": 421968
+      },
+      "metric_count": 5,
+      "metrics": [
+        {
+          "name": "annual_economic_loss_usd",
+          "unit": "USD_per_year",
+          "exact_reference": 2154328867.6202106
+        },
+        {
+          "name": "annual_layer_payment_usd",
+          "unit": "USD_per_year",
+          "exact_reference": 128221305.74456164
+        },
+        {
+          "name": "joint_layer_exceedance_rate_per_year",
+          "unit": "event_rate_per_year",
+          "exact_reference": 0.6117012849999984
+        },
+        {
+          "name": "portfolio_layer_exceedance_rate_per_year",
+          "unit": "event_rate_per_year",
+          "exact_reference": 0.5275005999999998
+        },
+        {
+          "name": "annual_layer_stop_loss_usd",
+          "unit": "USD_per_year",
+          "exact_reference": 13523861.422961611
+        }
+      ],
+      "reference_status": "exact_conditional_mean_catalogue",
+      "independent_check": {
+        "method": "separate_peril_npz_sum_no_qjlb_evaluate",
+        "values": {
+          "annual_economic_loss_usd": 2154328867.6202044,
+          "annual_layer_payment_usd": 128221305.74455956,
+          "joint_layer_exceedance_rate_per_year": 0.6117012849999909,
+          "portfolio_layer_exceedance_rate_per_year": 0.5275005999999987,
+          "annual_layer_stop_loss_usd": 13523861.422961611
+        },
+        "absolute_diffs": {
+          "annual_economic_loss_usd": 6.198883056640625e-06,
+          "annual_layer_payment_usd": 2.086162567138672e-06,
+          "joint_layer_exceedance_rate_per_year": 7.549516567451064e-15,
+          "portfolio_layer_exceedance_rate_per_year": 1.1102230246251565e-15,
+          "annual_layer_stop_loss_usd": 0.0
+        },
+        "max_absolute_diff": 6.198883056640625e-06
+      }
+    }
+  ],
+  "environment": {
+    "python": "3.13.5",
+    "numpy": "2.3.5",
+    "scipy": "1.17.0"
+  },
+  "scope": "read_only_no_benchmarks_no_claim_of_runtime_advantage"
+}

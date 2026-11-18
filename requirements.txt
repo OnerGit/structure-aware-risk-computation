@@ -1,0 +1,5 @@
+# Frozen regression environment (Python 3.12.14), verified 2026-11-18.
+numpy==2.5.4
+scipy==1.18.1
+qiskit==2.6.2
+pytest==8.4.2

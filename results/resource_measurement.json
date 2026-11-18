@@ -1,0 +1,32 @@
+{
+  "budget_s": 900,
+  "environment": {
+    "numpy": "2.5.4",
+    "official_source": "ADMITTED_AND_EXECUTED",
+    "platform": "Linux-6.6.87.2-microsoft-standard-WSL2-x86_64-with-glibc2.35",
+    "python": "3.12.14",
+    "qiskit": "2.6.2",
+    "qpu": "NOT_RUN",
+    "scipy": "1.18.1"
+  },
+  "external_time_trace_seven_case": "results/seven_cases/<case>/time_v.txt",
+  "external_time_trace_verifier": "results/raw/verify_time.txt",
+  "note": "No hard memory controller; RSS is measured externally with GNU time and is monitor-only.",
+  "peak_target_rss_kib": 1572864,
+  "per_case_timeout_s": 60,
+  "resource_status": "RSS_MONITOR_ONLY",
+  "seven_case": {
+    "peak_case_rss_kib": 190796,
+    "rss_status": "RSS_MONITOR_ONLY",
+    "target_peak_rss_kib": 1572864,
+    "total_budget_seconds": 900.0,
+    "total_wall_seconds": 4.339693362009712
+  },
+  "verifier": {
+    "budget_s": 900,
+    "peak_rss_kib": 218376,
+    "recommended_rss_limit_kib": 1572864,
+    "rss_status": "RSS_MONITOR_ONLY",
+    "wall_s": 1.1310968270990998
+  }
+}

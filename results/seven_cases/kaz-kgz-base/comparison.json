@@ -1,0 +1,139 @@
+{
+  "case": "kaz-kgz-base",
+  "five_metric_pass": true,
+  "independent_vs_official": [
+    {
+      "absolute_error": 4.76837158203125e-07,
+      "candidate": 1802984588.9189255,
+      "metric": "annual_economic_loss_usd",
+      "reference": 1802984588.918926,
+      "tolerance": 18029845.889189262,
+      "within_tolerance": true
+    },
+    {
+      "absolute_error": 0.0,
+      "candidate": 94261849.48202562,
+      "metric": "annual_layer_payment_usd",
+      "reference": 94261849.48202562,
+      "tolerance": 942618.4948202563,
+      "within_tolerance": true
+    },
+    {
+      "absolute_error": 0.0,
+      "candidate": 0.12500027500000008,
+      "metric": "joint_layer_exceedance_rate_per_year",
+      "reference": 0.12500027500000008,
+      "tolerance": 0.006250013750000004,
+      "within_tolerance": true
+    },
+    {
+      "absolute_error": 0.0,
+      "candidate": 0.1216001300000001,
+      "metric": "portfolio_layer_exceedance_rate_per_year",
+      "reference": 0.1216001300000001,
+      "tolerance": 0.006080006500000006,
+      "within_tolerance": true
+    },
+    {
+      "absolute_error": 0.0,
+      "candidate": 1236767.1065727999,
+      "metric": "annual_layer_stop_loss_usd",
+      "reference": 1236767.1065727999,
+      "tolerance": 61838.35532864,
+      "within_tolerance": true
+    }
+  ],
+  "official_tolerance": {
+    "annual_economic_loss_usd": 18029845.889189262,
+    "annual_layer_payment_usd": 942618.4948202563,
+    "annual_layer_stop_loss_usd": 61838.35532864,
+    "joint_layer_exceedance_rate_per_year": 0.006250013750000004,
+    "portfolio_layer_exceedance_rate_per_year": 0.006080006500000006
+  },
+  "problem_id": "1972f9a4f55d44e7556583147182d04268d77e96f73696724719b237bbcca21e",
+  "team_vs_independent": [
+    {
+      "absolute_error": 5.245208740234375e-06,
+      "candidate": 1802984588.9189308,
+      "metric": "annual_economic_loss_usd",
+      "reference": 1802984588.9189255,
+      "tolerance": 18029845.889189262,
+      "within_tolerance": true
+    },
+    {
+      "absolute_error": 5.960464477539063e-08,
+      "candidate": 94261849.48202568,
+      "metric": "annual_layer_payment_usd",
+      "reference": 94261849.48202562,
+      "tolerance": 942618.4948202563,
+      "within_tolerance": true
+    },
+    {
+      "absolute_error": 2.7755575615628914e-17,
+      "candidate": 0.1250002750000001,
+      "metric": "joint_layer_exceedance_rate_per_year",
+      "reference": 0.12500027500000008,
+      "tolerance": 0.006250013750000004,
+      "within_tolerance": true
+    },
+    {
+      "absolute_error": 0.0,
+      "candidate": 0.1216001300000001,
+      "metric": "portfolio_layer_exceedance_rate_per_year",
+      "reference": 0.1216001300000001,
+      "tolerance": 0.006080006500000006,
+      "within_tolerance": true
+    },
+    {
+      "absolute_error": 0.0,
+      "candidate": 1236767.1065727999,
+      "metric": "annual_layer_stop_loss_usd",
+      "reference": 1236767.1065727999,
+      "tolerance": 61838.35532864,
+      "within_tolerance": true
+    }
+  ],
+  "team_vs_official": [
+    {
+      "absolute_error": 4.76837158203125e-06,
+      "candidate": 1802984588.9189308,
+      "metric": "annual_economic_loss_usd",
+      "reference": 1802984588.918926,
+      "tolerance": 18029845.889189262,
+      "within_tolerance": true
+    },
+    {
+      "absolute_error": 5.960464477539063e-08,
+      "candidate": 94261849.48202568,
+      "metric": "annual_layer_payment_usd",
+      "reference": 94261849.48202562,
+      "tolerance": 942618.4948202563,
+      "within_tolerance": true
+    },
+    {
+      "absolute_error": 2.7755575615628914e-17,
+      "candidate": 0.1250002750000001,
+      "metric": "joint_layer_exceedance_rate_per_year",
+      "reference": 0.12500027500000008,
+      "tolerance": 0.006250013750000004,
+      "within_tolerance": true
+    },
+    {
+      "absolute_error": 0.0,
+      "candidate": 0.1216001300000001,
+      "metric": "portfolio_layer_exceedance_rate_per_year",
+      "reference": 0.1216001300000001,
+      "tolerance": 0.006080006500000006,
+      "within_tolerance": true
+    },
+    {
+      "absolute_error": 0.0,
+      "candidate": 1236767.1065727999,
+      "metric": "annual_layer_stop_loss_usd",
+      "reference": 1236767.1065727999,
+      "tolerance": 61838.35532864,
+      "within_tolerance": true
+    }
+  ],
+  "track": "worldbank_elt"
+}

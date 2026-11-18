@@ -1,0 +1,332 @@
+{
+  "cells": [
+    {
+      "scenario": "adb-base",
+      "metric": "EL",
+      "cover": [
+        35,
+        20
+      ],
+      "tn_value": 0.06289695843096318,
+      "frozen_target": 0.06289695843096318,
+      "gt_scaled": 0.06289695843096317,
+      "normalized_abs_error_vs_target": 0.0,
+      "pass_1e12": true
+    },
+    {
+      "scenario": "adb-base",
+      "metric": "attach",
+      "cover": [
+        35,
+        20
+      ],
+      "tn_value": 0.04413776873084346,
+      "frozen_target": 0.04413776873084346,
+      "gt_scaled": 0.04413776873084346,
+      "normalized_abs_error_vs_target": 0.0,
+      "pass_1e12": true
+    },
+    {
+      "scenario": "adb-base",
+      "metric": "exceed",
+      "cover": [
+        35,
+        20
+      ],
+      "tn_value": 0.012046720907534033,
+      "frozen_target": 0.012046720907534031,
+      "gt_scaled": 0.012046720907534031,
+      "normalized_abs_error_vs_target": 1.734723475976807e-18,
+      "pass_1e12": true
+    },
+    {
+      "scenario": "adb-base",
+      "metric": "stoploss",
+      "cover": [
+        35,
+        20
+      ],
+      "tn_value": 0.0035294337320767623,
+      "frozen_target": 0.003529433732076762,
+      "gt_scaled": 0.0035294337320767627,
+      "normalized_abs_error_vs_target": 4.336808689942018e-19,
+      "pass_1e12": true
+    },
+    {
+      "scenario": "adb-base",
+      "metric": "both",
+      "cover": [
+        35,
+        20
+      ],
+      "tn_value": 3.163304630917887e-05,
+      "frozen_target": 3.163304630917883e-05,
+      "gt_scaled": 3.1633046309178836e-05,
+      "normalized_abs_error_vs_target": 4.0657581468206416e-20,
+      "pass_1e12": true
+    },
+    {
+      "scenario": "adb-independent",
+      "metric": "EL",
+      "cover": [
+        35,
+        20
+      ],
+      "tn_value": 0.06289695843096316,
+      "frozen_target": 0.06289695843096316,
+      "gt_scaled": 0.06289695843096317,
+      "normalized_abs_error_vs_target": 0.0,
+      "pass_1e12": true
+    },
+    {
+      "scenario": "adb-independent",
+      "metric": "attach",
+      "cover": [
+        35,
+        20
+      ],
+      "tn_value": 0.027156372630856667,
+      "frozen_target": 0.027156372630856667,
+      "gt_scaled": 0.02715637263085667,
+      "normalized_abs_error_vs_target": 0.0,
+      "pass_1e12": true
+    },
+    {
+      "scenario": "adb-independent",
+      "metric": "exceed",
+      "cover": [
+        35,
+        20
+      ],
+      "tn_value": 0.007185934925690383,
+      "frozen_target": 0.007185934925690383,
+      "gt_scaled": 0.007185934925690383,
+      "normalized_abs_error_vs_target": 0.0,
+      "pass_1e12": true
+    },
+    {
+      "scenario": "adb-independent",
+      "metric": "stoploss",
+      "cover": [
+        35,
+        20
+      ],
+      "tn_value": 0.0021408305679225816,
+      "frozen_target": 0.0021408305679225816,
+      "gt_scaled": 0.0021408305679225816,
+      "normalized_abs_error_vs_target": 0.0,
+      "pass_1e12": true
+    },
+    {
+      "scenario": "adb-independent",
+      "metric": "both",
+      "cover": [
+        35,
+        20
+      ],
+      "tn_value": 3.923917930752888e-06,
+      "frozen_target": 3.923917930752892e-06,
+      "gt_scaled": 3.923917930752892e-06,
+      "normalized_abs_error_vs_target": 4.235164736271502e-21,
+      "pass_1e12": true
+    },
+    {
+      "scenario": "adb-common-shock",
+      "metric": "EL",
+      "cover": [
+        35,
+        20
+      ],
+      "tn_value": 0.06289695843096318,
+      "frozen_target": 0.06289695843096317,
+      "gt_scaled": 0.06289695843096317,
+      "normalized_abs_error_vs_target": 1.3877787807814457e-17,
+      "pass_1e12": true
+    },
+    {
+      "scenario": "adb-common-shock",
+      "metric": "attach",
+      "cover": [
+        35,
+        20
+      ],
+      "tn_value": 0.050525670312933146,
+      "frozen_target": 0.050525670312933146,
+      "gt_scaled": 0.050525670312933146,
+      "normalized_abs_error_vs_target": 0.0,
+      "pass_1e12": true
+    },
+    {
+      "scenario": "adb-common-shock",
+      "metric": "exceed",
+      "cover": [
+        35,
+        20
+      ],
+      "tn_value": 0.016066409986690615,
+      "frozen_target": 0.016066409986690615,
+      "gt_scaled": 0.01606640998669062,
+      "normalized_abs_error_vs_target": 0.0,
+      "pass_1e12": true
+    },
+    {
+      "scenario": "adb-common-shock",
+      "metric": "stoploss",
+      "cover": [
+        35,
+        20
+      ],
+      "tn_value": 0.00481304212779335,
+      "frozen_target": 0.0048130421277933514,
+      "gt_scaled": 0.004813042127793351,
+      "normalized_abs_error_vs_target": 1.734723475976807e-18,
+      "pass_1e12": true
+    },
+    {
+      "scenario": "adb-common-shock",
+      "metric": "both",
+      "cover": [
+        35,
+        20
+      ],
+      "tn_value": 4.400154217606905e-05,
+      "frozen_target": 4.400154217606905e-05,
+      "gt_scaled": 4.4001542176069056e-05,
+      "normalized_abs_error_vs_target": 0.0,
+      "pass_1e12": true
+    },
+    {
+      "scenario": "adb-rain-stress",
+      "metric": "EL",
+      "cover": [
+        35,
+        20
+      ],
+      "tn_value": 0.0698156608229632,
+      "frozen_target": 0.0698156608229632,
+      "gt_scaled": 0.06981566082296319,
+      "normalized_abs_error_vs_target": 0.0,
+      "pass_1e12": true
+    },
+    {
+      "scenario": "adb-rain-stress",
+      "metric": "attach",
+      "cover": [
+        35,
+        20
+      ],
+      "tn_value": 0.07046389659987555,
+      "frozen_target": 0.07046389659987555,
+      "gt_scaled": 0.07046389659987555,
+      "normalized_abs_error_vs_target": 0.0,
+      "pass_1e12": true
+    },
+    {
+      "scenario": "adb-rain-stress",
+      "metric": "exceed",
+      "cover": [
+        35,
+        20
+      ],
+      "tn_value": 0.013215038883593162,
+      "frozen_target": 0.013215038883593162,
+      "gt_scaled": 0.013215038883593162,
+      "normalized_abs_error_vs_target": 0.0,
+      "pass_1e12": true
+    },
+    {
+      "scenario": "adb-rain-stress",
+      "metric": "stoploss",
+      "cover": [
+        35,
+        20
+      ],
+      "tn_value": 0.003828572454093997,
+      "frozen_target": 0.0038285724540939965,
+      "gt_scaled": 0.003828572454093997,
+      "normalized_abs_error_vs_target": 4.336808689942018e-19,
+      "pass_1e12": true
+    },
+    {
+      "scenario": "adb-rain-stress",
+      "metric": "both",
+      "cover": [
+        35,
+        20
+      ],
+      "tn_value": 6.924565668457718e-05,
+      "frozen_target": 6.924565668457714e-05,
+      "gt_scaled": 6.924565668457714e-05,
+      "normalized_abs_error_vs_target": 4.0657581468206416e-20,
+      "pass_1e12": true
+    },
+    {
+      "scenario": "adb-rain-cover",
+      "metric": "EL",
+      "cover": [
+        30,
+        40
+      ],
+      "tn_value": 0.062312821512254146,
+      "frozen_target": 0.062312821512254146,
+      "gt_scaled": 0.06231282151225415,
+      "normalized_abs_error_vs_target": 0.0,
+      "pass_1e12": true
+    },
+    {
+      "scenario": "adb-rain-cover",
+      "metric": "attach",
+      "cover": [
+        30,
+        40
+      ],
+      "tn_value": 0.04413776873084346,
+      "frozen_target": 0.04413776873084346,
+      "gt_scaled": 0.04413776873084346,
+      "normalized_abs_error_vs_target": 0.0,
+      "pass_1e12": true
+    },
+    {
+      "scenario": "adb-rain-cover",
+      "metric": "exceed",
+      "cover": [
+        30,
+        40
+      ],
+      "tn_value": 0.006997089316821914,
+      "frozen_target": 0.006997089316821914,
+      "gt_scaled": 0.006997089316821913,
+      "normalized_abs_error_vs_target": 0.0,
+      "pass_1e12": true
+    },
+    {
+      "scenario": "adb-rain-cover",
+      "metric": "stoploss",
+      "cover": [
+        30,
+        40
+      ],
+      "tn_value": 0.0021365932640908633,
+      "frozen_target": 0.0021365932640908633,
+      "gt_scaled": 0.0021365932640908633,
+      "normalized_abs_error_vs_target": 0.0,
+      "pass_1e12": true
+    },
+    {
+      "scenario": "adb-rain-cover",
+      "metric": "both",
+      "cover": [
+        30,
+        40
+      ],
+      "tn_value": 3.163304630917887e-05,
+      "frozen_target": 3.163304630917883e-05,
+      "gt_scaled": 3.1633046309178836e-05,
+      "normalized_abs_error_vs_target": 4.0657581468206416e-20,
+      "pass_1e12": true
+    }
+  ],
+  "all_pass_1e12": true,
+  "count": 25,
+  "reference_source": "results/g2_s2_s1a/results.json n2.*.targets + results/g1b_full/exact_ground_truth.json"
+}

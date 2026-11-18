@@ -1,0 +1,42 @@
+{
+  "estimates": {
+    "term_both_bonds_exhausted_probability": {
+      "ci95_high": 4.400154217606985e-05,
+      "ci95_low": 4.400154217606985e-05,
+      "estimate": 4.400154217606985e-05,
+      "standard_error": 0.0
+    },
+    "term_expected_principal_loss_usd": {
+      "ci95_high": 10063513.348954102,
+      "ci95_low": 10063513.348954102,
+      "estimate": 10063513.348954102,
+      "standard_error": 0.0
+    },
+    "term_joint_attachment_probability": {
+      "ci95_high": 0.05052567031293338,
+      "ci95_low": 0.05052567031293338,
+      "estimate": 0.05052567031293338,
+      "standard_error": 0.0
+    },
+    "term_portfolio_loss_exceedance_probability": {
+      "ci95_high": 0.016066409986690625,
+      "ci95_low": 0.016066409986690625,
+      "estimate": 0.016066409986690625,
+      "standard_error": 0.0
+    },
+    "term_portfolio_stop_loss_usd": {
+      "ci95_high": 385043.37022346805,
+      "ci95_low": 385043.37022346805,
+      "estimate": 385043.37022346805,
+      "standard_error": 0.0
+    }
+  },
+  "resources": {
+    "execution": "classical_cpu",
+    "method": "exact",
+    "model_evaluations": 100,
+    "samples": 100,
+    "transition_products": 30000
+  },
+  "uncertainty": "Exact finite-state reference up to floating-point error; calibration and structural uncertainty excluded."
+}

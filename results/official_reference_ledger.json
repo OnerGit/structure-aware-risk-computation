@@ -1,0 +1,18 @@
+{
+  "errors": [],
+  "metric_count": 35,
+  "p1b_reference": {
+    "errors": [],
+    "sha256": "06f34f6a0a4d6d8c5d1fa4fb871203fef31733fa71bb1dea5e19195250015bd7",
+    "target_index": 99,
+    "target_probability": 1.8794874245975374e-06
+  },
+  "scenario_count": 7,
+  "status": "PASS",
+  "track_counts": {
+    "adb_drb": 5,
+    "worldbank_elt": 2
+  },
+  "unique_config_hashes": 7,
+  "unique_problem_ids": 7
+}

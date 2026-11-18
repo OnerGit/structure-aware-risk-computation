@@ -1,0 +1,31 @@
+{
+  "status": "PASS_CANDIDATE",
+  "executed_checks": "PASS",
+  "official_reference_ledger": "PASS",
+  "official_source_audit": "PASS",
+  "official_path_contract": "PASS",
+  "official_problem_ids": "7/7",
+  "official_interface_validation": "PASS",
+  "official_seven_case_interface": "PASS",
+  "p1b_integration": "PASS",
+  "p1b_scientific_semantics": "UNCHANGED",
+  "v1_exact_reference": "PASS",
+  "p1b_gatekeeper": "PASS_WITH_SCOPE_LIMITS",
+  "resource": {
+    "wall_s": 1.1310968270990998,
+    "peak_rss_kib": 218376,
+    "rss_status": "RSS_MONITOR_ONLY",
+    "budget_s": 900,
+    "recommended_rss_limit_kib": 1572864
+  },
+  "claims": {
+    "formal_benchmark": "NOT_RUN",
+    "new_quantum_algorithm": "NO",
+    "full_three_year_quantum_poc": "NOT_RUN",
+    "quantum_advantage": "NOT_CLAIMED",
+    "official_source_interface_executed": "YES",
+    "git_write_operations": "NO",
+    "publication": "NO",
+    "submission": "NO"
+  }
+}

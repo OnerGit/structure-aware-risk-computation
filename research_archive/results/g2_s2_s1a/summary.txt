@@ -1,0 +1,9 @@
+n2 adb-base: max_vs_frozen_oracle=1.388e-17
+n2 adb-independent: max_vs_frozen_oracle=1.388e-17
+n2 adb-common-shock: max_vs_frozen_oracle=3.469e-18
+n2 adb-rain-stress: max_vs_frozen_oracle=1.388e-17
+n2 adb-rain-cover: max_vs_frozen_oracle=6.939e-18
+F1_base: P min_chi_abs=10 rel=4 | W per-metric abs={'EL_synth': 10, 'attach_synth': 8, 'exceed_synth': 10, 'stoploss_synth': 10, 'all_exhaust_synth': 1} rel={'EL_synth': 2, 'attach_synth': 2, 'exceed_synth': 2, 'stoploss_synth': 2, 'all_exhaust_synth': 1} | W all-five abs=10 rel=2 | e2e=0.3221s
+F2_independent: P min_chi_abs=1 rel=1 | W per-metric abs={'EL_synth': 2, 'attach_synth': 1, 'exceed_synth': 10, 'stoploss_synth': 10, 'all_exhaust_synth': 1} rel={'EL_synth': 1, 'attach_synth': 1, 'exceed_synth': 2, 'stoploss_synth': 2, 'all_exhaust_synth': 1} | W all-five abs=10 rel=2 | e2e=0.3219s
+F3_common_shock: P min_chi_abs=10 rel=4 | W per-metric abs={'EL_synth': 10, 'attach_synth': 10, 'exceed_synth': 10, 'stoploss_synth': 10, 'all_exhaust_synth': 1} rel={'EL_synth': 2, 'attach_synth': 2, 'exceed_synth': 1, 'stoploss_synth': 2, 'all_exhaust_synth': 1} | W all-five abs=10 rel=2 | e2e=0.3233s
+gate_wall_s=3.9322 peak_rss_kb=64608

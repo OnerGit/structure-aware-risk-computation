@@ -1,0 +1,32 @@
+# Local tooling and caches (never part of the submitted prototype)
+.venv/
+venv/
+__pycache__/
+*.py[cod]
+.pytest_cache/
+.mypy_cache/
+.ruff_cache/
+.ipynb_checkpoints/
+.env
+.env.*
+*.log
+.DS_Store
+# Official external datasets and local input copies
+external_data/
+official_inputs/
+*.npz
+# Private review archives, internal packages and local worktree scratch
+review-packages/
+handoff/
+resources/private/
+resources/official/
+*_REVIEW.zip
+*_OWNER_REVIEW.zip
+*.zip
+*.tar.gz
+*.7z
+*.pdf
+*.pem
+*.key
+cache/
+tmp/

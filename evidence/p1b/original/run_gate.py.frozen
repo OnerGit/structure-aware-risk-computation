@@ -1,0 +1,344 @@
+from __future__ import annotations
+
+import json
+import os
+import platform
+import resource
+import sys
+import time
+from pathlib import Path
+
+import numpy as np
+import qiskit
+import scipy
+
+PACKAGE = Path(__file__).resolve().parent
+sys.path.insert(0, str(PACKAGE / "src"))
+
+from p1b_circuit import (
+    build_complete_operator,
+    build_data_only_reflection_mutant,
+    build_event_oracle,
+    build_flag_phase,
+    build_grover,
+    build_state_preparation,
+    build_zero_reflection,
+    component_counts,
+    reverse_adjoint,
+)
+from p1b_contract import (
+    EXPECTED_SHA256,
+    load_amended_reference,
+    rain_probabilities_c_order,
+    run_preflight,
+    sha256_file,
+)
+from p1b_verify import (
+    check_a_dagger_a,
+    check_asymmetric_rain,
+    check_budget,
+    check_clean_subspace,
+    check_event_mutant,
+    check_event_oracle,
+    check_flag_probability,
+    check_preparation,
+    check_q_action,
+    check_s0_and_sf,
+    check_wrong_grover_order,
+    make_probes,
+    reverse_sequence_check,
+    serialized_netlist,
+)
+
+
+def write_json(path: Path, data) -> None:
+    path.parent.mkdir(parents=True, exist_ok=True)
+    path.write_text(json.dumps(data, indent=2, sort_keys=True) + "\n")
+
+
+def write_netlist(path: Path, circuit, expanded: bool = False) -> dict:
+    from qiskit import qasm3
+
+    output = circuit.decompose(gates_to_decompose=["ccx"]) if expanded else circuit
+    text = qasm3.dumps(output)
+    path.parent.mkdir(parents=True, exist_ok=True)
+    path.write_text(text)
+    json_path = path.with_suffix(".netlist.json")
+    rows = serialized_netlist(output)
+    write_json(json_path, rows)
+    return {
+        "qasm": str(path.relative_to(PACKAGE)),
+        "qasm_sha256": sha256_file(path),
+        "json": str(json_path.relative_to(PACKAGE)),
+        "json_sha256": sha256_file(json_path),
+        "gate_count": output.size(),
+        "depth": output.depth(),
+    }
+
+
+def main() -> int:
+    start = time.perf_counter()
+    results_dir = PACKAGE / "results"
+    raw_dir = results_dir / "raw"
+    netlist_dir = results_dir / "netlists"
+    for directory in (results_dir, raw_dir, netlist_dir):
+        directory.mkdir(parents=True, exist_ok=True)
+    environment = {
+        "gate": "ADB_P1B_O1Y_FLAT7_BOTHEX",
+        "timestamp_local": time.strftime("%Y-%m-%dT%H:%M:%S%z"),
+        "python": sys.version,
+        "python_executable": sys.executable,
+        "platform": platform.platform(),
+        "qiskit": qiskit.__version__,
+        "numpy": np.__version__,
+        "scipy": scipy.__version__,
+        "simulator": "qiskit.quantum_info.Statevector (local statevector, no QPU)",
+        "compilation": "no transpile, no optimization, no coupling map, no backend",
+        "qpu": "NOT_RUN",
+        "cwd": os.getcwd(),
+        "command": " ".join(sys.argv),
+        "dense_8192_unitary_built": False,
+    }
+    write_json(results_dir / "environment.json", environment)
+    try:
+        preflight = run_preflight()
+    except Exception as error:
+        write_json(
+            results_dir / "preflight_failure.json",
+            {"error": repr(error), "type": type(error).__name__},
+        )
+        (PACKAGE / "FAILURE_AND_STOP_LOG.md").write_text(
+            "# Failure and Stop Log\n\n"
+            "Status: BLOCKED at STEP A preflight.\n\n"
+            f"Exception: `{type(error).__name__}: {error}`\n\n"
+            "No formal circuit verification was started. No budget was relaxed.\n"
+        )
+        print(f"PREFLIGHT_FAIL {type(error).__name__}: {error}")
+        return 2
+
+    reference = load_amended_reference()
+    earthquake = np.asarray(reference["earthquake_probabilities_25"], dtype=float)
+    rain = np.asarray(reference["rain_probabilities_4"], dtype=float)
+    annual = np.asarray(reference["annual_probabilities_100"], dtype=float)
+    target_probability = float(reference["selected_event"]["probability"])
+
+    preparation = build_state_preparation(earthquake, rain)
+    event_oracle = build_event_oracle()
+    zero_reflection = build_zero_reflection()
+    flag_phase = build_flag_phase()
+    operator = build_complete_operator(preparation, event_oracle)
+    operator_dagger = reverse_adjoint(operator)
+    grover = build_grover(operator, operator_dagger, zero_reflection, flag_phase)
+
+    components = {
+        "P": component_counts(preparation),
+        "Uf": component_counts(event_oracle),
+        "A": component_counts(operator),
+        "A_dagger": component_counts(operator_dagger),
+        "S0": component_counts(zero_reflection),
+        "Sf": component_counts(flag_phase),
+        "Q": component_counts(grover),
+    }
+    budget = check_budget(
+        {
+            "P": components["P"],
+            "A": components["A"],
+            "Q": components["Q"],
+        }
+    )
+
+    preparation_check = check_preparation(preparation, annual)
+    event_check = check_event_oracle(event_oracle)
+    flag_check = check_flag_probability(operator, target_probability)
+    reverse_check = reverse_sequence_check(operator, operator_dagger)
+    adjoint_check = check_a_dagger_a(
+        operator, operator_dagger, reverse_check, make_probes()
+    )
+    reflection_check = check_s0_and_sf(
+        zero_reflection, flag_phase, build_data_only_reflection_mutant()
+    )
+    event_mutant_check = check_event_mutant(event_oracle)
+    q_check = check_q_action(operator, grover, target_probability)
+    wrong_q_check = check_wrong_grover_order(
+        operator, operator_dagger, zero_reflection, flag_phase, target_probability
+    )
+    clean_check = check_clean_subspace(
+        operator, operator_dagger, zero_reflection, flag_phase, grover
+    )
+    asym_p = rain_probabilities_c_order(0.02, 0.04, 0.25)
+    asym_legacy = np.array([asym_p[0], asym_p[2], asym_p[1], asym_p[3]])
+    rain_check = check_asymmetric_rain(asym_p, asym_legacy)
+
+    netlists = {}
+    for label, circuit, expanded in (
+        ("P", preparation, False),
+        ("Uf", event_oracle, False),
+        ("A", operator, False),
+        ("A_expanded", operator, True),
+        ("A_dagger", operator_dagger, False),
+        ("S0", zero_reflection, False),
+        ("Sf", flag_phase, False),
+        ("Q", grover, False),
+        ("Q_expanded", grover, True),
+    ):
+        netlists[label] = write_netlist(netlist_dir / f"{label}.qasm", circuit, expanded)
+
+    checks = {
+        "annual_reference": preflight["reference_validation"]["status"],
+        "rain_order_erratum": preflight["rain_errata"]["status"],
+        "state_preparation": preparation_check["status"],
+        "event_oracle": event_check["status"],
+        "target_flag_probability": flag_check["status"],
+        "a_dagger_a": adjoint_check["status"],
+        "scratch_cleanup": adjoint_check["status"]
+        if all(row["scratch_mass_after_A"] <= 1e-10 for row in adjoint_check["probe_records"])
+        else "FAIL",
+        "s0_sf_q": reflection_check["status"]
+        if q_check["status"] == "PASS"
+        else "FAIL",
+        "asymmetric_rain": rain_check["status"],
+        "flag_negative_control": event_mutant_check["status"],
+        "s0_flag_negative_control": reflection_check["s0_flag_omission_negative_control"]["distinguished"],
+        "wrong_q_order_control": wrong_q_check["status"],
+        "clean_subspace": clean_check["status"],
+        "resource_budget": budget["status"],
+    }
+    all_checks_pass = all(
+        value == "PASS" or value is True for value in checks.values()
+    )
+    status = "PASS_CANDIDATE" if all_checks_pass else "PARTIAL"
+
+    write_json(raw_dir / "preparation_amplitudes_128.json", preparation_check)
+    write_json(raw_dir / "event_oracle_256.json", event_check)
+    write_json(raw_dir / "a_dagger_a_probes.json", adjoint_check)
+    write_json(raw_dir / "s0_sf_phase.json", reflection_check)
+    write_json(raw_dir / "q_action.json", q_check)
+    write_json(raw_dir / "q_wrong_order_control.json", wrong_q_check)
+    write_json(raw_dir / "asymmetric_rain.json", rain_check)
+    write_json(raw_dir / "negative_controls.json", {
+        "event_oracle": event_mutant_check,
+        "s0_flag_omission": reflection_check["s0_flag_omission_negative_control"],
+        "wrong_q_order": wrong_q_check,
+    })
+    write_json(raw_dir / "clean_subspace.json", clean_check)
+
+    source_paths = [
+        PACKAGE / "src" / "p1b_contract.py",
+        PACKAGE / "src" / "p1b_circuit.py",
+        PACKAGE / "src" / "p1b_verify.py",
+        PACKAGE / "run_gate.py",
+        PACKAGE / "tests" / "test_contract.py",
+        PACKAGE / "tests" / "test_circuit.py",
+        PACKAGE / "tests" / "conftest.py",
+        PACKAGE / "requirements.txt",
+    ]
+    source_hashes = {str(path.relative_to(PACKAGE)): sha256_file(path) for path in source_paths}
+
+    elapsed = time.perf_counter() - start
+    rss_kib = resource.getrusage(resource.RUSAGE_SELF).ru_maxrss
+    verification = {
+        "gate": "ADB_P1B_O1Y_FLAT7_BOTHEX",
+        "status": status,
+        "preflight": preflight,
+        "reference": {
+            "amended_reference_path": preflight["amended_reference_path"],
+            "amended_reference_sha256": preflight["amended_reference_sha256"],
+            "original_reference_sha256": EXPECTED_SHA256["original_annual_reference"],
+            "target_index": reference["selected_event"]["annual_state_index"],
+            "target_probability": target_probability,
+            "annual_mass": float(annual.sum()),
+            "valid_states": int(annual.size),
+            "padding_states": 28,
+        },
+        "components": components,
+        "resource_budget": budget,
+        "checks": checks,
+        "details": {
+            "preparation": {
+                "valid_probability_max_abs_error": preparation_check[
+                    "valid_probability_max_abs_error"
+                ],
+                "padding_probability_max_abs_error": preparation_check[
+                    "padding_probability_max_abs_error"
+                ],
+                "amplitude_max_abs_error": preparation_check["amplitude_max_abs_error"],
+                "target_amplitude": preparation_check["target_amplitude"],
+                "target_probability": preparation_check["target_probability"],
+            },
+            "event_oracle": {
+                "cases": event_check["cases"],
+                "cases_passed": event_check["cases_passed"],
+                "max_power_leakage": event_check["max_power_leakage"],
+                "max_amplitude_error": event_check["max_amplitude_error"],
+            },
+            "flag_probability": {
+                "observed": flag_check["flag_one_probability"],
+                "expected": flag_check["expected_target_probability"],
+                "abs_error": flag_check["abs_error"],
+                "scratch_mass": flag_check["scratch_mass"],
+            },
+            "a_dagger_a": {
+                "reverse_sequence": reverse_check,
+                "probe_count": adjoint_check["probe_count"],
+                "zero_round_trip_amplitude_error": adjoint_check[
+                    "zero_round_trip_amplitude_error"
+                ],
+                "zero_round_trip_leakage": adjoint_check["zero_round_trip_leakage"],
+                "probe_max_error": max(
+                    row["round_trip_max_abs_error"]
+                    for row in adjoint_check["probe_records"]
+                ),
+            },
+            "s0_sf": reflection_check,
+            "q": q_check,
+            "wrong_q": wrong_q_check,
+            "clean_subspace": clean_check,
+            "asymmetric_rain": rain_check,
+            "event_mutant": event_mutant_check,
+        },
+        "netlists": netlists,
+        "source_hashes": source_hashes,
+        "dependencies": environment,
+        "timing": {
+            "cpu_wall_s": elapsed,
+            "peak_rss_kib": rss_kib,
+            "rss_limit_kib": 1024 * 1024,
+            "rss_status": "RSS_MONITOR_ONLY",
+            "total_wall_budget_s": 600,
+        },
+        "claims": {
+            "official_three_year_benchmark": "NOT_RUN",
+            "finite_shot_qae": "NOT_RUN",
+            "quantum_advantage": "NOT_CLAIMED",
+            "v2_narrative_changed": "NO",
+            "v1_frozen_files_mutated": "NO",
+            "historical_results_mutated": "NO",
+            "git_write_operations": "NO",
+            "publication": "NO",
+            "submission": "NO",
+        },
+    }
+    write_json(results_dir / "verification.json", verification)
+    if all_checks_pass:
+        failure_log = (
+            "# Failure and Stop Log\n\n"
+            "No formal-execution failure or stop condition occurred.\n\n"
+            "- STEP A preflight passed.\n"
+            "- STEP B emitted circuits built without transpilation or backend coupling.\n"
+            "- STEP C checks passed; no budget relaxation and no selective rerun.\n"
+            "- No QPU, finite-shot QAE, three-year expansion, Git write, publication or submission.\n"
+        )
+    else:
+        failure_log = (
+            "# Failure and Stop Log\n\n"
+            "Status: PARTIAL.\n\n"
+            "One or more contract checks failed in the single formal run. Raw results are retained.\n"
+            "No cap was changed, no target was changed, and no selective rerun was performed.\n"
+        )
+    (PACKAGE / "FAILURE_AND_STOP_LOG.md").write_text(failure_log)
+    print(json.dumps({"status": status, "checks": checks, "timing": verification["timing"]}, indent=2))
+    return 0 if all_checks_pass else 1
+
+
+if __name__ == "__main__":
+    raise SystemExit(main())

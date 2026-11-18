@@ -1,0 +1,16 @@
+{
+  "config_file": "cases/case.json",
+  "problem_id": "1e0742ee4814e3c47d3ce0ed4c697bcb791ec06468a6a04603a6e4262b0770f3",
+  "run_id": "ea1f9f7dc2d9f1b22021263b14f94903",
+  "samples": 8192,
+  "schema_version": 1,
+  "seed": 1004,
+  "targets": [
+    "term_expected_principal_loss_usd",
+    "term_joint_attachment_probability",
+    "term_portfolio_loss_exceedance_probability",
+    "term_portfolio_stop_loss_usd",
+    "term_both_bonds_exhausted_probability"
+  ],
+  "track": "adb_drb"
+}

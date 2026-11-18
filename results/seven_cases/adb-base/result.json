@@ -1,0 +1,51 @@
+{
+  "estimates": {
+    "term_both_bonds_exhausted_probability": 3.163304630917947e-05,
+    "term_expected_principal_loss_usd": 10063513.348954104,
+    "term_joint_attachment_probability": 0.04413776873084369,
+    "term_portfolio_loss_exceedance_probability": 0.012046720907534048,
+    "term_portfolio_stop_loss_usd": 282354.6985661411
+  },
+  "execution": "classical_cpu",
+  "intervals": {
+    "term_both_bonds_exhausted_probability": [
+      3.163304630917947e-05,
+      3.163304630917947e-05
+    ],
+    "term_expected_principal_loss_usd": [
+      10063513.348954104,
+      10063513.348954104
+    ],
+    "term_joint_attachment_probability": [
+      0.04413776873084369,
+      0.04413776873084369
+    ],
+    "term_portfolio_loss_exceedance_probability": [
+      0.012046720907534048,
+      0.012046720907534048
+    ],
+    "term_portfolio_stop_loss_usd": [
+      282354.6985661411,
+      282354.6985661411
+    ]
+  },
+  "method": "official_exact_classical_dp",
+  "problem_id": "1e05d3e5593e9f38955e8ff4271a15d65e538ed6555955aff2f84e2d3f8e5fda",
+  "resources": {
+    "elapsed_seconds": 0.3853687340160832,
+    "model_evaluations": 100,
+    "preparation_seconds": 0.001383693073876202,
+    "qubits": 0,
+    "shots": 0
+  },
+  "run_id": "0936ca962ef2d979e0a786e32dbfad1f",
+  "seed": 1000,
+  "targets": [
+    "term_expected_principal_loss_usd",
+    "term_joint_attachment_probability",
+    "term_portfolio_loss_exceedance_probability",
+    "term_portfolio_stop_loss_usd",
+    "term_both_bonds_exhausted_probability"
+  ],
+  "track": "adb_drb"
+}

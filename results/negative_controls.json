@@ -1,0 +1,94 @@
+{
+  "all_controls_rejected": true,
+  "controls": [
+    {
+      "control": "valid_baseline",
+      "status": "PASS"
+    },
+    {
+      "control": "wrong_problem_id",
+      "detail": "ValueError: problem_id does not match the selected configuration and data",
+      "status": "REJECTED"
+    },
+    {
+      "control": "wrong_run_id",
+      "detail": "ValueError: run_id does not match this invocation",
+      "status": "REJECTED"
+    },
+    {
+      "control": "wrong_seed",
+      "detail": "ValueError: seed does not match this invocation",
+      "status": "REJECTED"
+    },
+    {
+      "control": "missing_model_evaluations",
+      "detail": "ValueError: model_evaluations must be a finite number",
+      "status": "REJECTED"
+    },
+    {
+      "control": "negative_resource",
+      "detail": "ValueError: elapsed_seconds must be nonnegative",
+      "status": "REJECTED"
+    },
+    {
+      "control": "noninteger_resource",
+      "detail": "ValueError: shots must be an integer or null",
+      "status": "REJECTED"
+    },
+    {
+      "control": "nan_estimate",
+      "detail": "ValueError: term_expected_principal_loss_usd must be a finite number",
+      "status": "REJECTED"
+    },
+    {
+      "control": "inf_estimate",
+      "detail": "ValueError: term_portfolio_loss_exceedance_probability must be a finite number",
+      "status": "REJECTED"
+    },
+    {
+      "control": "out_of_range_estimate",
+      "detail": "ValueError: estimate is outside the physical range of its target",
+      "status": "REJECTED"
+    },
+    {
+      "control": "incomplete_five_metrics",
+      "detail": "ValueError: estimates must contain exactly the target names for this scenario",
+      "status": "REJECTED"
+    },
+    {
+      "control": "drb_elt_metric_mix",
+      "detail": "ValueError: estimates must contain exactly the target names for this scenario",
+      "status": "REJECTED"
+    },
+    {
+      "control": "invalid_execution",
+      "detail": "ValueError: quantum runs require positive qubits",
+      "status": "REJECTED"
+    },
+    {
+      "control": "duplicate_json_key",
+      "detail": "ValueError: duplicate JSON key: method",
+      "status": "REJECTED"
+    },
+    {
+      "control": "missing_source_root",
+      "detail": "FAIL_CLOSED_SOURCE_ROOT_REQUIRED",
+      "status": "REJECTED"
+    },
+    {
+      "control": "missing_npz",
+      "detail": "[\"missing canonical paths: ['data/flood.npz']\", \"data/flood.npz: missing\", \"root SHA256SUMS: FAIL_MISSING_MANIFEST_FILES\"]",
+      "status": "REJECTED"
+    },
+    {
+      "control": "stale_data_hash",
+      "detail": "ValueError: seismic: dataset checksum mismatch",
+      "status": "REJECTED"
+    }
+  ],
+  "controls_rejected": 16,
+  "controls_total": 16,
+  "status": "PASS",
+  "tolerance_relaxation": "NO",
+  "valid_baseline": true
+}

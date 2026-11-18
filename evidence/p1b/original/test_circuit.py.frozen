@@ -1,0 +1,78 @@
+from __future__ import annotations
+import numpy as np
+from p1b_circuit import (
+    build_complete_operator,
+    build_data_only_reflection_mutant,
+    build_event_oracle,
+    build_flag_phase,
+    build_grover,
+    build_state_preparation,
+    build_zero_reflection,
+    component_counts,
+    reverse_adjoint,
+)
+from p1b_contract import load_amended_reference, rain_probabilities_c_order
+from p1b_verify import (
+    check_a_dagger_a,
+    check_asymmetric_rain,
+    check_budget,
+    check_event_oracle,
+    check_preparation,
+    check_q_action,
+    check_s0_and_sf,
+    check_wrong_grover_order,
+    make_probes,
+    reverse_sequence_check,
+)
+
+
+def _circuits():
+    reference = load_amended_reference()
+    preparation = build_state_preparation(
+        np.asarray(reference["earthquake_probabilities_25"], dtype=float),
+        np.asarray(reference["rain_probabilities_4"], dtype=float),
+    )
+    oracle = build_event_oracle()
+    zero = build_zero_reflection()
+    flag = build_flag_phase()
+    operator = build_complete_operator(preparation, oracle)
+    dagger = reverse_adjoint(operator)
+    grover = build_grover(operator, dagger, zero, flag)
+    return reference, preparation, oracle, zero, flag, operator, dagger, grover
+
+
+def test_preparation_oracle_and_counts():
+    reference, preparation, oracle, zero, flag, operator, dagger, grover = _circuits()
+    annual = np.asarray(reference["annual_probabilities_100"], dtype=float)
+    assert check_preparation(preparation, annual)["status"] == "PASS"
+    assert check_event_oracle(oracle)["status"] == "PASS"
+    counts = {name: component_counts(circuit) for name, circuit in {
+        "P": preparation,
+        "Uf": oracle,
+        "A": operator,
+        "A_dagger": dagger,
+        "S0": zero,
+        "Sf": flag,
+        "Q": grover,
+    }.items()}
+    assert counts["P"]["expanded_primitives"] == 66
+    assert counts["A"]["expanded_primitives"] == 237
+    assert counts["Q"]["expanded_primitives"] == 658
+    assert check_budget({"P": counts["P"], "A": counts["A"], "Q": counts["Q"]})["status"] == "PASS"
+
+
+def test_adjoint_s0_sf_q_and_controls():
+    reference, preparation, oracle, zero, flag, operator, dagger, grover = _circuits()
+    target = float(reference["selected_event"]["probability"])
+    reverse_check = reverse_sequence_check(operator, dagger)
+    assert reverse_check["status"] == "PASS"
+    assert check_a_dagger_a(operator, dagger, reverse_check, make_probes())["status"] == "PASS"
+    assert check_s0_and_sf(zero, flag, build_data_only_reflection_mutant())["status"] == "PASS"
+    assert check_q_action(operator, grover, target)["status"] == "PASS"
+    assert check_wrong_grover_order(operator, dagger, zero, flag, target)["status"] == "PASS"
+
+
+def test_asymmetric_rain_circuit():
+    corrected = rain_probabilities_c_order(0.02, 0.04)
+    legacy = np.array([corrected[0], corrected[2], corrected[1], corrected[3]])
+    assert check_asymmetric_rain(corrected, legacy)["status"] == "PASS"

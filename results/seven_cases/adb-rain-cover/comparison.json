@@ -1,0 +1,139 @@
+{
+  "case": "adb-rain-cover",
+  "five_metric_pass": true,
+  "independent_vs_official": [
+    {
+      "absolute_error": 1.862645149230957e-09,
+      "candidate": 9970051.441960664,
+      "metric": "term_expected_principal_loss_usd",
+      "reference": 9970051.441960663,
+      "tolerance": 99700.51441960662,
+      "within_tolerance": true
+    },
+    {
+      "absolute_error": 2.2898349882893854e-16,
+      "candidate": 0.04413776873084346,
+      "metric": "term_joint_attachment_probability",
+      "reference": 0.04413776873084369,
+      "tolerance": 0.0022068884365421845,
+      "within_tolerance": true
+    },
+    {
+      "absolute_error": 2.0816681711721685e-17,
+      "candidate": 0.006997089316821913,
+      "metric": "term_portfolio_loss_exceedance_probability",
+      "reference": 0.006997089316821934,
+      "tolerance": 0.00034985446584109674,
+      "within_tolerance": true
+    },
+    {
+      "absolute_error": 4.0745362639427185e-10,
+      "candidate": 170927.46112726905,
+      "metric": "term_portfolio_stop_loss_usd",
+      "reference": 170927.46112726946,
+      "tolerance": 8546.373056363473,
+      "within_tolerance": true
+    },
+    {
+      "absolute_error": 6.369687763352339e-19,
+      "candidate": 3.1633046309178836e-05,
+      "metric": "term_both_bonds_exhausted_probability",
+      "reference": 3.163304630917947e-05,
+      "tolerance": 3.1633046309179473e-06,
+      "within_tolerance": true
+    }
+  ],
+  "official_tolerance": {
+    "term_both_bonds_exhausted_probability": 3.1633046309179473e-06,
+    "term_expected_principal_loss_usd": 99700.51441960662,
+    "term_joint_attachment_probability": 0.0022068884365421845,
+    "term_portfolio_loss_exceedance_probability": 0.00034985446584109674,
+    "term_portfolio_stop_loss_usd": 8546.373056363473
+  },
+  "problem_id": "e9aeda787e64b3cd0f8654fd323c81f13eeffa3a73a1377cf92c70483f524351",
+  "team_vs_independent": [
+    {
+      "absolute_error": 1.862645149230957e-09,
+      "candidate": 9970051.441960663,
+      "metric": "term_expected_principal_loss_usd",
+      "reference": 9970051.441960664,
+      "tolerance": 99700.51441960662,
+      "within_tolerance": true
+    },
+    {
+      "absolute_error": 2.2898349882893854e-16,
+      "candidate": 0.04413776873084369,
+      "metric": "term_joint_attachment_probability",
+      "reference": 0.04413776873084346,
+      "tolerance": 0.0022068884365421845,
+      "within_tolerance": true
+    },
+    {
+      "absolute_error": 2.0816681711721685e-17,
+      "candidate": 0.006997089316821934,
+      "metric": "term_portfolio_loss_exceedance_probability",
+      "reference": 0.006997089316821913,
+      "tolerance": 0.00034985446584109674,
+      "within_tolerance": true
+    },
+    {
+      "absolute_error": 4.0745362639427185e-10,
+      "candidate": 170927.46112726946,
+      "metric": "term_portfolio_stop_loss_usd",
+      "reference": 170927.46112726905,
+      "tolerance": 8546.373056363473,
+      "within_tolerance": true
+    },
+    {
+      "absolute_error": 6.369687763352339e-19,
+      "candidate": 3.163304630917947e-05,
+      "metric": "term_both_bonds_exhausted_probability",
+      "reference": 3.1633046309178836e-05,
+      "tolerance": 3.1633046309179473e-06,
+      "within_tolerance": true
+    }
+  ],
+  "team_vs_official": [
+    {
+      "absolute_error": 0.0,
+      "candidate": 9970051.441960663,
+      "metric": "term_expected_principal_loss_usd",
+      "reference": 9970051.441960663,
+      "tolerance": 99700.51441960662,
+      "within_tolerance": true
+    },
+    {
+      "absolute_error": 0.0,
+      "candidate": 0.04413776873084369,
+      "metric": "term_joint_attachment_probability",
+      "reference": 0.04413776873084369,
+      "tolerance": 0.0022068884365421845,
+      "within_tolerance": true
+    },
+    {
+      "absolute_error": 0.0,
+      "candidate": 0.006997089316821934,
+      "metric": "term_portfolio_loss_exceedance_probability",
+      "reference": 0.006997089316821934,
+      "tolerance": 0.00034985446584109674,
+      "within_tolerance": true
+    },
+    {
+      "absolute_error": 0.0,
+      "candidate": 170927.46112726946,
+      "metric": "term_portfolio_stop_loss_usd",
+      "reference": 170927.46112726946,
+      "tolerance": 8546.373056363473,
+      "within_tolerance": true
+    },
+    {
+      "absolute_error": 0.0,
+      "candidate": 3.163304630917947e-05,
+      "metric": "term_both_bonds_exhausted_probability",
+      "reference": 3.163304630917947e-05,
+      "tolerance": 3.1633046309179473e-06,
+      "within_tolerance": true
+    }
+  ],
+  "track": "adb_drb"
+}

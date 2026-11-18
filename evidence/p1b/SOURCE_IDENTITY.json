@@ -1,0 +1,123 @@
+{
+  "actual_counts": {
+    "A_expanded_gates": 237,
+    "P_expanded_gates": 66,
+    "Q3A_expanded_gates": 2211,
+    "Q_ccx_macro_depth": 141,
+    "Q_expanded_depth": 345,
+    "Q_expanded_gates": 658,
+    "peak_qubits": 13
+  },
+  "candidate_verification_sanitization": {
+    "math_and_resources_changed": false,
+    "original_external_verification_sha256": "c8787a3783fbd89318e2d0b56723c4942bf397ea25e7251b46c28c37fd78adaf",
+    "reason": "avoid embedding a local home directory in the candidate repository",
+    "removed_fields": [
+      "dependencies.cwd",
+      "dependencies.python_executable"
+    ],
+    "sanitized": true
+  },
+  "frozen_amended_reference_sha256": "06f34f6a0a4d6d8c5d1fa4fb871203fef31733fa71bb1dea5e19195250015bd7",
+  "frozen_verification_candidate_sha256": "41e11d61abe24c4d27a3a1ecadeb364210c204a61df38e71e45e7b82c9d54ae4",
+  "frozen_verification_original_sha256": "c8787a3783fbd89318e2d0b56723c4942bf397ea25e7251b46c28c37fd78adaf",
+  "gate": "ADB_P1B_O1Y_FLAT7_BOTHEX",
+  "gatekeeper_status": "PASS_WITH_SCOPE_LIMITS",
+  "independent_gatekeeper_zip_sha256": "ff175086b80692b13933afe290050fd0e1500ba96c733df1dd52d96d5b7e536a",
+  "integration": "Circuit and verification modules copied byte-for-byte. V2 wrapper adds reference-path loading and netlist replay; no mathematical or gate change.",
+  "netlists": {
+    "A": {
+      "depth": 68,
+      "gate_count": 83,
+      "json": "results/netlists/A.netlist.json",
+      "json_sha256": "a26c792dec2469d865d27a51f762bb4e3a3b1703ed406b30174266a908fc9d67",
+      "qasm": "results/netlists/A.qasm",
+      "qasm_sha256": "a2a185953c9a1d528284888bd5502e46911025e7239bd97898c07e549decbb87"
+    },
+    "A_dagger": {
+      "depth": 68,
+      "gate_count": 83,
+      "json": "results/netlists/A_dagger.netlist.json",
+      "json_sha256": "be9b2a05325db4523a126e1328bc4bf88d2a2be776e5cea1d8d2b5144d5a6b5e",
+      "qasm": "results/netlists/A_dagger.qasm",
+      "qasm_sha256": "a37ae4e4082099e269405d285536daa75c86b39d51726285451b24ef73c46329"
+    },
+    "A_expanded": {
+      "depth": 151,
+      "gate_count": 237,
+      "json": "results/netlists/A_expanded.netlist.json",
+      "json_sha256": "db9de7978704b0b8ab211b961aeceaaead1a5a56ecd45284fc8327c9162da6f5",
+      "qasm": "results/netlists/A_expanded.qasm",
+      "qasm_sha256": "d3ca86a869fd9837143634c89f81b91340f8c8d11c8eefa52898053e36aeae8c"
+    },
+    "P": {
+      "depth": 57,
+      "gate_count": 66,
+      "json": "results/netlists/P.netlist.json",
+      "json_sha256": "9b6eeaec2a3820d55efbd8dea312918e53e7f558b653ae392ede6706c46a39f4",
+      "qasm": "results/netlists/P.qasm",
+      "qasm_sha256": "e7d89fba8eacc3ed0647949b0f44b4bcd75d2889d19661833559e8996d1d6409"
+    },
+    "Q": {
+      "depth": 141,
+      "gate_count": 196,
+      "json": "results/netlists/Q.netlist.json",
+      "json_sha256": "51c82215fe475575f703231bfdbf65563bca3ec8e19d4505519d1c708e78191d",
+      "qasm": "results/netlists/Q.qasm",
+      "qasm_sha256": "5861a3b04f7a6c79cb1081d9d4059139ec6261e25014614d65e41e8cbd39150c"
+    },
+    "Q_expanded": {
+      "depth": 345,
+      "gate_count": 658,
+      "json": "results/netlists/Q_expanded.netlist.json",
+      "json_sha256": "cfa5abaa70cb6ccc027477001337dfe6a2e354b55521fd3bcc74d5992122950c",
+      "qasm": "results/netlists/Q_expanded.qasm",
+      "qasm_sha256": "70c1ed335443efe48f4dcf733ae314b0390dde336ff7fbae50b59a38f108b96b"
+    },
+    "S0": {
+      "depth": 13,
+      "gate_count": 29,
+      "json": "results/netlists/S0.netlist.json",
+      "json_sha256": "3bebaa127fb85315364b6400693576123d386bd0f8a7c76f3f49207fae00c127",
+      "qasm": "results/netlists/S0.qasm",
+      "qasm_sha256": "0f1f88cd9afeeae826de7ffdd8d29f94b991bc2d7f34e2a6837dcdc4613c0554"
+    },
+    "Sf": {
+      "depth": 1,
+      "gate_count": 1,
+      "json": "results/netlists/Sf.netlist.json",
+      "json_sha256": "f03b5caafb57709d8274361e3c686a3b69f6807ecc2a0ec3e6c23a32ff5ae76e",
+      "qasm": "results/netlists/Sf.qasm",
+      "qasm_sha256": "5b2636d33ff873018e9d89a2f854c169256d178c9dc4e9414140b15ea595dcd1"
+    },
+    "Uf": {
+      "depth": 11,
+      "gate_count": 17,
+      "json": "results/netlists/Uf.netlist.json",
+      "json_sha256": "5138b45dc4d5dce1115bdea6b4a296bff5a39464e4f8814e33e726cd0147461c",
+      "qasm": "results/netlists/Uf.qasm",
+      "qasm_sha256": "901e649fe153e5017ed77532893dbadca437529ed9a1c641d054b39f7d361547"
+    }
+  },
+  "review_zip_sha256": "fd3f1341f3d06ddbb12b3100685c12a82d99d4e00f61302c08a9166614507aeb",
+  "scope": {
+    "finite_shot_qae": "NOT_RUN",
+    "hardware_execution": "NOT_RUN",
+    "official_model": "adb-base",
+    "quantum_advantage": "NOT_ESTABLISHED",
+    "target_event": "ANNUAL_BOTH_BONDS_EXHAUSTED",
+    "target_index": 99,
+    "target_probability": 1.8794874245975374e-06,
+    "time_horizon": "ONE_YEAR"
+  },
+  "source_hashes": {
+    "requirements.txt": "e4e0a77835074078dfe1f5b8e39caff5c8c6767a465e544021cb646ba7bde90d",
+    "run_gate.py": "88718e58224039372decb1af659ebd2c90397fff8b17619dd5b8f28463057bbd",
+    "src/p1b_circuit.py": "02ccb119f1798e94f74784c2519694fb6ea974e1af481cdbc392e2b8fd3f67bc",
+    "src/p1b_contract.py": "128b34fb3fc47c1710cd0e3a3461e10304f69b6adaecb73d1604c9a6087c8d74",
+    "src/p1b_verify.py": "226e18a0e195c7496fdecc97e6bbb2d519899b862392e620309a1aab9b2c1b95",
+    "tests/conftest.py": "fc6fc945b19bde23a2d61bd99636e9406daa356eb99e3b566bc62b1f00762a34",
+    "tests/test_circuit.py": "4e65657a6642a18b1cbf206294b06ea4780661efe4ec321a783b9b20e50622cd",
+    "tests/test_contract.py": "8574b745dfcdf6e2f22f6e23fc697cfb48cafc17451c1cfe72bae0e8f382d263"
+  }
+}

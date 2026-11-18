@@ -1,0 +1,22 @@
+{
+  "entries": {
+    "merge_index_table_n2_elements": 10000,
+    "merge_index_table_n3_elements": 1000000,
+    "theoretical_dense_M_tensor_n2": "not materialized (100^3=1e6 theoretical)",
+    "theoretical_dense_M_tensor_n3": "not materialized (1000^3=1e9 theoretical)",
+    "annual_prob_tensor_n2_elements": 100,
+    "annual_prob_tensor_n3_elements": 1000,
+    "terminal_peak_n2_elements": 100,
+    "terminal_peak_n3_elements": 1000,
+    "measurement_tensor_peak_elements": 1000
+  },
+  "phases_seconds": {
+    "merge_table_build_n3": 0.414287241990678,
+    "annual_factor_build_n3": 0.009673252992797643,
+    "exact_contraction_n3": 0.4178074430092238,
+    "matched_n3_exact_dp": 0.37128355202730745,
+    "diagnostic_truncated_chi4": 0.011903601000085473
+  },
+  "mode": "single-thread CPU, float64, same machine",
+  "peak_rss_kb": 64800
+}

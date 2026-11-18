@@ -1,0 +1,105 @@
+{
+  "archive": {
+    "sha256": "89d4139f809c316294b6115f115724b2af2304cba1992774e2d5086e49f7c79b",
+    "status": "PASS"
+  },
+  "canonical_path_count": 27,
+  "canonical_paths": [
+    "README.md",
+    "EVALUATION.md",
+    "team_solver.py",
+    "LICENSE",
+    "pyproject.toml",
+    "src/qjlb/__init__.py",
+    "src/qjlb/model.py",
+    "src/qjlb/bond.py",
+    "src/qjlb/cli.py",
+    "src/qjlb/worker.py",
+    "src/qjlb/validation.py",
+    "src/qjlb/evaluation.py",
+    "src/qjlb/holdout.py",
+    "data/adb_terms.json",
+    "data/seismic.npz",
+    "data/flood.npz",
+    "data/audit.json",
+    "data/LICENSE.txt",
+    "data/source-manifest.json",
+    "scenarios/adb-base.json",
+    "scenarios/adb-common-shock.json",
+    "scenarios/adb-independent.json",
+    "scenarios/adb-rain-cover.json",
+    "scenarios/adb-rain-stress.json",
+    "scenarios/kaz-kgz-base.json",
+    "scenarios/tjk-uzb-base.json",
+    "SHA256SUMS"
+  ],
+  "data_hashes": {
+    "data/adb_terms.json": "50bdb628d0a67d14966d16bda35b4ab9d6b2fc473bdec42c9a664db10cc2b69b",
+    "data/audit.json": "11c3931d374b53a7091a88dcea5184660ffe13bf159146f5327bcaaee9690cb8",
+    "data/flood.npz": "a843078285068838db0a7b83ba96aaecebceb4e69ba9774b99395a6e216bbaa1",
+    "data/seismic.npz": "ec8a93254dc4d9471792941022941d6ed5d76ab80e8950c21624393743a4bd25"
+  },
+  "elt_symbols": {
+    "classes": [
+      "ELTModel"
+    ],
+    "elt_module": "src/qjlb/model.py",
+    "functions": [
+      "elt_exact",
+      "elt_is",
+      "elt_mc",
+      "elt_rqmc",
+      "elt_stratified",
+      "entries",
+      "sample_result"
+    ],
+    "status": "PASS"
+  },
+  "errors": [],
+  "interface_validation": "NOT_PERFORMED",
+  "minimum_missing": [],
+  "minimum_missing_count": 0,
+  "note": "Exact canonical paths only; no rglob or basename fallback.",
+  "recorded_elt_path": "src/qjlb/model.py",
+  "recorded_elt_symbols": [
+    "ELTModel",
+    "elt_exact"
+  ],
+  "root_manifest": {
+    "listed": 37,
+    "matched": 36,
+    "mismatched": [],
+    "missing": [
+      ".gitignore"
+    ],
+    "note": "The upstream archive omits .gitignore; do not claim 37/37.",
+    "status": "PARTIAL_36_OF_37_GITIGNORE_ABSENT"
+  },
+  "scenario_hashes": {
+    "adb-base": "91e4ca8e0ac73beb504b8a13bc80d5668c1f3005637d6e867bdc7bc31bfd1eb8",
+    "adb-common-shock": "02eef9574f7193d66623dd8187d2c3224752dba0be8f12c83ef5c68eb704039a",
+    "adb-independent": "7c00787e47e69a7dd62a175b08cf7005b8d8d7bd7460068ceeab366d0113dd50",
+    "adb-rain-cover": "4e90443ebebb8aa7ee321f29ff7ab741fef810a3ddc69597769488387bcddaf1",
+    "adb-rain-stress": "63126a131cbb9e250f3ade8fca9dd41af8930c4c64c82d9291d4f1fde608c735",
+    "kaz-kgz-base": "2440dc1aed8757ad9168b690d24cb75c7a7be2d0230ba6fc7f132ef50944018b",
+    "tjk-uzb-base": "27535b76fa74e0dbd80b45a64ce1cd8f376b12a4f6787ec2f0107dfe36b4cf31"
+  },
+  "source_archive_sha256_expected": "89d4139f809c316294b6115f115724b2af2304cba1992774e2d5086e49f7c79b",
+  "source_hashes": {
+    "EVALUATION.md": "80ebff4ee0f546f7625579930208ec2b11d817b7d2f83043f6abde51eedf1f6c",
+    "README.md": "9d0a63b9cc14389c13bc3e608fb70ca17edcf6cc4926a1b472c6152a7131ac83",
+    "data/LICENSE.txt": "98b8de4eaf4e5c24bc4a8586ef34e30370d8b081cadeed0ba608efbfaa60328d",
+    "src/qjlb/__init__.py": "f7d296be6c649c1540e436e1300ec52a981b917e8207a7550f18f6fa05296019",
+    "src/qjlb/bond.py": "5b0f867816470fdac69188d09f1121f65dc68ba8d9240755e7fea64b6e43f9ea",
+    "src/qjlb/cli.py": "1dbafa5815e61597e614366628db4e8910afb76bb20da67808a54dc085998508",
+    "src/qjlb/evaluation.py": "f0248efa281b43aebc634ae8fc209506fc0ae9e1ec92966938486dfca664cbf4",
+    "src/qjlb/holdout.py": "e9499212a36a81ef832a56930434fa667566f293e2467619d8e12ddee6fffde0",
+    "src/qjlb/model.py": "bfae7be5c540c0a9c9cadcf6f8277b03430e3016d56ec0374be7eae858c99228",
+    "src/qjlb/validation.py": "b63e56fea8e78dd93dacf0718742a5a391738fac61fbc76fa0a1acaa8e26a8fb",
+    "src/qjlb/worker.py": "d02b2d4406f2493fd9e1c30eb9d712df352b3e7cec83f3157533f312c40b19b9",
+    "team_solver.py": "8f70887577ecec73a4c659072ac6b9fc6aba82dabd1854b16380151b78a0837f"
+  },
+  "source_root_name": "adb-challenge-quantum-joint-loss-scenario-public-main",
+  "source_root_provided": true,
+  "status": "PASS"
+}

@@ -1,0 +1,25 @@
+{
+  "gate": "ADB_V2_OFFICIAL_SOURCE_AND_SEVEN_CASE_S1",
+  "independent_gatekeeper_zip": {
+    "decision": "PARTIAL_ACCEPTED / NEXT_GATE_CONDITIONAL",
+    "entries": 4,
+    "sha256": "e2de014a530f526de3423ebc2f0e9a25fb7a986d527dca3d6b49b6c4b5b79a53"
+  },
+  "official_source_archive": {
+    "entries": 44,
+    "extracted_root_name": "adb-challenge-quantum-joint-loss-scenario-public-main",
+    "logical_name": "adb-challenge-quantum-joint-loss-scenario-public-main(1).zip",
+    "manifest": "36/37; .gitignore absent upstream",
+    "sha256": "89d4139f809c316294b6115f115724b2af2304cba1992774e2d5086e49f7c79b"
+  },
+  "redistribution": {
+    "adb_pdf": "NO",
+    "official_source": "NO",
+    "world_bank_npz": "NO"
+  },
+  "s0_review_zip": {
+    "entries": 92,
+    "internal_manifest": "91/91 PASS",
+    "sha256": "a2b1319beea3749e02fa804c7b3eea9d2bdd3a6a646b016b4210a87bbb638d4d"
+  }
+}

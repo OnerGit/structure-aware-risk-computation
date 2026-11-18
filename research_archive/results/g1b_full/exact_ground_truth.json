@@ -1,0 +1,37 @@
+{
+  "adb-base": {
+    "term_expected_principal_loss_usd": 10063513.348954108,
+    "term_joint_attachment_probability": 0.04413776873084346,
+    "term_portfolio_loss_exceedance_probability": 0.012046720907534031,
+    "term_portfolio_stop_loss_usd": 282354.698566141,
+    "term_both_bonds_exhausted_probability": 3.1633046309178836e-05
+  },
+  "adb-independent": {
+    "term_expected_principal_loss_usd": 10063513.348954108,
+    "term_joint_attachment_probability": 0.02715637263085667,
+    "term_portfolio_loss_exceedance_probability": 0.007185934925690383,
+    "term_portfolio_stop_loss_usd": 171266.44543380654,
+    "term_both_bonds_exhausted_probability": 3.923917930752892e-06
+  },
+  "adb-common-shock": {
+    "term_expected_principal_loss_usd": 10063513.348954108,
+    "term_joint_attachment_probability": 0.050525670312933146,
+    "term_portfolio_loss_exceedance_probability": 0.01606640998669062,
+    "term_portfolio_stop_loss_usd": 385043.37022346805,
+    "term_both_bonds_exhausted_probability": 4.4001542176069056e-05
+  },
+  "adb-rain-stress": {
+    "term_expected_principal_loss_usd": 11170505.731674109,
+    "term_joint_attachment_probability": 0.07046389659987555,
+    "term_portfolio_loss_exceedance_probability": 0.013215038883593162,
+    "term_portfolio_stop_loss_usd": 306285.79632751975,
+    "term_both_bonds_exhausted_probability": 6.924565668457714e-05
+  },
+  "adb-rain-cover": {
+    "term_expected_principal_loss_usd": 9970051.441960664,
+    "term_joint_attachment_probability": 0.04413776873084346,
+    "term_portfolio_loss_exceedance_probability": 0.006997089316821913,
+    "term_portfolio_stop_loss_usd": 170927.46112726905,
+    "term_both_bonds_exhausted_probability": 3.1633046309178836e-05
+  }
+}

@@ -1,0 +1,10 @@
+{
+  "case_timeout_seconds": 60.0,
+  "exit_status": 0,
+  "external_wall_clock": "0:00.47",
+  "max_rss_kib": 98840,
+  "measured_wall_seconds": 0.48315372900106013,
+  "reported_elapsed_seconds": 0.3853687340160832,
+  "reported_preparation_seconds": 0.001383693073876202,
+  "rss_status": "RSS_MONITOR_ONLY"
+}

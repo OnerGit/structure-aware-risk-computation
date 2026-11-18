@@ -1,0 +1,95 @@
+{
+  "official_probability_vector_max_abs_diff": 1.0408340855860843e-16,
+  "official_total_probability": 1.0,
+  "official_target_probability": 1.879487424597577e-06,
+  "P_amplitude_max_error": 7.216449660063518e-16,
+  "P_probability_max_error": 2.220446049250313e-16,
+  "P_padded_amplitude_max": 4.686900846116147e-18,
+  "A_flag_probability": 1.8794874245975355e-06,
+  "A_flag_abs_error": 4.1504614415460717e-20,
+  "A_scratch_mass": 0.0,
+  "A_vs_expanded_max_abs": 1.6718811856835334e-15,
+  "Q_on_A_flag_probability": 1.6915302042132546e-05,
+  "Q_on_A_flag_expected": 1.6915302042132916e-05,
+  "Q_on_A_flag_abs_error": 3.6930636500287495e-19,
+  "Q_vs_Qexpanded_on_A_max_abs": 5.697817809583166e-15,
+  "Q_on_A_scratch_mass": 0.0,
+  "A_dagger_A_zero_max_abs": 2.2105826869933553e-16,
+  "S0_zero_phase": -0.9999999999999998,
+  "S0_flag_one_phase": 0.9999999999999998,
+  "Sf_flag_one_phase": -1.0,
+  "Uf_bases_passed": 256,
+  "Uf_wrong": [],
+  "A_dagger_exact_reverse_gate_identity": true,
+  "P_macro_gates": 66,
+  "P_gate_histogram": {
+    "cx": 32,
+    "ry": 34
+  },
+  "A_macro_gates": 83,
+  "A_gate_histogram": {
+    "ccx": 11,
+    "cx": 32,
+    "ry": 34,
+    "x": 6
+  },
+  "Q_macro_gates": 196,
+  "Q_gate_histogram": {
+    "ccx": 33,
+    "cx": 64,
+    "h": 2,
+    "ry": 68,
+    "x": 28,
+    "z": 1
+  },
+  "A_expanded_macro_gates": 237,
+  "A_expanded_gate_histogram": {
+    "cx": 98,
+    "h": 22,
+    "ry": 34,
+    "t": 44,
+    "tdg": 33,
+    "x": 6
+  },
+  "Q_expanded_macro_gates": 658,
+  "Q_expanded_gate_histogram": {
+    "cx": 262,
+    "h": 68,
+    "ry": 68,
+    "t": 132,
+    "tdg": 99,
+    "x": 28,
+    "z": 1
+  },
+  "A_expanded_depth": 151,
+  "Q_expanded_depth": 345,
+  "Q_macro_depth": 141,
+  "A_dagger_A_independent_random_probe_error": 1.1178203268234443e-16,
+  "A_independent_random_probe_scratch_mass": 0.0,
+  "Q_0_to_3_amplification_check": [
+    {
+      "k": 0,
+      "observed": 1.8794874245975355e-06,
+      "expected": 1.8794874245975772e-06,
+      "abs_error": 4.171637265227429e-20
+    },
+    {
+      "k": 1,
+      "observed": 1.6915302042132546e-05,
+      "expected": 1.6915302042132916e-05,
+      "abs_error": 3.6930636500287495e-19
+    },
+    {
+      "k": 2,
+      "observed": 4.6986479124060495e-05,
+      "expected": 4.6986479124061545e-05,
+      "abs_error": 1.0503208545953324e-18
+    },
+    {
+      "k": 3,
+      "observed": 9.209211437769433e-05,
+      "expected": 9.209211437769636e-05,
+      "abs_error": 2.032879073410321e-18
+    }
+  ]
+}

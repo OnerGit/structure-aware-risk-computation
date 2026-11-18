@@ -1,0 +1,25 @@
+[project]
+name = "structure-aware-risk-computation"
+version = "0.2.0"
+description = "Classical-first structure-aware joint-loss risk computation: official benchmark regression, reversible quantum PoCs and tensor-network research"
+readme = "README.md"
+requires-python = ">=3.12,<3.13"
+dependencies = [
+  "numpy>=2.0,<3",
+  "scipy>=1.13,<2",
+  "qiskit>=2.0,<3",
+]
+
+[project.optional-dependencies]
+dev = ["pytest>=8,<9"]
+
+[project.urls]
+Homepage = "https://github.com/OnerGit/structure-aware-risk-computation"
+
+[build-system]
+requires = ["hatchling"]
+build-backend = "hatchling.build"
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]
+filterwarnings = ["error::FutureWarning"]

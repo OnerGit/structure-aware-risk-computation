@@ -1,0 +1,20 @@
+{
+  "canonical_serializer": "QGate(key).__repr__ ordered",
+  "component_sha256": {
+    "A": "6e2c98f3c2ea46fb178f08a5818f0799054a3417c6323ebd1ac0ec845e69a342",
+    "A_dagger": "64d4837e36e3eacfd2958d1d3c8817726ce490157e8a8a087e372335ea2b0137",
+    "S_f": "750fe45ff329f2f2c33bb894f912f305cc289e22852b7d3d9a2f8a3d3b997134",
+    "S_0": "627d20e8ca04f90cb17abffc3c9869b7cee9fe902edf61be84f2ad6cdb01090d",
+    "Q": "f29532c87ea3fe73e7b604a74b00581278596165f717c1b3919b2ebf59d19a72"
+  },
+  "aggregate_netlist_sha256": "0e993e494f31a922bb33014a488dc032dfed0df16d129c0c611b74baf4d68369",
+  "gate_counts": {
+    "A": "20587",
+    "A_dagger": "20587",
+    "S_f": "15451",
+    "S_0": "183",
+    "Q": "56808",
+    "totals": "113616"
+  },
+  "generator": "src.adb_g3_a_p0.loader/build_A + oracle.sf_net/s0_net + grover.netQ"
+}

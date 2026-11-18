@@ -1,0 +1,16 @@
+{
+  "data_sha256": {
+    "flood": "a843078285068838db0a7b83ba96aaecebceb4e69ba9774b99395a6e216bbaa1",
+    "seismic": "ec8a93254dc4d9471792941022941d6ed5d76ab80e8950c21624393743a4bd25"
+  },
+  "method": "independent_npz_row_sum",
+  "track": "worldbank_elt",
+  "unit_note": "ELT values are annual USD/year or event-rate/year",
+  "values": {
+    "annual_economic_loss_usd": 2154328867.620208,
+    "annual_layer_payment_usd": 128221305.74456161,
+    "annual_layer_stop_loss_usd": 13523861.422961611,
+    "joint_layer_exceedance_rate_per_year": 0.6117012849999987,
+    "portfolio_layer_exceedance_rate_per_year": 0.5275005999999998
+  }
+}

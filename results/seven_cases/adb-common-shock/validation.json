@@ -1,0 +1,13 @@
+{
+  "check_submission": "PASS",
+  "execution": "classical_cpu",
+  "method": "official_exact_classical_dp",
+  "resources": {
+    "elapsed_seconds": 0.3648472549393773,
+    "model_evaluations": 100,
+    "preparation_seconds": 0.0011005960404872894,
+    "qubits": 0,
+    "shots": 0
+  },
+  "strict_submission": "code_review_required"
+}

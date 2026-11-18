@@ -1,0 +1,47 @@
+{
+  "phases": {
+    "phases": {
+      "annual_factor_build_n2": 0.0004099649959243834,
+      "merge_table_build_n2": 0.004379209014587104,
+      "exact_contraction_n2_1scenario": 0.007099296955857426,
+      "annual_factor_build_n3": 0.008605836017522961,
+      "merge_table_build_n3": 0.4051986740087159,
+      "exact_contraction_n3_1scenario": 0.41567384800873697,
+      "matched_n3_exact_dp": 0.3711249619955197,
+      "truncated_contract_chi4": 0.00942615099484101,
+      "all_25_cells": 0.03383681701961905
+    }
+  },
+  "peak_rss_kb": 65208,
+  "peak_intermediate_entries_n2": 1000000,
+  "intermediate_size_trace_exact_n2": [
+    {
+      "after_year": 1,
+      "states": 100
+    },
+    {
+      "after_year": 2,
+      "states": 100
+    },
+    {
+      "after_year": 3,
+      "states": 100
+    }
+  ],
+  "intermediate_size_trace_exact_n3": [
+    {
+      "after_year": 1,
+      "states": 1000
+    },
+    {
+      "after_year": 2,
+      "states": 1000
+    },
+    {
+      "after_year": 3,
+      "states": 1000
+    }
+  ],
+  "matched": "same machine, single thread, float64",
+  "dp_equivalence_note": "exact contraction (typhoon) = capped-state transfer DP on the same state space;"
+}

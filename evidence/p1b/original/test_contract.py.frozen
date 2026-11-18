@@ -1,0 +1,35 @@
+from __future__ import annotations
+import numpy as np
+from p1b_contract import (
+    ASYM_P01,
+    ASYM_P10,
+    TARGET_PROBABILITY,
+    load_amended_reference,
+    rain_probabilities_c_order,
+    run_preflight,
+)
+
+
+def test_preflight_and_hashes():
+    result = run_preflight()
+    assert result["source_integrity"] == "PASS"
+    assert result["rain_order_erratum"] == "PASS"
+    assert result["reference_validation"]["status"] == "PASS"
+    assert result["reference_validation"]["annual_count"] == 100
+    assert result["reference_validation"]["padding_count"] == 28
+    assert result["source_manifest"]["verified_count"] == 93
+
+
+def test_target_probability_and_bits():
+    reference = load_amended_reference()
+    annual = np.asarray(reference["annual_probabilities_100"], dtype=float)
+    assert abs(annual[99] - TARGET_PROBABILITY) <= 1e-12
+    assert [int((99 >> bit) & 1) for bit in range(7)] == [1, 1, 0, 0, 0, 1, 1]
+    assert abs(float(annual.sum()) - 1.0) <= 1e-12
+
+
+def test_rain_errata_asymmetric_negative_control():
+    probabilities = rain_probabilities_c_order(0.02, 0.04)
+    assert abs(float(probabilities[1]) - ASYM_P01) <= 1e-15
+    assert abs(float(probabilities[2]) - ASYM_P10) <= 1e-15
+    assert float(probabilities[1]) - float(probabilities[2]) > 1e-6

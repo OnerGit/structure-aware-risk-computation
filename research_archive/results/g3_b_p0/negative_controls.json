@@ -1,0 +1,18 @@
+{
+  "reference_exceed": 0.012046720907534033,
+  "controls": {
+    "wrong_cap_at_5": {
+      "deviation": 0.0011626948815807534,
+      "detected": true
+    },
+    "wrong_threshold_ge_160": {
+      "deviation": 0.004839761039243775,
+      "detected": true
+    },
+    "wrong_shared_shock_cr0": {
+      "deviation": 0.0007824895515592435,
+      "detected": true
+    }
+  },
+  "all_detected": true
+}

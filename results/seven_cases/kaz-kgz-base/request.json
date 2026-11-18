@@ -1,0 +1,16 @@
+{
+  "config_file": "cases/case.json",
+  "problem_id": "1972f9a4f55d44e7556583147182d04268d77e96f73696724719b237bbcca21e",
+  "run_id": "efa1da7e9ad946259030b6e58f6ef5a8",
+  "samples": 8192,
+  "schema_version": 1,
+  "seed": 1005,
+  "targets": [
+    "annual_economic_loss_usd",
+    "annual_layer_payment_usd",
+    "joint_layer_exceedance_rate_per_year",
+    "portfolio_layer_exceedance_rate_per_year",
+    "annual_layer_stop_loss_usd"
+  ],
+  "track": "worldbank_elt"
+}

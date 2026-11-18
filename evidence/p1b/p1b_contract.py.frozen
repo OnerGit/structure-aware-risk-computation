@@ -1,0 +1,370 @@
+from __future__ import annotations
+
+import hashlib
+import json
+import math
+import zipfile
+from pathlib import Path
+
+import numpy as np
+
+PROJECT_ROOT = Path(__file__).resolve().parents[3]
+PACKAGE_DIR = PROJECT_ROOT / "research" / "adb_p1b_o1y_flat7_bothex"
+CROSS_ZIP = (
+    PROJECT_ROOT
+    / "review-packages"
+    / "ADB_P1_S0_CROSS_RESEARCH_INTEGRATION_20261116_143222_REVIEW.zip"
+)
+S0_ZIP = (
+    PROJECT_ROOT
+    / "review-packages"
+    / "ADB_P1_STRUCTURED_STATE_PREPARATION_S0_20261116_095434_REVIEW.zip"
+)
+GK_ZIP = (
+    PROJECT_ROOT
+    / "handoff"
+    / "inbox"
+    / "ADB_P1_CROSS_INDEPENDENT_GK_20261116"
+    / "ADB_P1_CROSS_INDEPENDENT_GK_20261116_REVIEW.zip"
+)
+W1_ZIP = (
+    PROJECT_ROOT
+    / "handoff"
+    / "inbox"
+    / "ADB_WEB_P1_OFFICIAL_GENERATIVE_ARCHITECTURE_W1"
+    / "ADB_WEB_P1_OFFICIAL_GENERATIVE_ARCHITECTURE_W1_20261113_REVIEW.zip"
+)
+W2_ZIP = (
+    PROJECT_ROOT
+    / "handoff"
+    / "inbox"
+    / "ADB_WEB_P1_OFFICIAL_CIRCUIT_DESIGN_W2"
+    / "ADB_WEB_P1_OFFICIAL_CIRCUIT_DESIGN_W2_20261113_REVIEW.zip"
+)
+W3_ZIP = (
+    PROJECT_ROOT
+    / "handoff"
+    / "inbox"
+    / "ADB_WEB_P1_A1A_GATE_RESOURCE_W3"
+    / "ADB_WEB_P1_A1A_GATE_RESOURCE_W3_20261113_REVIEW.zip"
+)
+S0_GK_ZIP = (
+    PROJECT_ROOT
+    / "handoff"
+    / "inbox"
+    / "ADB_P1_S0_INDEPENDENT_GK_20261116"
+    / "ADB_P1_S0_INDEPENDENT_GK_20261116_REVIEW.zip"
+)
+OFFICIAL_PDF = (
+    PROJECT_ROOT / "resources" / "official" / "ADB Quantum Innovation Challenge Brief.pdf"
+)
+AMENDED_REFERENCE = PACKAGE_DIR / "resources" / "ANNUAL_REFERENCE_AMENDED.json"
+
+EXPECTED_SHA256 = {
+    "cross_review": "1a436a98831919e976c9c32b91e9069981228e8b04520c2a03fb9ee9f42d47d6",
+    "s0_review": "489a290a053e2f63f408a9ce233d876f2ccca4db321cccf03eacc67b4a812992",
+    "current_gk": "017820e778d127bbb15acbda092f1386eceb7cf4fa3b679e1c7976d01a2618ca",
+    "w1_review": "5afb4b55651391eac234986365b49d3b43719a497e3b1693e15123cb62aa2dee",
+    "w2_review": "3623b2eeacb52ab08814439d5472606cd2a15f9c10a7e2766137df59e27bc269",
+    "w3_review": "0f18a4e079ad9b29a922dea1968bb51593ebd26de81956154765b0e8cbd7b24e",
+    "s0_gk_review": "d39f62bb97e3b767d16f074a993d6617e53131370e5f1e736385e848be8a4217",
+    "official_pdf": "cf731f2ac6e4db319ca8762fdd3b3b0d72de7dffb8c5781addcc66a164da1000",
+    "original_annual_reference": "a752c93a679e5754922638468a8612ff1fd6ff3c2fe0dacfd29e7c38a8e205c1",
+    "model_py": "b470f1df10a2d6334f3d3fb98f4edd4a47571db3f9d05570b6814ce47ed0001c",
+    "hazard_py": "5474218c81b0c3ea94b8cd35f29b669065070769570699f19abc21640625466d",
+    "ctmc_py": "9d90588ca74a77ec3aa337e94dc1b192e127a3128473a61362e1a00024fbc4cf",
+}
+
+RAIN_ORDER_LEGACY = [[0, 0], [1, 0], [0, 1], [1, 1]]
+RAIN_ORDER_CORRECTED = [[0, 0], [0, 1], [1, 0], [1, 1]]
+TARGET_INDEX = 99
+TARGET_PROBABILITY = 1.8794874245975374e-06
+ASYM_P01 = 0.03443630341950599
+ASYM_P10 = 0.01443630341950597
+
+
+def sha256_file(path: Path) -> str:
+    return hashlib.sha256(path.read_bytes()).hexdigest()
+
+
+def sha256_bytes(data: bytes) -> str:
+    return hashlib.sha256(data).hexdigest()
+
+
+def verify_zip(path: Path, expected_sha: str) -> dict:
+    actual_sha = sha256_file(path)
+    if actual_sha != expected_sha:
+        raise ValueError(f"external SHA256 mismatch: {path}: {actual_sha} != {expected_sha}")
+    with zipfile.ZipFile(path) as archive:
+        crc = archive.testzip()
+        if crc is not None:
+            raise ValueError(f"CRC failure in {path.name}: {crc}")
+        names = archive.namelist()
+        roots = {name.split("/")[0] for name in names if name}
+        if len(roots) != 1:
+            raise ValueError(f"ambiguous archive root in {path.name}: {roots}")
+        root = roots.pop() + "/"
+        internal = []
+        sums_name = root + "SHA256SUMS.txt"
+        if sums_name in names:
+            for line in archive.read(sums_name).decode().splitlines():
+                line = line.strip()
+                if not line:
+                    continue
+                digest, member = line.split("  ", 1)
+                actual = sha256_bytes(archive.read(root + member))
+                if actual != digest:
+                    raise ValueError(f"internal SHA256 mismatch in {path.name}: {member}")
+                internal.append(member)
+        return {
+            "path": str(path.relative_to(PROJECT_ROOT)),
+            "sha256": actual_sha,
+            "bytes": path.stat().st_size,
+            "members": len(names),
+            "internal_sha256_count": len(internal),
+            "crc": "PASS",
+        }
+
+
+def read_zip_bytes(path: Path, relative: str) -> bytes:
+    with zipfile.ZipFile(path) as archive:
+        root = archive.namelist()[0].split("/")[0] + "/"
+        return archive.read(root + relative)
+
+
+def read_zip_json(path: Path, relative: str):
+    return json.loads(read_zip_bytes(path, relative))
+
+
+def load_original_reference() -> dict:
+    data = read_zip_bytes(CROSS_ZIP, "resources/P1B_ANNUAL_REFERENCE.json")
+    digest = sha256_bytes(data)
+    if digest != EXPECTED_SHA256["original_annual_reference"]:
+        raise ValueError("original annual reference hash mismatch")
+    return json.loads(data)
+
+
+def build_amended_reference(original: dict) -> dict:
+    amended = json.loads(json.dumps(original))
+    amended["rain_order_original"] = original["rain_order"]
+    amended["rain_order"] = RAIN_ORDER_CORRECTED
+    amended["rain_order_definition"] = (
+        "C-order over (r1,r2), index = 4*z + 2*r1 + r2; "
+        "D0=r2, D1=r1"
+    )
+    amended["amendment"] = {
+        "schema": "ADB_P1B_CONTRACT_AMENDMENT_V1",
+        "errata": "ERRATA-01",
+        "source_reference_sha256": EXPECTED_SHA256["original_annual_reference"],
+        "original_rain_order_was_legacy_metadata": True,
+        "probabilities_changed": False,
+        "target_index_changed": False,
+        "reason": "official model C-order flattening labels index 1 as (r1=0,r2=1)",
+    }
+    return amended
+
+
+def write_amended_reference() -> str:
+    original = load_original_reference()
+    amended = build_amended_reference(original)
+    AMENDED_REFERENCE.parent.mkdir(parents=True, exist_ok=True)
+    text = json.dumps(amended, indent=2, sort_keys=True) + "\n"
+    AMENDED_REFERENCE.write_text(text)
+    changed = json.loads(text)
+    if changed["annual_probabilities_100"] != original["annual_probabilities_100"]:
+        raise ValueError("annual probabilities changed in amendment")
+    if changed["earthquake_probabilities_25"] != original["earthquake_probabilities_25"]:
+        raise ValueError("earthquake probabilities changed in amendment")
+    if changed["rain_probabilities_4"] != original["rain_probabilities_4"]:
+        raise ValueError("rain probabilities changed in amendment")
+    return sha256_file(AMENDED_REFERENCE)
+
+
+def load_amended_reference() -> dict:
+    return json.loads(AMENDED_REFERENCE.read_text())
+
+
+def rain_probabilities_c_order(q1: float, q2: float, shared_share: float = 0.25) -> np.ndarray:
+    mu1 = -math.log(1.0 - q1)
+    mu2 = -math.log(1.0 - q2)
+    common = shared_share * min(mu1, mu2)
+    p00 = math.exp(-(mu1 + mu2 - common))
+    p01 = math.exp(-mu1) - p00
+    p10 = math.exp(-mu2) - p00
+    p11 = 1.0 - p00 - p01 - p10
+    return np.array([p00, p01, p10, p11], dtype=float)
+
+
+def verify_source_manifest() -> dict:
+    manifest = read_zip_json(S0_ZIP, "evidence/EVIDENCE_MANIFEST.json")
+    missing = []
+    mismatches = []
+    verified = 0
+    for row in manifest["files"]:
+        path = PROJECT_ROOT / row["path"]
+        if not path.is_file():
+            missing.append(row["path"])
+            continue
+        if sha256_file(path) != row["sha256"]:
+            mismatches.append(row["path"])
+            continue
+        verified += 1
+    return {
+        "declared_count": manifest["count"],
+        "verified_count": verified,
+        "missing": missing,
+        "mismatches": mismatches,
+        "status": "PASS" if verified == manifest["count"] and not missing and not mismatches else "FAIL",
+    }
+
+
+def verify_local_model(reference: dict) -> dict:
+    from adb_g1a.ctmc import base_rain_rates, rain_annual_probabilities
+    from adb_g1a.model import RAIN_TRIGGER_PROB
+
+    eq25 = np.asarray(reference["earthquake_probabilities_25"], dtype=float)
+    rain_ref = np.asarray(reference["rain_probabilities_4"], dtype=float)
+    mu1, mu2 = base_rain_rates(q=RAIN_TRIGGER_PROB)
+    common = 0.25 * min(mu1, mu2)
+    rain_legacy = rain_annual_probabilities(mu1, mu2, common)
+    rain_corrected = rain_probabilities_c_order(RAIN_TRIGGER_PROB, RAIN_TRIGGER_PROB, 0.25)
+
+    annual_ref = np.asarray(reference["annual_probabilities_100"], dtype=float)
+    annual_legacy = np.kron(eq25, rain_legacy)
+    annual_corrected = np.kron(eq25, rain_corrected)
+    return {
+        "source_hashes": {
+            "model.py": sha256_file(PROJECT_ROOT / "src" / "adb_g1a" / "model.py"),
+            "hazard.py": sha256_file(PROJECT_ROOT / "src" / "adb_g1a" / "hazard.py"),
+            "ctmc.py": sha256_file(PROJECT_ROOT / "src" / "adb_g1a" / "ctmc.py"),
+        },
+        "rain_legacy_from_frozen_source": rain_legacy.tolist(),
+        "rain_c_order_contract": rain_corrected.tolist(),
+        "reference_rain": rain_ref.tolist(),
+        "annual_legacy_max_abs_delta": float(np.max(np.abs(annual_legacy - annual_ref))),
+        "annual_c_order_max_abs_delta": float(np.max(np.abs(annual_corrected - annual_ref))),
+        "rain_legacy_vs_reference_max_abs_delta": float(np.max(np.abs(rain_legacy - rain_ref))),
+        "rain_c_order_vs_reference_max_abs_delta": float(np.max(np.abs(rain_corrected - rain_ref))),
+        "base_rain_order_is_symmetric": bool(np.max(np.abs(rain_legacy - rain_corrected)) < 1e-15),
+        "status": "PASS"
+        if max(
+            float(np.max(np.abs(annual_legacy - annual_ref))),
+            float(np.max(np.abs(annual_corrected - annual_ref))),
+        )
+        < 1e-12
+        else "FAIL",
+    }
+
+
+def verify_rain_errata() -> dict:
+    corrected = rain_probabilities_c_order(0.02, 0.04, 0.25)
+    legacy = np.array([corrected[0], corrected[2], corrected[1], corrected[3]])
+    p01 = float(corrected[1])
+    p10 = float(corrected[2])
+    return {
+        "rain_order_legacy": RAIN_ORDER_LEGACY,
+        "rain_order_corrected": RAIN_ORDER_CORRECTED,
+        "corrected_probabilities": corrected.tolist(),
+        "legacy_probabilities_under_same_index": legacy.tolist(),
+        "index_1_corrected_p01": p01,
+        "index_2_corrected_p10": p10,
+        "gk_index_1_p01": ASYM_P01,
+        "gk_index_2_p10": ASYM_P10,
+        "distinguishes_index_1_and_2": bool(p01 - p10 > 1e-6),
+        "p01_delta_vs_gk": abs(p01 - ASYM_P01),
+        "p10_delta_vs_gk": abs(p10 - ASYM_P10),
+        "legacy_index_1_is_wrong": bool(legacy[1] != corrected[1]),
+        "status": "PASS"
+        if abs(p01 - ASYM_P01) <= 1e-15
+        and abs(p10 - ASYM_P10) <= 1e-15
+        and p01 - p10 > 1e-6
+        else "FAIL",
+    }
+
+
+def validate_reference(reference: dict) -> dict:
+    annual = np.asarray(reference["annual_probabilities_100"], dtype=float)
+    eq25 = np.asarray(reference["earthquake_probabilities_25"], dtype=float)
+    rain = np.asarray(reference["rain_probabilities_4"], dtype=float)
+    factorized = np.kron(eq25, rain)
+    return {
+        "annual_count": int(annual.size),
+        "earthquake_count": int(eq25.size),
+        "rain_count": int(rain.size),
+        "annual_mass": float(annual.sum()),
+        "factorization_max_abs_delta": float(np.max(np.abs(annual - factorized))),
+        "target_index": TARGET_INDEX,
+        "target_probability": float(annual[TARGET_INDEX]),
+        "target_probability_expected": TARGET_PROBABILITY,
+        "target_probability_delta": abs(float(annual[TARGET_INDEX]) - TARGET_PROBABILITY),
+        "target_bits_lsb_first": [int((TARGET_INDEX >> bit) & 1) for bit in range(7)],
+        "padding_count": 28,
+        "padding_probability_expected": 0.0,
+        "nonnegative": bool(np.all(annual >= 0.0)),
+        "status": "PASS"
+        if annual.size == 100
+        and abs(float(annual.sum()) - 1.0) <= 1e-12
+        and float(np.max(np.abs(annual - factorized))) <= 1e-12
+        and abs(float(annual[TARGET_INDEX]) - TARGET_PROBABILITY) <= 1e-12
+        else "FAIL",
+    }
+
+
+def run_preflight() -> dict:
+    zip_checks = {
+        "cross_review": verify_zip(CROSS_ZIP, EXPECTED_SHA256["cross_review"]),
+        "s0_review": verify_zip(S0_ZIP, EXPECTED_SHA256["s0_review"]),
+        "current_gk": verify_zip(GK_ZIP, EXPECTED_SHA256["current_gk"]),
+        "w1_review": verify_zip(W1_ZIP, EXPECTED_SHA256["w1_review"]),
+        "w2_review": verify_zip(W2_ZIP, EXPECTED_SHA256["w2_review"]),
+        "w3_review": verify_zip(W3_ZIP, EXPECTED_SHA256["w3_review"]),
+        "s0_gk_review": verify_zip(S0_GK_ZIP, EXPECTED_SHA256["s0_gk_review"]),
+    }
+    pdf_sha = sha256_file(OFFICIAL_PDF)
+    if pdf_sha != EXPECTED_SHA256["official_pdf"]:
+        raise ValueError("official PDF SHA256 mismatch")
+    original = load_original_reference()
+    amended_sha = write_amended_reference()
+    amended = load_amended_reference()
+    reference_validation = validate_reference(amended)
+    model_check = verify_local_model(original)
+    rain_errata = verify_rain_errata()
+    manifest_check = verify_source_manifest()
+    declared_source_hashes = model_check["source_hashes"]
+    expected_source_hashes = {
+        "model.py": EXPECTED_SHA256["model_py"],
+        "hazard.py": EXPECTED_SHA256["hazard_py"],
+        "ctmc.py": EXPECTED_SHA256["ctmc_py"],
+    }
+    if declared_source_hashes != expected_source_hashes:
+        raise ValueError("local frozen source hash mismatch")
+    if reference_validation["status"] != "PASS":
+        raise ValueError("annual reference validation failed")
+    if model_check["status"] != "PASS":
+        raise ValueError("local model annual validation failed")
+    if rain_errata["status"] != "PASS":
+        raise ValueError("rain errata negative control failed")
+    if manifest_check["status"] != "PASS":
+        raise ValueError("source manifest mismatch")
+    return {
+        "zip_checks": zip_checks,
+        "official_pdf": {
+            "path": str(OFFICIAL_PDF.relative_to(PROJECT_ROOT)),
+            "sha256": pdf_sha,
+            "status": "PASS",
+        },
+        "official_source_archive": {
+            "sha256_reported": "89d4139f809c316294b6115f115724b2af2304cba1992774e2d5086e49f7c79b",
+            "status": "REPORTED_BY_GK_NOT_LOCAL_REHASH",
+        },
+        "original_reference_sha256": EXPECTED_SHA256["original_annual_reference"],
+        "amended_reference_sha256": amended_sha,
+        "amended_reference_path": str(AMENDED_REFERENCE.relative_to(PROJECT_ROOT)),
+        "reference_validation": reference_validation,
+        "local_model": model_check,
+        "rain_errata": rain_errata,
+        "source_manifest": manifest_check,
+        "source_integrity": "PASS",
+        "rain_order_erratum": rain_errata["status"],
+        "a_dagger_test_contract_erratum": "PASS_CONTRACT_AMENDED",
+    }

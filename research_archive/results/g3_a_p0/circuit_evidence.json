@@ -1,0 +1,522 @@
+{
+  "gate": "G3_A_P0_EXECUTABLE_REVERSIBLE_CIRCUIT_VALIDATION",
+  "scenarios_executed": [
+    "adb-base",
+    "adb-independent",
+    "adb-common-shock"
+  ],
+  "scenario_bundles": [
+    {
+      "scenario": "adb-base",
+      "mandatory_adb_base": true,
+      "trace": {
+        "scenario": "adb-base",
+        "a": 0.012046720907534031,
+        "good_set_size": 45,
+        "tol": 1e-10,
+        "rows": [
+          {
+            "k": 0,
+            "measured": 0.012046720907527928,
+            "analytic": 0.01204672090753403,
+            "abs_diff": 6.1010224650104306e-15,
+            "pass": true
+          },
+          {
+            "k": 1,
+            "measured": 0.1049654967304926,
+            "analytic": 0.10496549673069216,
+            "abs_diff": 1.995625886763719e-13,
+            "pass": true
+          },
+          {
+            "k": 2,
+            "measured": 0.2731089385700728,
+            "analytic": 0.2731089385709789,
+            "abs_diff": 9.061085215478215e-13,
+            "pass": true
+          },
+          {
+            "k": 3,
+            "measured": 0.4844582375607324,
+            "analytic": 0.4844582375630247,
+            "abs_diff": 2.2922774789435607e-12,
+            "pass": true
+          }
+        ],
+        "all_pass": true
+      },
+      "loader": {
+        "max_abs_prob_err": 3.5937919307116317e-13,
+        "padding_mass_100_128": 1.2860149721907116e-34,
+        "norm2": 0.9999999999994962
+      },
+      "adjoint_identity": {
+        "probes": [
+          0,
+          1,
+          2,
+          5,
+          99,
+          127,
+          133,
+          4097,
+          447
+        ],
+        "n_probes_chemistry": 9,
+        "max_abs_diff": 1.0109690862236675e-12
+      },
+      "negative_controls": {
+        "k": 1,
+        "baseline_dev": 1.995625886763719e-13,
+        "controls": {
+          "wrong_threshold": {
+            "description": "non-strict >=160 predicate",
+            "deviation": 0.04024620601850751,
+            "detected": true
+          },
+          "scrambled_good": {
+            "description": "scrambled good-set order",
+            "deviation": 0.7153731787119548,
+            "detected": true
+          },
+          "faulty_diffusion": {
+            "description": "diffusion uses A instead of A-dagger (not centered on the original prepared reference)",
+            "deviation": 0.03706163798271844,
+            "detected": true
+          }
+        },
+        "all_detected": true
+      },
+      "costs": {
+        "components": {
+          "A": {
+            "one_qubit": 12519,
+            "two_qubit_cx": 8068,
+            "total": 20587,
+            "depth": 12117,
+            "two_qubit_depth": 6196
+          },
+          "A_dagger": {
+            "one_qubit": 12519,
+            "two_qubit_cx": 8068,
+            "total": 20587,
+            "depth": 12117,
+            "two_qubit_depth": 6196
+          },
+          "S_f": {
+            "one_qubit": 9511,
+            "two_qubit_cx": 5940,
+            "total": 15451,
+            "depth": 9082,
+            "two_qubit_depth": 4590
+          },
+          "S_0": {
+            "one_qubit": 117,
+            "two_qubit_cx": 66,
+            "total": 183,
+            "depth": 102,
+            "two_qubit_depth": 51
+          },
+          "Q": {
+            "one_qubit": 34666,
+            "two_qubit_cx": 22142,
+            "total": 56808,
+            "depth": 33416,
+            "two_qubit_depth": 17033
+          }
+        },
+        "k_traces": {
+          "Q^1_x_A k=0": {
+            "one_qubit": 12519,
+            "two_qubit_cx": 8068,
+            "total": 20587
+          },
+          "Q^1_x_A k=1": {
+            "one_qubit": 47185,
+            "two_qubit_cx": 30210,
+            "total": 77395
+          },
+          "Q^1_x_A k=2": {
+            "one_qubit": 81851,
+            "two_qubit_cx": 52352,
+            "total": 134203
+          },
+          "Q^1_x_A k=3": {
+            "one_qubit": 116517,
+            "two_qubit_cx": 74494,
+            "total": 191011
+          }
+        }
+      },
+      "qubits": {
+        "data": 7,
+        "flag": 1,
+        "scratch": 5,
+        "total": 13,
+        "peak_live_scratch": 6
+      },
+      "timing": {
+        "build_s": 0.03072752698790282,
+        "trace_s": 9.469429505988955,
+        "peak_rss_max_kb": 61360
+      },
+      "gate_semantics": {
+        "PRIMITIVE_GATE_MODEL_COMPILED": true,
+        "NATIVE_QPU_COMPILED": "NO",
+        "NOISE_VALIDATED": "NO",
+        "hardware_uncompiled": "UNKNOWN_NOT_COMPILED"
+      }
+    },
+    {
+      "scenario": "adb-independent",
+      "mandatory_adb_base": false,
+      "trace": {
+        "scenario": "adb-independent",
+        "a": 0.007185934925690383,
+        "good_set_size": 45,
+        "tol": 1e-10,
+        "rows": [
+          {
+            "k": 0,
+            "measured": 0.007185934925686631,
+            "analytic": 0.0071859349256903834,
+            "abs_diff": 3.752206878537834e-15,
+            "pass": true
+          },
+          {
+            "k": 1,
+            "measured": 0.06344004751085927,
+            "analytic": 0.06344004751098183,
+            "abs_diff": 1.2255474413080947e-13,
+            "pass": true
+          },
+          {
+            "k": 2,
+            "measured": 0.16952693569605917,
+            "analytic": 0.16952693569662808,
+            "abs_diff": 5.689060333935458e-13,
+            "pass": true
+          },
+          {
+            "k": 3,
+            "measured": 0.31333691314148326,
+            "analytic": 0.3133369131429774,
+            "abs_diff": 1.4941381465405357e-12,
+            "pass": true
+          }
+        ],
+        "all_pass": true
+      },
+      "loader": {
+        "max_abs_prob_err": 3.6148861681795097e-13,
+        "padding_mass_100_128": 9.456624339392644e-35,
+        "norm2": 0.9999999999994835
+      },
+      "adjoint_identity": {
+        "probes": [
+          0,
+          1,
+          2,
+          5,
+          99,
+          127,
+          133,
+          4097,
+          447
+        ],
+        "n_probes_chemistry": 9,
+        "max_abs_diff": 1.0256240301487196e-12
+      },
+      "negative_controls": {
+        "k": 1,
+        "baseline_dev": 1.2255474413080947e-13,
+        "controls": {
+          "wrong_threshold": {
+            "description": "non-strict >=160 predicate",
+            "deviation": 0.057874299547571284,
+            "detected": true
+          },
+          "scrambled_good": {
+            "description": "scrambled good-set order",
+            "deviation": 0.8228628617440747,
+            "detected": true
+          },
+          "faulty_diffusion": {
+            "description": "diffusion uses A instead of A-dagger (not centered on the original prepared reference)",
+            "deviation": 0.06719449154745792,
+            "detected": true
+          }
+        },
+        "all_detected": true
+      },
+      "costs": {
+        "components": {
+          "A": {
+            "one_qubit": 12519,
+            "two_qubit_cx": 8068,
+            "total": 20587,
+            "depth": 12117,
+            "two_qubit_depth": 6196
+          },
+          "A_dagger": {
+            "one_qubit": 12519,
+            "two_qubit_cx": 8068,
+            "total": 20587,
+            "depth": 12117,
+            "two_qubit_depth": 6196
+          },
+          "S_f": {
+            "one_qubit": 9511,
+            "two_qubit_cx": 5940,
+            "total": 15451,
+            "depth": 9082,
+            "two_qubit_depth": 4590
+          },
+          "S_0": {
+            "one_qubit": 117,
+            "two_qubit_cx": 66,
+            "total": 183,
+            "depth": 102,
+            "two_qubit_depth": 51
+          },
+          "Q": {
+            "one_qubit": 34666,
+            "two_qubit_cx": 22142,
+            "total": 56808,
+            "depth": 33416,
+            "two_qubit_depth": 17033
+          }
+        },
+        "k_traces": {
+          "Q^1_x_A k=0": {
+            "one_qubit": 12519,
+            "two_qubit_cx": 8068,
+            "total": 20587
+          },
+          "Q^1_x_A k=1": {
+            "one_qubit": 47185,
+            "two_qubit_cx": 30210,
+            "total": 77395
+          },
+          "Q^1_x_A k=2": {
+            "one_qubit": 81851,
+            "two_qubit_cx": 52352,
+            "total": 134203
+          },
+          "Q^1_x_A k=3": {
+            "one_qubit": 116517,
+            "two_qubit_cx": 74494,
+            "total": 191011
+          }
+        }
+      },
+      "qubits": {
+        "data": 7,
+        "flag": 1,
+        "scratch": 5,
+        "total": 13,
+        "peak_live_scratch": 6
+      },
+      "timing": {
+        "build_s": 0.0338473140145652,
+        "trace_s": 10.052078309992794,
+        "peak_rss_max_kb": 67576
+      },
+      "gate_semantics": {
+        "PRIMITIVE_GATE_MODEL_COMPILED": true,
+        "NATIVE_QPU_COMPILED": "NO",
+        "NOISE_VALIDATED": "NO",
+        "hardware_uncompiled": "UNKNOWN_NOT_COMPILED"
+      }
+    },
+    {
+      "scenario": "adb-common-shock",
+      "mandatory_adb_base": false,
+      "trace": {
+        "scenario": "adb-common-shock",
+        "a": 0.01606640998669062,
+        "good_set_size": 45,
+        "tol": 1e-10,
+        "rows": [
+          {
+            "k": 0,
+            "measured": 0.016066409986682406,
+            "analytic": 0.01606640998669062,
+            "abs_diff": 8.212180935274205e-15,
+            "pass": true
+          },
+          {
+            "k": 1,
+            "measured": 0.13846893660100368,
+            "analytic": 0.13846893660126772,
+            "abs_diff": 2.6403879083147785e-13,
+            "pass": true
+          },
+          {
+            "k": 2,
+            "measured": 0.35231441431968225,
+            "analytic": 0.3523144143208563,
+            "abs_diff": 1.174060848541103e-12,
+            "pass": true
+          },
+          {
+            "k": 3,
+            "measured": 0.6035143745631354,
+            "analytic": 0.6035143745659989,
+            "abs_diff": 2.8634872251132037e-12,
+            "pass": true
+          }
+        ],
+        "all_pass": true
+      },
+      "loader": {
+        "max_abs_prob_err": 3.637090628672013e-13,
+        "padding_mass_100_128": 9.817278737752628e-35,
+        "norm2": 0.9999999999994916
+      },
+      "adjoint_identity": {
+        "probes": [
+          0,
+          1,
+          2,
+          5,
+          99,
+          127,
+          133,
+          4097,
+          447
+        ],
+        "n_probes_chemistry": 9,
+        "max_abs_diff": 1.0369483049998962e-12
+      },
+      "negative_controls": {
+        "k": 1,
+        "baseline_dev": 2.6403879083147785e-13,
+        "controls": {
+          "wrong_threshold": {
+            "description": "non-strict >=160 predicate",
+            "deviation": 0.036895490130261194,
+            "detected": true
+          },
+          "scrambled_good": {
+            "description": "scrambled good-set order",
+            "deviation": 0.6828826912748155,
+            "detected": true
+          },
+          "faulty_diffusion": {
+            "description": "diffusion uses A instead of A-dagger (not centered on the original prepared reference)",
+            "deviation": 0.005895285916073273,
+            "detected": true
+          }
+        },
+        "all_detected": true
+      },
+      "costs": {
+        "components": {
+          "A": {
+            "one_qubit": 12519,
+            "two_qubit_cx": 8068,
+            "total": 20587,
+            "depth": 12117,
+            "two_qubit_depth": 6196
+          },
+          "A_dagger": {
+            "one_qubit": 12519,
+            "two_qubit_cx": 8068,
+            "total": 20587,
+            "depth": 12117,
+            "two_qubit_depth": 6196
+          },
+          "S_f": {
+            "one_qubit": 9511,
+            "two_qubit_cx": 5940,
+            "total": 15451,
+            "depth": 9082,
+            "two_qubit_depth": 4590
+          },
+          "S_0": {
+            "one_qubit": 117,
+            "two_qubit_cx": 66,
+            "total": 183,
+            "depth": 102,
+            "two_qubit_depth": 51
+          },
+          "Q": {
+            "one_qubit": 34666,
+            "two_qubit_cx": 22142,
+            "total": 56808,
+            "depth": 33416,
+            "two_qubit_depth": 17033
+          }
+        },
+        "k_traces": {
+          "Q^1_x_A k=0": {
+            "one_qubit": 12519,
+            "two_qubit_cx": 8068,
+            "total": 20587
+          },
+          "Q^1_x_A k=1": {
+            "one_qubit": 47185,
+            "two_qubit_cx": 30210,
+            "total": 77395
+          },
+          "Q^1_x_A k=2": {
+            "one_qubit": 81851,
+            "two_qubit_cx": 52352,
+            "total": 134203
+          },
+          "Q^1_x_A k=3": {
+            "one_qubit": 116517,
+            "two_qubit_cx": 74494,
+            "total": 191011
+          }
+        }
+      },
+      "qubits": {
+        "data": 7,
+        "flag": 1,
+        "scratch": 5,
+        "total": 13,
+        "peak_live_scratch": 6
+      },
+      "timing": {
+        "build_s": 0.03999816701980308,
+        "trace_s": 10.27732004300924,
+        "peak_rss_max_kb": 67684
+      },
+      "gate_semantics": {
+        "PRIMITIVE_GATE_MODEL_COMPILED": true,
+        "NATIVE_QPU_COMPILED": "NO",
+        "NOISE_VALIDATED": "NO",
+        "hardware_uncompiled": "UNKNOWN_NOT_COMPILED"
+      }
+    }
+  ],
+  "acceptance": {
+    "tol": 1e-10,
+    "adb_base_all_pass": true
+  },
+  "measured_wall_s": 81.38895886600949,
+  "peak_rss_kb": 67804,
+  "wall_budget_s": 1200,
+  "rss_budget_kb": 2097152,
+  "wall_within_budget": true,
+  "rss_within_budget": true,
+  "threads": 1,
+  "exact_dp_preprocessing_not_free": {
+    "measured_s1a_wall_s": 3.932232,
+    "measured_s1a_peak_rss_kb": 64608,
+    "note": "TABLE_LOAD uses the exact 100-state terminal table produced by the frozen G1-A/S1A Exact-DP pipeline; its cost is disclosed and is NOT a quantum loading claim."
+  },
+  "semantics": {
+    "PRIMITIVE_GATE_MODEL_COMPILED": true,
+    "CLASSICAL_COMPETITIVENESS": "NO_MEASURED_BENEFIT",
+    "SCALING_ADVANTAGE_NOT_ESTABLISHED": true,
+    "QUANTUM_ADVANTAGE": "NOT_CLAIMED",
+    "FULL_G1": "NOT_RERUN",
+    "A_P1_AUTHORIZED": false,
+    "A_P2_AUTHORIZED": false,
+    "G3_B_AUTHORIZED": false
+  }
+}

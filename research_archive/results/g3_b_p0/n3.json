@@ -1,0 +1,37 @@
+{
+  "law": "S1A F1/F2/F3 synthetic third country",
+  "tag": "SYNTHETIC_N3_NOT_OFFICIAL",
+  "terminal_marginal_to_n2_max_abs_err": 5.551115123125783e-16,
+  "annual_marginal_to_n2_max_abs_err": 2.220446049250313e-16,
+  "marginals_pass_1e12": true,
+  "metrics_vs_exact_n3_dp": {
+    "EL": {
+      "tn": 0.0640981008933936,
+      "dp_reference": 0.0640981008933936,
+      "abs_err": 0.0
+    },
+    "attach": {
+      "tn": 0.026696718109426237,
+      "dp_reference": 0.026696718109426233,
+      "abs_err": 3.469446951953614e-18
+    },
+    "exceed": {
+      "tn": 0.010657058513242773,
+      "dp_reference": 0.010657058513242772,
+      "abs_err": 1.734723475976807e-18
+    },
+    "stoploss": {
+      "tn": 0.0021829104599944164,
+      "dp_reference": 0.002182910459994415,
+      "abs_err": 1.3010426069826053e-18
+    },
+    "both": {
+      "tn": 5.250499180815835e-06,
+      "dp_reference": 5.250499180815876e-06,
+      "abs_err": 4.0657581468206416e-20
+    }
+  },
+  "metrics_pass_1e12": true,
+  "annual_factor_norm": 1.0,
+  "terminal_norm": 1.0000000000000004
+}

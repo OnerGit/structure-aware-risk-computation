@@ -1,0 +1,705 @@
+[
+  {
+    "gate": "x",
+    "params_float_hex": [],
+    "qubits": [
+      4
+    ]
+  },
+  {
+    "gate": "x",
+    "params_float_hex": [],
+    "qubits": [
+      3
+    ]
+  },
+  {
+    "gate": "x",
+    "params_float_hex": [],
+    "qubits": [
+      2
+    ]
+  },
+  {
+    "gate": "ccx",
+    "params_float_hex": [],
+    "qubits": [
+      0,
+      1,
+      8
+    ]
+  },
+  {
+    "gate": "ccx",
+    "params_float_hex": [],
+    "qubits": [
+      8,
+      2,
+      9
+    ]
+  },
+  {
+    "gate": "ccx",
+    "params_float_hex": [],
+    "qubits": [
+      9,
+      3,
+      10
+    ]
+  },
+  {
+    "gate": "ccx",
+    "params_float_hex": [],
+    "qubits": [
+      10,
+      4,
+      11
+    ]
+  },
+  {
+    "gate": "ccx",
+    "params_float_hex": [],
+    "qubits": [
+      11,
+      5,
+      12
+    ]
+  },
+  {
+    "gate": "ccx",
+    "params_float_hex": [],
+    "qubits": [
+      12,
+      6,
+      7
+    ]
+  },
+  {
+    "gate": "ccx",
+    "params_float_hex": [],
+    "qubits": [
+      11,
+      5,
+      12
+    ]
+  },
+  {
+    "gate": "ccx",
+    "params_float_hex": [],
+    "qubits": [
+      10,
+      4,
+      11
+    ]
+  },
+  {
+    "gate": "ccx",
+    "params_float_hex": [],
+    "qubits": [
+      9,
+      3,
+      10
+    ]
+  },
+  {
+    "gate": "ccx",
+    "params_float_hex": [],
+    "qubits": [
+      8,
+      2,
+      9
+    ]
+  },
+  {
+    "gate": "ccx",
+    "params_float_hex": [],
+    "qubits": [
+      0,
+      1,
+      8
+    ]
+  },
+  {
+    "gate": "x",
+    "params_float_hex": [],
+    "qubits": [
+      4
+    ]
+  },
+  {
+    "gate": "x",
+    "params_float_hex": [],
+    "qubits": [
+      3
+    ]
+  },
+  {
+    "gate": "x",
+    "params_float_hex": [],
+    "qubits": [
+      2
+    ]
+  },
+  {
+    "gate": "cx",
+    "params_float_hex": [],
+    "qubits": [
+      1,
+      0
+    ]
+  },
+  {
+    "gate": "ry",
+    "params_float_hex": [
+      "0x1.a9b0a40495cf8p-2"
+    ],
+    "qubits": [
+      0
+    ]
+  },
+  {
+    "gate": "cx",
+    "params_float_hex": [],
+    "qubits": [
+      1,
+      0
+    ]
+  },
+  {
+    "gate": "ry",
+    "params_float_hex": [
+      "-0x1.52bbd6151067cp-1"
+    ],
+    "qubits": [
+      0
+    ]
+  },
+  {
+    "gate": "ry",
+    "params_float_hex": [
+      "-0x1.229aec47638dep-2"
+    ],
+    "qubits": [
+      1
+    ]
+  },
+  {
+    "gate": "cx",
+    "params_float_hex": [],
+    "qubits": [
+      6,
+      2
+    ]
+  },
+  {
+    "gate": "ry",
+    "params_float_hex": [
+      "-0x1.8ffeb29509402p-2"
+    ],
+    "qubits": [
+      2
+    ]
+  },
+  {
+    "gate": "cx",
+    "params_float_hex": [],
+    "qubits": [
+      3,
+      2
+    ]
+  },
+  {
+    "gate": "ry",
+    "params_float_hex": [
+      "-0x1.261449152f085p-3"
+    ],
+    "qubits": [
+      2
+    ]
+  },
+  {
+    "gate": "cx",
+    "params_float_hex": [],
+    "qubits": [
+      4,
+      2
+    ]
+  },
+  {
+    "gate": "ry",
+    "params_float_hex": [
+      "-0x1.80930f3ebdd1bp-4"
+    ],
+    "qubits": [
+      2
+    ]
+  },
+  {
+    "gate": "cx",
+    "params_float_hex": [],
+    "qubits": [
+      3,
+      2
+    ]
+  },
+  {
+    "gate": "ry",
+    "params_float_hex": [
+      "0x1.c332d6acdbb04p-3"
+    ],
+    "qubits": [
+      2
+    ]
+  },
+  {
+    "gate": "cx",
+    "params_float_hex": [],
+    "qubits": [
+      5,
+      2
+    ]
+  },
+  {
+    "gate": "ry",
+    "params_float_hex": [
+      "0x1.0add2bd2a0280p-5"
+    ],
+    "qubits": [
+      2
+    ]
+  },
+  {
+    "gate": "cx",
+    "params_float_hex": [],
+    "qubits": [
+      3,
+      2
+    ]
+  },
+  {
+    "gate": "ry",
+    "params_float_hex": [
+      "0x1.29d9dd5dc1840p-2"
+    ],
+    "qubits": [
+      2
+    ]
+  },
+  {
+    "gate": "cx",
+    "params_float_hex": [],
+    "qubits": [
+      4,
+      2
+    ]
+  },
+  {
+    "gate": "ry",
+    "params_float_hex": [
+      "-0x1.cafcd27e240a0p-4"
+    ],
+    "qubits": [
+      2
+    ]
+  },
+  {
+    "gate": "cx",
+    "params_float_hex": [],
+    "qubits": [
+      3,
+      2
+    ]
+  },
+  {
+    "gate": "ry",
+    "params_float_hex": [
+      "0x1.dfa3886270104p-2"
+    ],
+    "qubits": [
+      2
+    ]
+  },
+  {
+    "gate": "cx",
+    "params_float_hex": [],
+    "qubits": [
+      6,
+      2
+    ]
+  },
+  {
+    "gate": "ry",
+    "params_float_hex": [
+      "-0x1.28f8036579bebp-3"
+    ],
+    "qubits": [
+      2
+    ]
+  },
+  {
+    "gate": "cx",
+    "params_float_hex": [],
+    "qubits": [
+      3,
+      2
+    ]
+  },
+  {
+    "gate": "ry",
+    "params_float_hex": [
+      "0x1.51c4b26da43b5p-3"
+    ],
+    "qubits": [
+      2
+    ]
+  },
+  {
+    "gate": "cx",
+    "params_float_hex": [],
+    "qubits": [
+      4,
+      2
+    ]
+  },
+  {
+    "gate": "ry",
+    "params_float_hex": [
+      "0x1.661cebfded26ep-2"
+    ],
+    "qubits": [
+      2
+    ]
+  },
+  {
+    "gate": "cx",
+    "params_float_hex": [],
+    "qubits": [
+      3,
+      2
+    ]
+  },
+  {
+    "gate": "ry",
+    "params_float_hex": [
+      "-0x1.b198abeaa89c8p-4"
+    ],
+    "qubits": [
+      2
+    ]
+  },
+  {
+    "gate": "cx",
+    "params_float_hex": [],
+    "qubits": [
+      5,
+      2
+    ]
+  },
+  {
+    "gate": "ry",
+    "params_float_hex": [
+      "0x1.4f5e6b85beb04p-4"
+    ],
+    "qubits": [
+      2
+    ]
+  },
+  {
+    "gate": "cx",
+    "params_float_hex": [],
+    "qubits": [
+      3,
+      2
+    ]
+  },
+  {
+    "gate": "ry",
+    "params_float_hex": [
+      "-0x1.1f0da97c1e8c8p-5"
+    ],
+    "qubits": [
+      2
+    ]
+  },
+  {
+    "gate": "cx",
+    "params_float_hex": [],
+    "qubits": [
+      4,
+      2
+    ]
+  },
+  {
+    "gate": "ry",
+    "params_float_hex": [
+      "0x1.112ed2978737cp-3"
+    ],
+    "qubits": [
+      2
+    ]
+  },
+  {
+    "gate": "cx",
+    "params_float_hex": [],
+    "qubits": [
+      3,
+      2
+    ]
+  },
+  {
+    "gate": "ry",
+    "params_float_hex": [
+      "-0x1.01078f2a8d8bep+0"
+    ],
+    "qubits": [
+      2
+    ]
+  },
+  {
+    "gate": "cx",
+    "params_float_hex": [],
+    "qubits": [
+      6,
+      3
+    ]
+  },
+  {
+    "gate": "ry",
+    "params_float_hex": [
+      "-0x1.1a26e2ca8074dp-1"
+    ],
+    "qubits": [
+      3
+    ]
+  },
+  {
+    "gate": "cx",
+    "params_float_hex": [],
+    "qubits": [
+      4,
+      3
+    ]
+  },
+  {
+    "gate": "ry",
+    "params_float_hex": [
+      "0x1.99d939cf33830p-3"
+    ],
+    "qubits": [
+      3
+    ]
+  },
+  {
+    "gate": "cx",
+    "params_float_hex": [],
+    "qubits": [
+      5,
+      3
+    ]
+  },
+  {
+    "gate": "ry",
+    "params_float_hex": [
+      "0x1.b8c182101c750p-4"
+    ],
+    "qubits": [
+      3
+    ]
+  },
+  {
+    "gate": "cx",
+    "params_float_hex": [],
+    "qubits": [
+      4,
+      3
+    ]
+  },
+  {
+    "gate": "ry",
+    "params_float_hex": [
+      "0x1.93c5b0c212853p-1"
+    ],
+    "qubits": [
+      3
+    ]
+  },
+  {
+    "gate": "cx",
+    "params_float_hex": [],
+    "qubits": [
+      6,
+      3
+    ]
+  },
+  {
+    "gate": "ry",
+    "params_float_hex": [
+      "0x1.9c8e8ec5c618bp-2"
+    ],
+    "qubits": [
+      3
+    ]
+  },
+  {
+    "gate": "cx",
+    "params_float_hex": [],
+    "qubits": [
+      4,
+      3
+    ]
+  },
+  {
+    "gate": "ry",
+    "params_float_hex": [
+      "-0x1.1029e119d314ap-3"
+    ],
+    "qubits": [
+      3
+    ]
+  },
+  {
+    "gate": "cx",
+    "params_float_hex": [],
+    "qubits": [
+      5,
+      3
+    ]
+  },
+  {
+    "gate": "ry",
+    "params_float_hex": [
+      "-0x1.4ac5a14ab7308p-5"
+    ],
+    "qubits": [
+      3
+    ]
+  },
+  {
+    "gate": "cx",
+    "params_float_hex": [],
+    "qubits": [
+      4,
+      3
+    ]
+  },
+  {
+    "gate": "ry",
+    "params_float_hex": [
+      "-0x1.dfa54c29afedap-1"
+    ],
+    "qubits": [
+      3
+    ]
+  },
+  {
+    "gate": "cx",
+    "params_float_hex": [],
+    "qubits": [
+      6,
+      4
+    ]
+  },
+  {
+    "gate": "ry",
+    "params_float_hex": [
+      "0x1.931ed8a23e35ep-3"
+    ],
+    "qubits": [
+      4
+    ]
+  },
+  {
+    "gate": "cx",
+    "params_float_hex": [],
+    "qubits": [
+      5,
+      4
+    ]
+  },
+  {
+    "gate": "ry",
+    "params_float_hex": [
+      "0x1.f5abf907f15dap-1"
+    ],
+    "qubits": [
+      4
+    ]
+  },
+  {
+    "gate": "cx",
+    "params_float_hex": [],
+    "qubits": [
+      6,
+      4
+    ]
+  },
+  {
+    "gate": "ry",
+    "params_float_hex": [
+      "-0x1.6b8a94c11b9dbp-2"
+    ],
+    "qubits": [
+      4
+    ]
+  },
+  {
+    "gate": "cx",
+    "params_float_hex": [],
+    "qubits": [
+      5,
+      4
+    ]
+  },
+  {
+    "gate": "ry",
+    "params_float_hex": [
+      "-0x1.2354c69ff7cf8p+0"
+    ],
+    "qubits": [
+      4
+    ]
+  },
+  {
+    "gate": "cx",
+    "params_float_hex": [],
+    "qubits": [
+      6,
+      5
+    ]
+  },
+  {
+    "gate": "ry",
+    "params_float_hex": [
+      "0x1.fdd3e275b4b06p-5"
+    ],
+    "qubits": [
+      5
+    ]
+  },
+  {
+    "gate": "cx",
+    "params_float_hex": [],
+    "qubits": [
+      6,
+      5
+    ]
+  },
+  {
+    "gate": "ry",
+    "params_float_hex": [
+      "-0x1.1c0d243ab2284p-2"
+    ],
+    "qubits": [
+      5
+    ]
+  },
+  {
+    "gate": "ry",
+    "params_float_hex": [
+      "-0x1.caf9bf36993d1p-3"
+    ],
+    "qubits": [
+      6
+    ]
+  }
+]

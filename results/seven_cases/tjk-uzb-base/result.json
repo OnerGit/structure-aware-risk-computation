@@ -1,0 +1,51 @@
+{
+  "estimates": {
+    "annual_economic_loss_usd": 2154328867.620198,
+    "annual_layer_payment_usd": 128221305.74456125,
+    "annual_layer_stop_loss_usd": 13523861.422961608,
+    "joint_layer_exceedance_rate_per_year": 0.611701284999998,
+    "portfolio_layer_exceedance_rate_per_year": 0.5275005999999994
+  },
+  "execution": "classical_cpu",
+  "intervals": {
+    "annual_economic_loss_usd": [
+      2154328867.620198,
+      2154328867.620198
+    ],
+    "annual_layer_payment_usd": [
+      128221305.74456125,
+      128221305.74456125
+    ],
+    "annual_layer_stop_loss_usd": [
+      13523861.422961608,
+      13523861.422961608
+    ],
+    "joint_layer_exceedance_rate_per_year": [
+      0.611701284999998,
+      0.611701284999998
+    ],
+    "portfolio_layer_exceedance_rate_per_year": [
+      0.5275005999999994,
+      0.5275005999999994
+    ]
+  },
+  "method": "official_exact_classical_dp",
+  "problem_id": "ca8cb198d4fdb69fe2a886f521740a8f608587ac5599ebc288dee3ff5270807d",
+  "resources": {
+    "elapsed_seconds": 0.6036417050054297,
+    "model_evaluations": 421968,
+    "preparation_seconds": 0.19797422701958567,
+    "qubits": 0,
+    "shots": 0
+  },
+  "run_id": "fe0320333ec934c56ef0e1cd16e61636",
+  "seed": 1006,
+  "targets": [
+    "annual_economic_loss_usd",
+    "annual_layer_payment_usd",
+    "joint_layer_exceedance_rate_per_year",
+    "portfolio_layer_exceedance_rate_per_year",
+    "annual_layer_stop_loss_usd"
+  ],
+  "track": "worldbank_elt"
+}

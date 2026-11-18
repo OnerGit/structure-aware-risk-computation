@@ -1,0 +1,202 @@
+{
+  "fixtures": [
+    {
+      "fixture_id": "F1_base",
+      "scenario": "adb-base",
+      "metric": "EL",
+      "tag": "SYNTHETIC_N3_NOT_OFFICIAL",
+      "source": "S1A F1/F2/F3 synthetic n3 law (annual_law_n3) + exact n3 DP (terminal_dp_n3); SYNTHETIC_N3_NOT_OFFICIAL",
+      "tn_value": 0.0640981008933936,
+      "n3_exact_dp_reference": 0.0640981008933936,
+      "normalized_abs_error": 0.0,
+      "pass_1e12": true
+    },
+    {
+      "fixture_id": "F1_base",
+      "scenario": "adb-base",
+      "metric": "attach",
+      "tag": "SYNTHETIC_N3_NOT_OFFICIAL",
+      "source": "S1A F1/F2/F3 synthetic n3 law (annual_law_n3) + exact n3 DP (terminal_dp_n3); SYNTHETIC_N3_NOT_OFFICIAL",
+      "tn_value": 0.026696718109426237,
+      "n3_exact_dp_reference": 0.026696718109426233,
+      "normalized_abs_error": 3.469446951953614e-18,
+      "pass_1e12": true
+    },
+    {
+      "fixture_id": "F1_base",
+      "scenario": "adb-base",
+      "metric": "exceed",
+      "tag": "SYNTHETIC_N3_NOT_OFFICIAL",
+      "source": "S1A F1/F2/F3 synthetic n3 law (annual_law_n3) + exact n3 DP (terminal_dp_n3); SYNTHETIC_N3_NOT_OFFICIAL",
+      "tn_value": 0.010657058513242773,
+      "n3_exact_dp_reference": 0.010657058513242772,
+      "normalized_abs_error": 1.734723475976807e-18,
+      "pass_1e12": true
+    },
+    {
+      "fixture_id": "F1_base",
+      "scenario": "adb-base",
+      "metric": "stoploss",
+      "tag": "SYNTHETIC_N3_NOT_OFFICIAL",
+      "source": "S1A F1/F2/F3 synthetic n3 law (annual_law_n3) + exact n3 DP (terminal_dp_n3); SYNTHETIC_N3_NOT_OFFICIAL",
+      "tn_value": 0.0021829104599944164,
+      "n3_exact_dp_reference": 0.002182910459994415,
+      "normalized_abs_error": 1.3010426069826053e-18,
+      "pass_1e12": true
+    },
+    {
+      "fixture_id": "F1_base",
+      "scenario": "adb-base",
+      "metric": "both",
+      "tag": "SYNTHETIC_N3_NOT_OFFICIAL",
+      "source": "S1A F1/F2/F3 synthetic n3 law (annual_law_n3) + exact n3 DP (terminal_dp_n3); SYNTHETIC_N3_NOT_OFFICIAL",
+      "tn_value": 5.250499180815835e-06,
+      "n3_exact_dp_reference": 5.250499180815876e-06,
+      "normalized_abs_error": 4.0657581468206416e-20,
+      "pass_1e12": true
+    },
+    {
+      "fixture_id": "F1_base",
+      "scenario": "adb-base",
+      "tag": "SYNTHETIC_N3_NOT_OFFICIAL",
+      "source": "S1A F1/F2/F3 synthetic n3 law (annual_law_n3) + exact n3 DP (terminal_dp_n3); SYNTHETIC_N3_NOT_OFFICIAL",
+      "marginals": {
+        "annual_to_n2": 2.220446049250313e-16,
+        "terminal_to_n2": 5.551115123125783e-16
+      },
+      "marginals_pass_1e12": true
+    },
+    {
+      "fixture_id": "F2_independent",
+      "scenario": "adb-independent",
+      "metric": "EL",
+      "tag": "SYNTHETIC_N3_NOT_OFFICIAL",
+      "source": "S1A F1/F2/F3 synthetic n3 law (annual_law_n3) + exact n3 DP (terminal_dp_n3); SYNTHETIC_N3_NOT_OFFICIAL",
+      "tn_value": 0.06409810089339357,
+      "n3_exact_dp_reference": 0.06409810089339359,
+      "normalized_abs_error": 1.3877787807814457e-17,
+      "pass_1e12": true
+    },
+    {
+      "fixture_id": "F2_independent",
+      "scenario": "adb-independent",
+      "metric": "attach",
+      "tag": "SYNTHETIC_N3_NOT_OFFICIAL",
+      "source": "S1A F1/F2/F3 synthetic n3 law (annual_law_n3) + exact n3 DP (terminal_dp_n3); SYNTHETIC_N3_NOT_OFFICIAL",
+      "tn_value": 0.0044603054740279015,
+      "n3_exact_dp_reference": 0.0044603054740279015,
+      "normalized_abs_error": 0.0,
+      "pass_1e12": true
+    },
+    {
+      "fixture_id": "F2_independent",
+      "scenario": "adb-independent",
+      "metric": "exceed",
+      "tag": "SYNTHETIC_N3_NOT_OFFICIAL",
+      "source": "S1A F1/F2/F3 synthetic n3 law (annual_law_n3) + exact n3 DP (terminal_dp_n3); SYNTHETIC_N3_NOT_OFFICIAL",
+      "tn_value": 0.006572962777950075,
+      "n3_exact_dp_reference": 0.006572962777950075,
+      "normalized_abs_error": 0.0,
+      "pass_1e12": true
+    },
+    {
+      "fixture_id": "F2_independent",
+      "scenario": "adb-independent",
+      "metric": "stoploss",
+      "tag": "SYNTHETIC_N3_NOT_OFFICIAL",
+      "source": "S1A F1/F2/F3 synthetic n3 law (annual_law_n3) + exact n3 DP (terminal_dp_n3); SYNTHETIC_N3_NOT_OFFICIAL",
+      "tn_value": 0.0008770676433835923,
+      "n3_exact_dp_reference": 0.0008770676433835923,
+      "normalized_abs_error": 0.0,
+      "pass_1e12": true
+    },
+    {
+      "fixture_id": "F2_independent",
+      "scenario": "adb-independent",
+      "metric": "both",
+      "tag": "SYNTHETIC_N3_NOT_OFFICIAL",
+      "source": "S1A F1/F2/F3 synthetic n3 law (annual_law_n3) + exact n3 DP (terminal_dp_n3); SYNTHETIC_N3_NOT_OFFICIAL",
+      "tn_value": 8.316227923243351e-09,
+      "n3_exact_dp_reference": 8.316227923243295e-09,
+      "normalized_abs_error": 5.624828165360588e-23,
+      "pass_1e12": true
+    },
+    {
+      "fixture_id": "F2_independent",
+      "scenario": "adb-independent",
+      "tag": "SYNTHETIC_N3_NOT_OFFICIAL",
+      "source": "S1A F1/F2/F3 synthetic n3 law (annual_law_n3) + exact n3 DP (terminal_dp_n3); SYNTHETIC_N3_NOT_OFFICIAL",
+      "marginals": {
+        "annual_to_n2": 1.1102230246251565e-16,
+        "terminal_to_n2": 2.220446049250313e-16
+      },
+      "marginals_pass_1e12": true
+    },
+    {
+      "fixture_id": "F3_common_shock",
+      "scenario": "adb-common-shock",
+      "metric": "EL",
+      "tag": "SYNTHETIC_N3_NOT_OFFICIAL",
+      "source": "S1A F1/F2/F3 synthetic n3 law (annual_law_n3) + exact n3 DP (terminal_dp_n3); SYNTHETIC_N3_NOT_OFFICIAL",
+      "tn_value": 0.0640981008933936,
+      "n3_exact_dp_reference": 0.06409810089339359,
+      "normalized_abs_error": 1.3877787807814457e-17,
+      "pass_1e12": true
+    },
+    {
+      "fixture_id": "F3_common_shock",
+      "scenario": "adb-common-shock",
+      "metric": "attach",
+      "tag": "SYNTHETIC_N3_NOT_OFFICIAL",
+      "source": "S1A F1/F2/F3 synthetic n3 law (annual_law_n3) + exact n3 DP (terminal_dp_n3); SYNTHETIC_N3_NOT_OFFICIAL",
+      "tn_value": 0.03488255002200393,
+      "n3_exact_dp_reference": 0.03488255002200394,
+      "normalized_abs_error": 6.938893903907228e-18,
+      "pass_1e12": true
+    },
+    {
+      "fixture_id": "F3_common_shock",
+      "scenario": "adb-common-shock",
+      "metric": "exceed",
+      "tag": "SYNTHETIC_N3_NOT_OFFICIAL",
+      "source": "S1A F1/F2/F3 synthetic n3 law (annual_law_n3) + exact n3 DP (terminal_dp_n3); SYNTHETIC_N3_NOT_OFFICIAL",
+      "tn_value": 0.01468223673630885,
+      "n3_exact_dp_reference": 0.014682236736308855,
+      "normalized_abs_error": 5.204170427930421e-18,
+      "pass_1e12": true
+    },
+    {
+      "fixture_id": "F3_common_shock",
+      "scenario": "adb-common-shock",
+      "metric": "stoploss",
+      "tag": "SYNTHETIC_N3_NOT_OFFICIAL",
+      "source": "S1A F1/F2/F3 synthetic n3 law (annual_law_n3) + exact n3 DP (terminal_dp_n3); SYNTHETIC_N3_NOT_OFFICIAL",
+      "tn_value": 0.003470642976388766,
+      "n3_exact_dp_reference": 0.0034706429763887675,
+      "normalized_abs_error": 1.3010426069826053e-18,
+      "pass_1e12": true
+    },
+    {
+      "fixture_id": "F3_common_shock",
+      "scenario": "adb-common-shock",
+      "metric": "both",
+      "tag": "SYNTHETIC_N3_NOT_OFFICIAL",
+      "source": "S1A F1/F2/F3 synthetic n3 law (annual_law_n3) + exact n3 DP (terminal_dp_n3); SYNTHETIC_N3_NOT_OFFICIAL",
+      "tn_value": 9.936681335580214e-06,
+      "n3_exact_dp_reference": 9.936681335580244e-06,
+      "normalized_abs_error": 3.049318610115481e-20,
+      "pass_1e12": true
+    },
+    {
+      "fixture_id": "F3_common_shock",
+      "scenario": "adb-common-shock",
+      "tag": "SYNTHETIC_N3_NOT_OFFICIAL",
+      "source": "S1A F1/F2/F3 synthetic n3 law (annual_law_n3) + exact n3 DP (terminal_dp_n3); SYNTHETIC_N3_NOT_OFFICIAL",
+      "marginals": {
+        "annual_to_n2": 1.214306433183765e-17,
+        "terminal_to_n2": 3.8163916471489756e-17
+      },
+      "marginals_pass_1e12": true
+    }
+  ]
+}
